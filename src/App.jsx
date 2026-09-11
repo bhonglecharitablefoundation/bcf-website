@@ -115,6 +115,40 @@ function App() {
     </svg>
   );
 
+  // On-Ground Field Initiatives & Welfare Drives Gallery
+  const galleryImages = [
+    {
+      src: '/health-camp-group.jpg',
+      tag: 'Healthcare Outreach',
+      title: 'Police Personnel Wellness & Screening Camp',
+      location: 'Nagpur, Maharashtra'
+    },
+    {
+      src: '/health-camp-checkup.jpg',
+      tag: 'Clinical Interventions',
+      title: 'On-Site Diagnostic & Preventative Consultations',
+      location: 'Nagpur Secretariat'
+    },
+    {
+      src: '/bcf-event-image-1.png',
+      tag: 'Holistic Health',
+      title: 'International Yoga Day Seminar & Practical Asanas',
+      location: 'IRA International Campus'
+    },
+    {
+      src: '/bcf-event-image-2.png',
+      tag: 'Preventative Education',
+      title: 'Lifestyle Disease Prevention & Stress Abatement Guidance',
+      location: 'Butibori, Maharashtra'
+    },
+    {
+      src: '/yoga-day-banner-1.png',
+      tag: 'Community Milestone',
+      title: 'Staff Wellness & Health Literacy Partnership',
+      location: 'Annual Foundation Drive'
+    }
+  ];
+
   // Focus Area Pillars data
   const pillars = [
     {
@@ -420,6 +454,59 @@ ${contactData.name}`;
                 <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>Central Govt. Registered</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Auto-scrolling On-Ground Impact & Field Interventions Ribbon */}
+      <section 
+        id="impact-gallery" 
+        style={{ 
+          background: 'linear-gradient(180deg, #001e33 0%, #001424 100%)', 
+          borderTop: '1px solid rgba(212, 175, 55, 0.2)',
+          borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
+          padding: '3rem 0',
+          position: 'relative',
+          overflow: 'hidden',
+          width: '100%'
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto 1.75rem auto', padding: '0 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', display: 'inline-block', animation: 'pulseGold 2s infinite' }}></span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                On-Ground Interventions & Field Drives
+              </span>
+            </div>
+            <h3 style={{ fontFamily: 'var(--font-serif)', color: '#fff', fontSize: '1.75rem', fontWeight: 600, margin: 0 }}>
+              Ground Realities & Community Impact
+            </h3>
+          </div>
+          <span style={{ fontSize: '0.8rem', color: '#b8c9d6', background: 'rgba(255,255,255,0.06)', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            Hover over any photo to pause
+          </span>
+        </div>
+
+        {/* Continuous Auto-scrolling Track */}
+        <div className="marquee-container">
+          <div className="marquee-track">
+            {galleryImages.concat(galleryImages).map((item, idx) => (
+              <div key={idx} className="marquee-card">
+                <img src={item.src} alt={item.title} loading="lazy" />
+                <div className="marquee-overlay">
+                  <span style={{ fontSize: '0.7rem', color: 'var(--gold)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {item.tag}
+                  </span>
+                  <strong style={{ fontSize: '0.92rem', color: '#fff', lineHeight: '1.3' }}>
+                    {item.title}
+                  </strong>
+                  <span style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>
+                    {item.location}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
