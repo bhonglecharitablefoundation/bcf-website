@@ -194,7 +194,8 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
               <Shield size={16} style={{ color: 'var(--gold)', marginTop: '0.1rem', flexShrink: 0 }} />
               <span style={{ fontSize: '0.8rem' }}>
                 Reg No: E-0004363NGP<br />
-                12A & 80G Certified Trust
+                12A & 80G Certified Trust<br />
+                MCA Form CSR-1 Registered
               </span>
             </div>
           </div>
@@ -220,7 +221,7 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
       >
         <p>© {currentYear} Bhongle Charitable Foundation. All Rights Reserved.</p>
         <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>
-          Bhongle Charitable Foundation operates as an irrevocable Public Charitable Trust registered in Nagpur, Maharashtra under the Maharashtra Public Trusts Act, 1950. All donations are tax-exempted under sections 12A & 80G.
+          Bhongle Charitable Foundation operates as an irrevocable Public Charitable Trust registered in Nagpur, Maharashtra under the Maharashtra Public Trusts Act, 1950. All donations are tax-exempted under sections 12A & 80G, and BCF is certified under MCA Form CSR-1 for corporate social responsibility funding.
         </p>
       </div>
     </footer>

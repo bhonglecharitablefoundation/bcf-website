@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Heart, BookOpen, Shield, Users, Mail, Phone, MapPin, 
   ChevronRight, Award, Compass, ExternalLink, ArrowUpRight, 
-  Info, CheckCircle2, Leaf
+  Info, CheckCircle2, Leaf, FileCheck
 } from 'lucide-react';
 import Globe from './components/Globe';
 import Navbar from './components/Navbar';
@@ -406,6 +406,10 @@ ${contactData.name}`;
               <div>
                 <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>12A & 80G</h4>
                 <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>Tax Exemptions Approved</p>
+              </div>
+              <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
+                <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>CSR-1</h4>
+                <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>MCA Registered (Govt. of India)</p>
               </div>
               <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
                 <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>Nagpur, MH</h4>
@@ -969,12 +973,17 @@ ${contactData.name}`;
                 <strong>NGO Darpan ID</strong>
                 <p>Registered (Govt. of India)</p>
               </div>
+              <div style={{ ...certCardStyle, gridColumn: 'span 2', background: 'rgba(212, 175, 55, 0.08)', border: '1.5px solid var(--gold)' }}>
+                <FileCheck size={22} style={{ color: 'var(--gold)', marginBottom: '0.5rem' }} />
+                <strong style={{ fontSize: '1.05rem', color: 'var(--primary)' }}>MCA Form CSR-1 Registered</strong>
+                <p style={{ color: 'var(--text-light)', marginTop: '0.2rem' }}>Ministry of Corporate Affairs • Eligible for Corporate CSR Funding</p>
+              </div>
             </div>
 
-            {/* Replaced Corporate Partnerships text */}
+            {/* Corporate Partnerships text */}
             <div style={{ background: 'rgba(0, 43, 73, 0.03)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: '12px', padding: '1.5rem', marginTop: '0.5rem' }}>
               <p style={{ fontSize: '0.9rem', color: 'var(--primary-light)', lineHeight: '1.6', fontWeight: 500 }}>
-                Registered under Sections 12A and 80G of the Income Tax Act, we invite corporate partnerships, grants, and philanthropic donations to scale our initiatives in sustainable healthcare, educational drives, and ecological restoration.
+                Registered under Sections 12A and 80G of the Income Tax Act and certified under MCA Form CSR-1, we invite corporate partnerships, CSR funding allocations, and philanthropic donations to scale our initiatives in sustainable healthcare, educational drives, and ecological restoration.
               </p>
             </div>
           </div>
@@ -1120,6 +1129,16 @@ ${contactData.name}`;
                   </span>
                 </div>
               </div>
+
+              <div style={contactItemStyle}>
+                <div style={contactIconStyle}><FileCheck size={20} /></div>
+                <div>
+                  <strong style={{ color: 'var(--primary)', display: 'block' }}>CSR & Statutory Compliance</strong>
+                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: '1.4' }}>
+                    MCA Form CSR-1 Registered • 12A & 80G Certified • Reg No: E-0004363NGP
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Social Media Connections */}
@@ -1184,7 +1203,7 @@ ${contactData.name}`;
                     type="text" 
                     required 
                     className="form-control" 
-                    placeholder="e.g. general inquiries, partnerships" 
+                    placeholder="e.g. CSR partnership, donations, general inquiries" 
                     value={contactData.subject}
                     onChange={(e) => setContactData({...contactData, subject: e.target.value})}
                   />
