@@ -917,20 +917,29 @@ ${contactData.name}`;
       </section>
 
       {/* Flagship Field Initiatives & Milestones: Nagpur Police Health Mission (Phase 1) */}
-      <section id="initiatives" className="scroll-reveal" style={{ borderBottom: '1px solid rgba(0,43,73,0.05)', backgroundColor: '#fffdf9', paddingTop: '5.5rem', paddingBottom: '5.5rem' }}>
+      <section 
+        id="initiatives" 
+        style={{ 
+          scrollMarginTop: '100px',
+          borderBottom: '1px solid rgba(0,43,73,0.05)', 
+          backgroundColor: '#fffdf9', 
+          paddingTop: '5.5rem', 
+          paddingBottom: '5.5rem' 
+        }}
+      >
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
           
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
-              <Shield size={16} style={{ color: 'var(--gold)' }} />
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+            <div className="police-badge-crisp">
+              <Shield size={18} style={{ color: '#f5b041', flexShrink: 0 }} />
+              <span>
                 Flagship Healthcare Initiative • July 27, 2026
               </span>
             </div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: 'var(--primary)', fontWeight: 700, lineHeight: '1.2' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.1rem, 3.8vw, 2.85rem)', color: 'var(--primary)', fontWeight: 800, lineHeight: '1.25' }}>
               Successful Conclusion of Phase 1: <br />
-              <span style={{ color: 'var(--gold)' }}>'Nagpur Police Health Mission'</span>
+              <span style={{ color: '#92400e', fontWeight: 800 }}>'Nagpur Police Health Mission'</span>
             </h2>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', maxWidth: '780px', margin: '1rem auto 0 auto', lineHeight: '1.6' }}>
               Securing the health and vitality of those who secure the city. A sweeping public health initiative dedicated to providing comprehensive diagnostic screenings, clinical consultations, and free pharmaceutical therapies across Nagpur police personnel.
