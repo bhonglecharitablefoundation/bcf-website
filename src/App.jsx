@@ -73,19 +73,19 @@ function App() {
   const [isDonateOpen, setIsDonateOpen] = useState(false);
   const [isVolunteerOpen, setIsVolunteerOpen] = useState(false);
 
-  // High-Quality 2-Second Intro Splash Screen State
+  // High-Quality 4-Second Intro Splash Screen State
   const [showSplash, setShowSplash] = useState(true);
   const [splashFading, setSplashFading] = useState(false);
 
   useEffect(() => {
-    // Show splash for 2 seconds, then smoothly fade out
+    // Show splash for 4 seconds, then smoothly fade out
     const fadeTimer = setTimeout(() => {
       setSplashFading(true);
-    }, 2000);
+    }, 4000);
 
     const removeTimer = setTimeout(() => {
       setShowSplash(false);
-    }, 2600);
+    }, 4600);
 
     return () => {
       clearTimeout(fadeTimer);

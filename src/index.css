@@ -371,7 +371,7 @@ section {
   background: linear-gradient(90deg, #ff9933, var(--gold), #10b981);
   box-shadow: 0 0 12px var(--gold);
   border-radius: 4px;
-  animation: splashFill 2s cubic-bezier(0.15, 0.85, 0.25, 1) forwards;
+  animation: splashFill 4s cubic-bezier(0.15, 0.85, 0.25, 1) forwards;
 }
 
 @keyframes splashFill {
