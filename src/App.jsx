@@ -170,6 +170,35 @@ function App() {
     }
   ];
 
+  // Strategic Partner & Supporting Organisations
+  const partnerOrganisations = [
+    {
+      name: "Maharashtra Police",
+      subtitle: "State Law Enforcement & Public Safety",
+      logo: "/partners/maharashtra-police.png"
+    },
+    {
+      name: "Nagpur Municipal Corporation",
+      subtitle: "Nagpur Mahanagar Palika (NMC)",
+      logo: "/partners/nagpur-municipal-corporation.png"
+    },
+    {
+      name: "IFPWD",
+      subtitle: "International Federation for Social Welfare",
+      logo: "/partners/ifpwd.png"
+    },
+    {
+      name: "Nagpur Police",
+      subtitle: "Nagpur City Police Department",
+      logo: "/partners/nagpur-police.png"
+    },
+    {
+      name: "Indian Medical Association",
+      subtitle: "IMA Nagpur & Healthcare Experts",
+      logo: "/partners/indian-medical-association.png"
+    }
+  ];
+
   // Focus Area Pillars data
   const pillars = [
     {
@@ -1819,6 +1848,34 @@ ${contactData.name}`;
             )}
           </div>
 
+        </div>
+      </section>
+
+      {/* Strategic Partners & Supporting Organisations Scrolling Section */}
+      <section id="partners" style={{ padding: '4.5rem 0 3.5rem 0', background: 'linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%)', borderTop: '1px solid rgba(0, 43, 73, 0.06)', borderBottom: '1px solid rgba(0, 43, 73, 0.08)', overflow: 'hidden' }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>Collaborative Ecosystem</div>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.4rem)', color: 'var(--primary)', marginBottom: '0.5rem', fontWeight: 800 }}>
+            Our Esteemed Partner Organisations
+          </h2>
+          <p style={{ color: 'var(--text-light)', maxWidth: '650px', margin: '0 auto', fontSize: '0.95rem' }}>
+            Empowering communities through strategic alliances with government bodies, civic institutions, and premier medical fraternities.
+          </p>
+        </div>
+
+        {/* Continuous Smooth Scrolling Marquee Container */}
+        <div className="marquee-container" style={{ padding: '1rem 0 2rem 0' }}>
+          <div className="partner-marquee-track">
+            {partnerOrganisations.concat(partnerOrganisations).concat(partnerOrganisations).map((partner, idx) => (
+              <div key={`partner-${idx}`} className="partner-card">
+                <div className="partner-logo-box">
+                  <img src={partner.logo} alt={partner.name} loading="lazy" />
+                </div>
+                <h4 className="partner-name">{partner.name}</h4>
+                <span className="partner-role">{partner.subtitle}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
