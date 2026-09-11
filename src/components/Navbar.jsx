@@ -15,7 +15,7 @@ const Navbar = ({ onOpenDonate }) => {
       }
 
       // Check active section
-      const sections = ['home', 'about', 'focus', 'governance', 'involved', 'contact'];
+      const sections = ['home', 'about', 'focus', 'initiatives', 'governance', 'involved', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -39,6 +39,7 @@ const Navbar = ({ onOpenDonate }) => {
     { name: 'Home', id: 'home' },
     { name: 'About Us', id: 'about' },
     { name: 'Our Focus', id: 'focus' },
+    { name: 'Events & Impact', id: 'initiatives' },
     { name: 'Governance', id: 'governance' },
     { name: 'Get Involved', id: 'involved' },
     { name: 'Contact Us', id: 'contact' },

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { 
   Heart, BookOpen, Shield, Users, Mail, Phone, MapPin, 
   ChevronRight, Award, Compass, ExternalLink, ArrowUpRight, 
-  Info, CheckCircle2, Leaf, FileCheck
+  Info, CheckCircle2, Leaf, FileCheck, Activity, Pill,
+  FileText, Calendar, Sparkles, Stethoscope, AlertCircle
 } from 'lucide-react';
 import Globe from './components/Globe';
 import Navbar from './components/Navbar';
@@ -139,33 +140,33 @@ function App() {
   const galleryImages = [
     {
       src: '/health-camp-group.jpg',
-      tag: 'Healthcare Outreach',
-      title: 'Police Personnel Wellness & Screening Camp',
-      location: 'Nagpur, Maharashtra'
+      tag: 'Police Health Mission',
+      title: 'Lakadganj Police Station Mega Camp (DCP Zone 3)',
+      location: 'Nagpur, Maharashtra • July 27, 2026'
     },
     {
       src: '/health-camp-checkup.jpg',
-      tag: 'Clinical Interventions',
-      title: 'On-Site Diagnostic & Preventative Consultations',
-      location: 'Nagpur Secretariat'
+      tag: 'Clinical Diagnostics',
+      title: '4-Tier Medical Screening & Free Pharmacy Dispensation',
+      location: 'Lakadganj Station • July 27, 2026'
     },
     {
       src: '/bcf-event-image-1.png',
-      tag: 'Holistic Health',
+      tag: 'Holistic Wellness',
       title: 'International Yoga Day Seminar & Practical Asanas',
-      location: 'IRA International Campus'
+      location: 'IRA International Campus • June 21, 2026'
     },
     {
       src: '/bcf-event-image-2.png',
       tag: 'Preventative Education',
       title: 'Lifestyle Disease Prevention & Stress Abatement Guidance',
-      location: 'Butibori, Maharashtra'
+      location: 'Butibori, Maharashtra • June 21, 2026'
     },
     {
       src: '/yoga-day-banner-1.png',
       tag: 'Community Milestone',
       title: 'Staff Wellness & Health Literacy Partnership',
-      location: 'Annual Foundation Drive'
+      location: 'Annual Foundation Drive • June 2026'
     }
   ];
 
@@ -915,10 +916,428 @@ ${contactData.name}`;
         </div>
       </section>
 
+      {/* Flagship Field Initiatives & Milestones: Nagpur Police Health Mission (Phase 1) */}
+      <section id="initiatives" className="scroll-reveal" style={{ borderBottom: '1px solid rgba(0,43,73,0.05)', backgroundColor: '#fffdf9', paddingTop: '5.5rem', paddingBottom: '5.5rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+          
+          {/* Section Header */}
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+              <Shield size={16} style={{ color: 'var(--gold)' }} />
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Flagship Healthcare Initiative • July 27, 2026
+              </span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: 'var(--primary)', fontWeight: 700, lineHeight: '1.2' }}>
+              Successful Conclusion of Phase 1: <br />
+              <span style={{ color: 'var(--gold)' }}>'Nagpur Police Health Mission'</span>
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', maxWidth: '780px', margin: '1rem auto 0 auto', lineHeight: '1.6' }}>
+              Securing the health and vitality of those who secure the city. A sweeping public health initiative dedicated to providing comprehensive diagnostic screenings, clinical consultations, and free pharmaceutical therapies across Nagpur police personnel.
+            </p>
+          </div>
+
+          {/* Visionary Patronage Card */}
+          <div 
+            className="glass-card" 
+            style={{ 
+              background: 'linear-gradient(135deg, rgba(0, 43, 73, 0.03) 0%, rgba(212, 175, 55, 0.06) 100%)', 
+              border: '1.5px solid rgba(212, 175, 55, 0.35)', 
+              borderRadius: '20px', 
+              padding: '1.75rem 2rem', 
+              marginBottom: '3rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.5rem',
+              flexWrap: 'wrap'
+            }}
+          >
+            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 4px 12px rgba(0, 43, 73, 0.25)' }}>
+              <Shield size={28} style={{ color: 'var(--gold)' }} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold-dark)', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '0.25rem' }}>
+                Visionary Guidance & Patronage
+              </span>
+              <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: 600, margin: 0, lineHeight: '1.5' }}>
+                Launched under the visionary guidance of the Hon’ble Police Commissioner of Nagpur, <strong>Shri Vishwas Nangre Patil</strong>, this sweeping initiative is dedicated to ensuring comprehensive healthcare access for police personnel across all DCP zones and the Commissioner’s office.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Quantitative Impact Statistics */}
+          <div className="police-stat-grid">
+            <div className="police-stat-card">
+              <div style={{ color: 'var(--primary)', fontSize: '2.2rem', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
+                90+
+              </div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--gold-dark)', marginTop: '0.2rem' }}>
+                Officers Screened
+              </div>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.35rem' }}>
+                Comprehensive 4-tier evaluations for DCP Zone 3 personnel
+              </p>
+            </div>
+
+            <div className="police-stat-card">
+              <div style={{ color: 'var(--primary)', fontSize: '2.2rem', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
+                82
+              </div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--gold-dark)', marginTop: '0.2rem' }}>
+                Metabolic Profiles
+              </div>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.35rem' }}>
+                Capillary Blood Glucose & Hemoglobin screenings
+              </p>
+            </div>
+
+            <div className="police-stat-card">
+              <div style={{ color: 'var(--primary)', fontSize: '2.2rem', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
+                4-Tier
+              </div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--gold-dark)', marginTop: '0.2rem' }}>
+                Clinical Protocol
+              </div>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.35rem' }}>
+                Vitals, diagnostics, 1-on-1 consultations & medical cards
+              </p>
+            </div>
+
+            <div className="police-stat-card">
+              <div style={{ color: 'var(--primary)', fontSize: '2.2rem', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
+                100% Free
+              </div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--gold-dark)', marginTop: '0.2rem' }}>
+                Medicine Dispensation
+              </div>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.35rem' }}>
+                On-site pharmacy providing premium clinical prescriptions
+              </p>
+            </div>
+          </div>
+
+          {/* Main Grid: Operational Narrative & Clinical Workflow */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'flex-start', marginBottom: '3.5rem' }}>
+            
+            {/* Left Column: Scope & 4-Tier Workflow */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
+                <Activity size={22} style={{ color: 'var(--primary)' }} />
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--primary)', fontWeight: 700 }}>
+                  Event Highlights & Clinical Workflow
+                </h3>
+              </div>
+
+              <div style={{ background: 'rgba(0, 43, 73, 0.03)', border: '1px solid rgba(0, 43, 73, 0.08)', borderRadius: '12px', padding: '1.1rem 1.3rem', marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.92rem', color: 'var(--text)', lineHeight: '1.6', margin: 0 }}>
+                  <strong>Venue & Scope:</strong> A mega free health check-up camp was hosted at the <strong>Lakadganj Police Station</strong>, serving <strong>DCP Zone 3</strong>. A robust four-tier clinical workflow ensured thorough evaluations for over <strong>90+ participating police personnel</strong> across Zone 3.
+                </p>
+              </div>
+
+              {/* 4 Tiers */}
+              <div className="police-workflow-item">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <CheckCircle2 size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '0.98rem' }}>
+                    Tier 1: Vital & Cardiovascular Assessments
+                  </strong>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Screenings included precise Body Mass Index (BMI) calculations, Blood Pressure (BP), Pulse Rate, Respiratory Rate, and SpO2 oxygen saturation monitoring.
+                </p>
+              </div>
+
+              <div className="police-workflow-item">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <CheckCircle2 size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '0.98rem' }}>
+                    Tier 2: Metabolic & Hematological Profiling
+                  </strong>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Capillary Blood Glucose and Hemoglobin tests were conducted for 82 officers, revealing critical workforce health trends, such as varying degrees of anaemia in 50% of the screened female personnel—enabling immediate therapeutic care.
+                </p>
+              </div>
+
+              <div className="police-workflow-item">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <CheckCircle2 size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '0.98rem' }}>
+                    Tier 3: 1-on-1 Expert Consultations
+                  </strong>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  MBBS and specialist doctors from the Indian Medical Association (IMA) provided one-on-one medical consultations to prescribe tailored treatments and preventative lifestyles.
+                </p>
+              </div>
+
+              <div className="police-workflow-item">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <CheckCircle2 size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '0.98rem' }}>
+                    Tier 4: Comprehensive Medical Records
+                  </strong>
+                </div>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Every participating officer was issued a detailed Patient Report Card containing their complete medical profile for future clinical reference and monitoring.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Pharmacy Dispensation & Leadership Commendations */}
+            <div>
+              {/* Pharmacy Box */}
+              <div className="glass-card" style={{ padding: '1.75rem', borderRadius: '18px', border: '1.5px solid rgba(212, 175, 55, 0.3)', background: '#ffffff', marginBottom: '2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <Pill size={22} style={{ color: 'var(--green-light)' }} />
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Medical Dispensation & Pharmacy Services
+                  </h4>
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
+                  A fully stocked, on-site free pharmacy was deployed to dispense high-quality medications based on expert clinical prescriptions. To ensure premium care, highly valued clinical-grade treatments were provided:
+                </p>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '0.35rem' }}>
+                    Cardiovascular & Diabetic Management:
+                  </span>
+                  <div>
+                    <span className="med-pill">Atorvastatin</span>
+                    <span className="med-pill">Rosuvastatin</span>
+                    <span className="med-pill">Clopidogrel Aspirin</span>
+                    <span className="med-pill">Metformin (1000mg)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '0.35rem' }}>
+                    Targeted Therapies & Gastric Formulations:
+                  </span>
+                  <div>
+                    <span className="med-pill">Azithromycin</span>
+                    <span className="med-pill">Levaflaxin</span>
+                    <span className="med-pill">Esomeprazole</span>
+                    <span className="med-pill">Omeprazole</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Distinguished Guests & Leadership Commendations */}
+              <div className="glass-card" style={{ padding: '1.75rem', borderRadius: '18px', border: '1px solid rgba(0, 43, 73, 0.1)', background: 'linear-gradient(135deg, rgba(255, 253, 249, 0.95) 0%, rgba(255, 248, 235, 0.6) 100%)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <Award size={22} style={{ color: 'var(--gold)' }} />
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Distinguished Guests & Leadership
+                  </h4>
+                </div>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontSize: '0.9rem', color: 'var(--text)', lineHeight: '1.5' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', marginTop: '0.45rem', flexShrink: 0 }}></div>
+                    <div>
+                      The initiative garnered warm appreciation and formal commendation from the Additional Commissioner of Police, <strong>Smt. Vinita Shahu</strong>.
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontSize: '0.9rem', color: 'var(--text)', lineHeight: '1.5' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', marginTop: '0.45rem', flexShrink: 0 }}></div>
+                    <div>
+                      The camp was honored by the prominent presence of Deputy Commissioner of Police (Zone 3), <strong>Shri Rahul Madane</strong>, alongside Senior Police Inspectors from various stations within Zone 3.
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', fontSize: '0.9rem', color: 'var(--text)', lineHeight: '1.5' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', marginTop: '0.45rem', flexShrink: 0 }}></div>
+                    <div>
+                      Exceptional logistical planning and ground support were meticulously executed by Senior Police Inspector <strong>Shri Mukund Kawade</strong> and the dedicated staff of the Lakadganj Police Station.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Photo Gallery Showcase */}
+          <div style={{ marginBottom: '3.5rem' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--primary)', marginBottom: '1.75rem', textAlign: 'center', fontWeight: 700 }}>
+              Mission Photo Gallery • Lakadganj Police Station
+            </h3>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+              {/* Photo 1 */}
+              <div className="glass-card" style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px' }}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '270px', border: '1px solid rgba(0,43,73,0.08)' }}>
+                  <img 
+                    src="/health-camp-group.jpg" 
+                    alt="Nagpur Police Health Mission Phase 1 Group Photo" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-dark)', textTransform: 'uppercase' }}>
+                      Inaugural Delegation
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      July 27, 2026
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    BCF Leadership, Police Dignitaries & IMA Doctors
+                  </h5>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Commemorative group gathering at Lakadganj Police Station featuring Police Leadership, IMA medical team, and BCF Trustees.
+                  </p>
+                </div>
+              </div>
+
+              {/* Photo 2 */}
+              <div className="glass-card" style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px' }}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '270px', border: '1px solid rgba(0,43,73,0.08)' }}>
+                  <img 
+                    src="/health-camp-checkup.jpg" 
+                    alt="Clinical Medical Checkup in progress" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-dark)', textTransform: 'uppercase' }}>
+                      Clinical Interventions
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      DCP Zone 3
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    One-on-One Vital Screening & Clinical Diagnosis
+                  </h5>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Doctors conducting blood pressure, sugar, hemoglobin and clinical evaluations for officers on duty.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Organizing Coalition & Medical Leadership Section */}
+          <div className="glass-card" style={{ padding: '2.25rem', borderRadius: '20px', border: '1px solid rgba(0, 43, 73, 0.08)', background: '#ffffff', marginBottom: '3rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Collaborative Coalition
+              </span>
+              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)', fontWeight: 700, marginTop: '0.3rem' }}>
+                Partnerships & Organizing Committee
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', maxWidth: '650px', margin: '0.5rem auto 0 auto' }}>
+                The health camp was a collaborative triumph jointly orchestrated by the <strong>Bhongle Charitable Foundation</strong>, <strong>IFPWD</strong>, <strong>Six Sigma</strong>, and <strong>IMA Nagpur</strong>.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+              {/* BCF Leadership */}
+              <div style={{ background: 'rgba(0, 43, 73, 0.03)', borderRadius: '14px', padding: '1.5rem', border: '1px solid rgba(0, 43, 73, 0.06)' }}>
+                <h5 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Users size={18} style={{ color: 'var(--gold)' }} />
+                  Foundation Leadership
+                </h5>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <div className="leader-badge">
+                    <strong>Dr. Shaligram Bhongle</strong> • President, BCF
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Dr. Priti Bhongle</strong> • Treasurer, BCF
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Mr. Yash Bhongle</strong> • Secretary, BCF
+                  </div>
+                </div>
+              </div>
+
+              {/* Medical Experts */}
+              <div style={{ background: 'rgba(0, 43, 73, 0.03)', borderRadius: '14px', padding: '1.5rem', border: '1px solid rgba(0, 43, 73, 0.06)' }}>
+                <h5 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Stethoscope size={18} style={{ color: 'var(--green-light)' }} />
+                  Medical Experts & IMA Delegation
+                </h5>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <div className="leader-badge">
+                    <strong>Dr. Suyash</strong> • State Co-Convenor, IMA JDN
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Dr. Balajit</strong> • State Joint Secretary, IMA JDN
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Dr. Chinmay</strong> • Chairman, IMA JDN Nagpur
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Dr. Lokesh</strong> • General Secretary, IMA JDN Nagpur
+                  </div>
+                  <div className="leader-badge">
+                    <strong>Mr. Vivek</strong> • Meethas Healthcare Pvt. Ltd.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Media Acknowledgment */}
+            <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(0,43,73,0.06)', textAlign: 'center' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                Media Acknowledgment
+              </span>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', maxWidth: '750px', margin: '0.4rem auto 0 auto', lineHeight: '1.6' }}>
+                We extend our deepest gratitude to the prominent news channels and print publications for their extensive coverage and massive support in amplifying the reach and impact of this noble healthcare mission.
+              </p>
+            </div>
+          </div>
+
+          {/* Future Roadmap Banner (Phase 2) */}
+          <div 
+            style={{ 
+              background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)', 
+              color: '#fff', 
+              borderRadius: '20px', 
+              padding: '2.5rem', 
+              textAlign: 'center',
+              boxShadow: 'var(--shadow-lg)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1rem', borderRadius: '50px', marginBottom: '1rem' }}>
+                <Sparkles size={16} style={{ color: 'var(--gold)' }} />
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                  Upcoming Mission Expansion
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>
+                Future Roadmap: Preparing for Phase 2
+              </h3>
+              <p style={{ fontSize: '1rem', color: '#cbd5e1', maxWidth: '720px', margin: '0 auto 1.5rem auto', lineHeight: '1.6' }}>
+                Driven by the clinical success and vital health data gathered during Phase 1, BCF is actively preparing to expand this initiative. The foundation will next execute Phase 2 soon, scaling its ongoing mission to secure the health of those who secure the city.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button onClick={() => setIsDonateOpen(true)} className="btn btn-gold">
+                  <Heart size={16} fill="currentColor" />
+                  Support Police Health Mission
+                </button>
+                <button onClick={() => setIsVolunteerOpen(true)} className="btn btn-outline-white">
+                  Join as Medical Volunteer
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* International Yoga Day 2026 Milestone Section */}
-      <section id="yoga-milestone" className="scroll-reveal" style={{ borderBottom: '1px solid rgba(0,43,73,0.05)' }}>
+      <section id="yoga-milestone" className="scroll-reveal" style={{ borderBottom: '1px solid rgba(0,43,73,0.05)', backgroundColor: '#fff', paddingTop: '4rem', paddingBottom: '4rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>Recent Initiatives & Milestones</span>
+          <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>Community Milestone • June 21, 2026</span>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)', marginTop: '0.5rem', fontWeight: 600 }}>
             International Yoga Day 2026 Seminar
           </h2>
