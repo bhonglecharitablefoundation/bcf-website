@@ -384,6 +384,72 @@ ${contactData.name}`;
           />
         </div>
 
+        {/* Top Header Text (Directly on opening) */}
+        <div 
+          style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            padding: '0 1.5rem',
+            gap: '1rem',
+            position: 'relative',
+            zIndex: 2
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.35rem 1.1rem', borderRadius: '50px', width: 'fit-content' }}>
+            <Shield size={16} style={{ color: 'var(--gold)' }} />
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
+              Pan-India Public Charitable Trust • Reg No: E-0004363NGP
+            </span>
+          </div>
+          
+          <h1 
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)',
+              lineHeight: '1.15',
+              fontWeight: 700,
+              color: '#fff',
+              margin: '0.2rem 0 0 0'
+            }}
+          >
+            Bhongle Charitable <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Foundation</span>
+          </h1>
+
+          <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
+            Universal Humanism In Service & Action • Structured socio-economic, medical, and educational interventions across the Indian subcontinent.
+          </p>
+        </div>
+
+        {/* Auto-scrolling Pictures in larger size directly below the NGO name */}
+        <div style={{ width: '100%', margin: '1.75rem 0', position: 'relative', zIndex: 2 }}>
+          <div className="marquee-container">
+            <div className="marquee-track">
+              {galleryImages.concat(galleryImages).map((item, idx) => (
+                <div key={idx} className="marquee-card marquee-card-hero">
+                  <img src={item.src} alt={item.title} loading="eager" />
+                  <div className="marquee-overlay">
+                    <span style={{ fontSize: '0.72rem', color: 'var(--gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      {item.tag}
+                    </span>
+                    <strong style={{ fontSize: '1rem', color: '#fff', lineHeight: '1.3' }}>
+                      {item.title}
+                    </strong>
+                    <span style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>
+                      {item.location}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons & Compliance Snapshot */}
         <div 
           style={{
             maxWidth: '850px',
@@ -394,119 +460,40 @@ ${contactData.name}`;
             alignItems: 'center',
             textAlign: 'center',
             padding: '0 1.5rem',
-            gap: '2rem',
+            gap: '1.5rem',
             position: 'relative',
             zIndex: 2
           }}
         >
-          {/* Hero text */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.4rem 1.2rem', borderRadius: '50px', width: 'fit-content' }}>
-              <Shield size={16} style={{ color: 'var(--gold)' }} />
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
-                Pan-India Public Charitable Trust • Reg No: E-0004363NGP
-              </span>
-            </div>
-            
-            <h1 
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
-                lineHeight: '1.15',
-                fontWeight: 600,
-                color: '#fff',
-              }}
-            >
-              Universal Humanism In <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Service</span> & Action
-            </h1>
-
-            <p style={{ fontSize: '1.1rem', color: '#b8c9d6', lineHeight: '1.6', maxWidth: '650px', margin: '0 auto' }}>
-              Bhongle Charitable Foundation is committed to delivering structured socio-economic, medical, and educational interventions across the Indian subcontinent. We stand for equity, literacy, and ecological preservation.
-            </p>
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '0.5rem' }}>
-              <button onClick={() => setIsDonateOpen(true)} className="btn btn-gold">
-                <Heart size={18} fill="currentColor" />
-                Support Our Work
-              </button>
-              <button onClick={() => setIsVolunteerOpen(true)} className="btn btn-outline-white">
-                Volunteer With Us
-                <ChevronRight size={16} />
-              </button>
-            </div>
-
-            {/* Tags / Snapshot */}
-            <div style={{ display: 'flex', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', marginTop: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <div>
-                <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>12A & 80G</h4>
-                <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>Tax Exemptions Approved</p>
-              </div>
-              <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>CSR-1</h4>
-                <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>MCA Registered (Govt. of India)</p>
-              </div>
-              <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>Nagpur, MH</h4>
-                <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>Headquarters & Registration</p>
-              </div>
-              <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                <h4 style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 700 }}>NGO Darpan</h4>
-                <p style={{ fontSize: '0.75rem', color: '#b8c9d6' }}>Central Govt. Registered</p>
-              </div>
-            </div>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button onClick={() => setIsDonateOpen(true)} className="btn btn-gold">
+              <Heart size={18} fill="currentColor" />
+              Support Our Work
+            </button>
+            <button onClick={() => setIsVolunteerOpen(true)} className="btn btn-outline-white">
+              Volunteer With Us
+              <ChevronRight size={16} />
+            </button>
           </div>
-        </div>
-      </section>
 
-      {/* Auto-scrolling On-Ground Impact & Field Interventions Ribbon */}
-      <section 
-        id="impact-gallery" 
-        style={{ 
-          background: 'linear-gradient(180deg, #001e33 0%, #001424 100%)', 
-          borderTop: '1px solid rgba(212, 175, 55, 0.2)',
-          borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
-          padding: '3rem 0',
-          position: 'relative',
-          overflow: 'hidden',
-          width: '100%'
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto 1.75rem auto', padding: '0 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)', display: 'inline-block', animation: 'pulseGold 2s infinite' }}></span>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                On-Ground Interventions & Field Drives
-              </span>
+          {/* Tags / Snapshot */}
+          <div style={{ display: 'flex', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div>
+              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>12A & 80G</h4>
+              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Tax Exemptions Approved</p>
             </div>
-            <h3 style={{ fontFamily: 'var(--font-serif)', color: '#fff', fontSize: '1.75rem', fontWeight: 600, margin: 0 }}>
-              Ground Realities & Community Impact
-            </h3>
-          </div>
-          <span style={{ fontSize: '0.8rem', color: '#b8c9d6', background: 'rgba(255,255,255,0.06)', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.1)' }}>
-            Hover over any photo to pause
-          </span>
-        </div>
-
-        {/* Continuous Auto-scrolling Track */}
-        <div className="marquee-container">
-          <div className="marquee-track">
-            {galleryImages.concat(galleryImages).map((item, idx) => (
-              <div key={idx} className="marquee-card">
-                <img src={item.src} alt={item.title} loading="lazy" />
-                <div className="marquee-overlay">
-                  <span style={{ fontSize: '0.7rem', color: 'var(--gold)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {item.tag}
-                  </span>
-                  <strong style={{ fontSize: '0.92rem', color: '#fff', lineHeight: '1.3' }}>
-                    {item.title}
-                  </strong>
-                  <span style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>
-                    {item.location}
-                  </span>
-                </div>
-              </div>
-            ))}
+            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>CSR-1</h4>
+              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>MCA Registered (Govt. of India)</p>
+            </div>
+            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>Nagpur, MH</h4>
+              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Headquarters & Registration</p>
+            </div>
+            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>NGO Darpan</h4>
+              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Central Govt. Registered</p>
+            </div>
           </div>
         </div>
       </section>
