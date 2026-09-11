@@ -681,7 +681,7 @@ section {
   flex-shrink: 0;
   width: max-content;
   gap: 2rem;
-  animation: marqueeScroll 28s linear infinite;
+  animation: marqueeScroll 38s linear infinite;
   align-items: center;
 }
 
@@ -691,8 +691,8 @@ section {
 
 .partner-card {
   flex-shrink: 0;
-  width: 270px;
-  min-height: 220px;
+  width: 285px;
+  min-height: 235px;
   background: #ffffff;
   border: 1.5px solid rgba(0, 43, 73, 0.08);
   border-radius: 20px;

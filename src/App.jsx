@@ -196,6 +196,21 @@ function App() {
       name: "Indian Medical Association",
       subtitle: "IMA Nagpur & Healthcare Experts",
       logo: "/partners/indian-medical-association.png"
+    },
+    {
+      name: "KDK College of Pharmacy & Research Institute",
+      subtitle: "Pharmaceutical Sciences & Healthcare Research",
+      logo: "/partners/kdk-college-pharmacy.jpg"
+    },
+    {
+      name: "Indian Medical Association - Junior Doctors Network",
+      subtitle: "IMA-JDN Healthcare & Youth Medical Wing",
+      logo: "/partners/ima-junior-doctors-network.jpg"
+    },
+    {
+      name: "Bhausaheb Mulak Ayurved Mahavidyalaya & Research Hospital",
+      subtitle: "Ayurvedic Medical Science & Hospital (BCYRC)",
+      logo: "/partners/bhausaheb-mulak-ayurved.png"
     }
   ];
 
