@@ -275,9 +275,11 @@ ${contactData.name}`;
         style={{
           background: 'radial-gradient(circle at top right, var(--primary-light) 0%, var(--primary-dark) 100%)',
           color: '#fff',
-          paddingTop: '9rem',
+          paddingTop: '8.5rem',
+          paddingBottom: '3.5rem',
           minHeight: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           maxWidth: '100%',
           margin: 0,
@@ -384,45 +386,67 @@ ${contactData.name}`;
           />
         </div>
 
-        {/* Top Header Text (Directly on opening) */}
-        <div 
-          style={{
-            maxWidth: '900px',
-            margin: '0 auto',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            padding: '0 1.5rem',
-            gap: '1rem',
-            position: 'relative',
-            zIndex: 2
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.35rem 1.1rem', borderRadius: '50px', width: 'fit-content' }}>
-            <Shield size={16} style={{ color: 'var(--gold)' }} />
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
-              Pan-India Public Charitable Trust • Reg No: E-0004363NGP
-            </span>
-          </div>
-          
-          <h1 
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)',
-              lineHeight: '1.15',
-              fontWeight: 700,
-              color: '#fff',
-              margin: '0.2rem 0 0 0'
-            }}
-          >
-            Bhongle Charitable <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Foundation</span>
-          </h1>
+        {/* Logo & Bilingual Welcome Showcase (English & Hindi) */}
+        <div style={{ maxWidth: '920px', width: '100%', padding: '0 1.25rem', position: 'relative', zIndex: 2 }}>
+          <div className="hero-welcome-card">
+            {/* Official Logo Crest */}
+            <div className="hero-logo-crest">
+              <div className="hero-logo-halo"></div>
+              <img src="/logo.png" alt="Bhongle Charitable Foundation Crest" className="hero-logo-img" />
+            </div>
 
-          <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
-            Universal Humanism In Service & Action • Structured socio-economic, medical, and educational interventions across the Indian subcontinent.
-          </p>
+            {/* Auspicious Trust Pill */}
+            <div className="welcome-pill-badge">
+              <Shield size={14} style={{ color: 'var(--gold)' }} />
+              <span>सार्वजनिक धर्मार्थ न्यास • Pan-India Public Charitable Trust (Reg: E-0004363NGP)</span>
+            </div>
+
+            {/* Bilingual Welcome Headings */}
+            <div className="welcome-heading-group">
+              <h1 className="welcome-hindi-title">
+                आपका हार्दिक स्वागत है
+              </h1>
+              <h2 className="welcome-english-title">
+                Welcome to Our Mission of Service & Hope
+              </h2>
+            </div>
+
+            {/* Auspicious Sacred Divider */}
+            <div className="welcome-divider">
+              <div className="welcome-divider-line"></div>
+              <span className="welcome-divider-icon">✦ ॐ सर्वे भवन्तु सुखिनः ✦</span>
+              <div className="welcome-divider-line"></div>
+            </div>
+
+            {/* Bilingual Welcome Messages (Hindi & English) */}
+            <div className="welcome-messages-container">
+              <div className="welcome-message-box hindi-box">
+                <div className="lang-indicator">
+                  <span className="lang-flag">🇮🇳</span> हिंदी
+                </div>
+                <p className="welcome-message-text">
+                  स्वास्थ्य, योग, शिक्षा एवं सामाजिक कल्याण के माध्यम से हर वर्ग को सशक्त, स्वस्थ और आत्मनिर्भर बनाने के पावन संकल्प में आपका स्वागत है।
+                </p>
+              </div>
+
+              <div className="welcome-message-box english-box">
+                <div className="lang-indicator">
+                  <span className="lang-flag">🌐</span> English
+                </div>
+                <p className="welcome-message-text">
+                  Welcome to our enduring philanthropic mission dedicated to holistic healthcare, educational upliftment, and universal social empowerment across India.
+                </p>
+              </div>
+            </div>
+
+            {/* Micro Highlights */}
+            <div className="welcome-highlights">
+              <span className="welcome-tag">✨ 12A & 80G Certified</span>
+              <span className="welcome-tag">🏛️ CSR-1 Approved (Govt. of India)</span>
+              <span className="welcome-tag">🌿 NGO Darpan Registered</span>
+              <span className="welcome-tag">📍 Nagpur Headquarters</span>
+            </div>
+          </div>
         </div>
 
         {/* Auto-scrolling Pictures in larger size directly below the NGO name */}

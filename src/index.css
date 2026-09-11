@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
   /* Colors */
@@ -22,6 +22,7 @@
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Outfit', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  --font-hindi: 'Noto Sans Devanagari', 'Inter', sans-serif;
   
   /* Transitions & Shadows */
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -225,6 +226,249 @@ section {
   flex-direction: column;
   gap: 0.2rem;
   pointer-events: none;
+}
+
+/* Hero Opening Welcome Card & Bilingual Presentation */
+.hero-welcome-card {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.2rem 2.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(212, 175, 55, 0.06) 45%, rgba(0, 43, 73, 0.6) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: 28px;
+  box-shadow: 0 25px 50px rgba(0, 20, 35, 0.5), 0 0 35px rgba(212, 175, 55, 0.15);
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.hero-welcome-card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 30px 60px rgba(0, 20, 35, 0.6), 0 0 50px rgba(212, 175, 55, 0.25);
+}
+
+/* Logo Crest with Halo */
+.hero-logo-crest {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+}
+
+.hero-logo-halo {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(20, 184, 166, 0.25) 50%, transparent 70%);
+  filter: blur(14px);
+  z-index: 1;
+  animation: spinSlow 20s linear infinite;
+}
+
+.hero-logo-img {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  background: #ffffff;
+  padding: 5px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.hero-logo-img:hover {
+  transform: scale(1.06) rotate(3deg);
+}
+
+/* Pill badge on top */
+.welcome-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 0.4rem 1.2rem;
+  border-radius: 9999px;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-heading-group {
+  margin-bottom: 0.5rem;
+}
+
+.welcome-hindi-title {
+  font-family: var(--font-hindi);
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fef3c7 40%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-english-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 460px;
+  margin: 0.6rem auto 1.25rem auto;
+}
+
+.welcome-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+}
+
+.welcome-divider-icon {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Bilingual Messages Grid */
+.welcome-messages-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .welcome-messages-container {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+.welcome-message-box {
+  background: rgba(0, 25, 43, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-message-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.welcome-message-box.hindi-box::before {
+  background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+}
+
+.welcome-message-box.english-box::before {
+  background: linear-gradient(to bottom, var(--gold), #38bdf8);
+}
+
+.welcome-message-box:hover {
+  background: rgba(0, 25, 43, 0.65);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.lang-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.welcome-message-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.welcome-message-box.hindi-box .welcome-message-text {
+  font-family: var(--font-hindi);
+  color: #f1f5f9;
+  font-size: 0.92rem;
+}
+
+/* Micro badges inside card */
+.welcome-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
+
+.welcome-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+@media (max-width: 640px) {
+  .hero-welcome-card {
+    padding: 1.6rem 1.1rem;
+    border-radius: 20px;
+  }
+  .hero-logo-img {
+    width: 82px;
+    height: 82px;
+  }
+  .welcome-hindi-title {
+    font-size: 1.55rem;
+  }
+  .welcome-english-title {
+    font-size: 1.05rem;
+  }
 }
 
 /* Glassmorphism card */
