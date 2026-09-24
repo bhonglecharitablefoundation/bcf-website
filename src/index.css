@@ -432,6 +432,63 @@ section {
   text-transform: uppercase;
 }
 
+/* Crisp Ecological Badge for Plantation Drive */
+.plantation-badge-crisp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #064e3b;
+  border: 1.5px solid #10b981;
+  padding: 0.45rem 1.35rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.22);
+  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.plantation-badge-crisp span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #a7f3d0;
+  letter-spacing: 0.85px;
+  text-transform: uppercase;
+}
+
+.plantation-stat-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.05);
+  transition: all 0.3s ease;
+}
+
+.plantation-stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #10b981, var(--gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plantation-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(6, 78, 59, 0.12);
+  border-color: #10b981;
+}
+
+.plantation-stat-card:hover::after {
+  opacity: 1;
+}
+
 /* Glassmorphism card */
 .glass-card {
   background: var(--card-bg);

@@ -3,7 +3,8 @@ import {
   Heart, BookOpen, Shield, Users, Mail, Phone, MapPin, 
   ChevronRight, Award, Compass, ExternalLink, ArrowUpRight, 
   Info, CheckCircle2, Leaf, FileCheck, Activity, Pill,
-  FileText, Calendar, Sparkles, Stethoscope, AlertCircle
+  FileText, Calendar, Sparkles, Stethoscope, AlertCircle,
+  TreePine, Cpu
 } from 'lucide-react';
 import Globe from './components/Globe';
 import Navbar from './components/Navbar';
@@ -969,9 +970,312 @@ ${contactData.name}`;
         </div>
       </section>
 
-      {/* Flagship Field Initiatives & Milestones: Nagpur Police Health Mission (Phase 1) */}
+      {/* Flagship Field Initiatives & Milestones: Mega Scientific Plantation Drive 2026 */}
       <section 
         id="initiatives" 
+        style={{ 
+          scrollMarginTop: '100px',
+          borderBottom: '1px solid rgba(16, 185, 129, 0.15)', 
+          background: 'linear-gradient(180deg, #f6fbf8 0%, #ffffff 100%)', 
+          paddingTop: '5.5rem', 
+          paddingBottom: '5.5rem' 
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+          
+          {/* Quick Event Selector / Timeline Switcher */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+            <a href="#initiatives" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.5rem 1.1rem', borderRadius: '50px', background: '#064e3b', color: '#a7f3d0', fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none', boxShadow: '0 2px 8px rgba(6, 78, 59, 0.2)' }}>
+              <Leaf size={14} /> Aug 21, 2026 • Mega Scientific Plantation Drive
+            </a>
+            <a href="#police-health-mission" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.5rem 1.1rem', borderRadius: '50px', background: 'rgba(0, 43, 73, 0.08)', color: 'var(--primary)', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(0, 43, 73, 0.15)' }}>
+              <Shield size={14} /> Jul 27, 2026 • Nagpur Police Health Mission
+            </a>
+            <a href="#yoga-milestone" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.5rem 1.1rem', borderRadius: '50px', background: 'rgba(0, 43, 73, 0.08)', color: 'var(--primary)', fontSize: '0.82rem', fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(0, 43, 73, 0.15)' }}>
+              <Award size={14} /> Jun 21, 2026 • International Yoga Day Seminar
+            </a>
+          </div>
+
+          {/* Section Header */}
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div className="plantation-badge-crisp">
+              <Leaf size={18} style={{ color: '#34d399', flexShrink: 0 }} />
+              <span>
+                Mega Ecological Initiative • August 21, 2026
+              </span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.1rem, 3.8vw, 2.9rem)', color: 'var(--primary)', fontWeight: 800, lineHeight: '1.25' }}>
+              'Mega Scientific Plantation Drive' <br />
+              <span style={{ color: '#047857', fontWeight: 800 }}>Inaugurated by Hon'ble Mayor Smt. Neeta Thakre</span>
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', maxWidth: '820px', margin: '1rem auto 0 auto', lineHeight: '1.6' }}>
+              In a major push to support the <strong>Nagpur Municipal Corporation’s (NMC)</strong> ambitious <strong>‘5-Lakh Green Nagpur’</strong> target, the <strong>Bhongle Charitable Foundation</strong>, in proud collaboration with the NMC, successfully executed the 'Mega Scientific Plantation Drive 2026' featuring precision number tagging, verified botanical tracking, and binding multi-year institutional care covenants.
+            </p>
+          </div>
+
+          {/* Mayoral Inauguration & Visionary Guidance Card */}
+          <div 
+            className="glass-card" 
+            style={{ 
+              background: 'linear-gradient(135deg, rgba(6, 78, 59, 0.04) 0%, rgba(212, 175, 55, 0.08) 100%)', 
+              border: '1.5px solid rgba(16, 185, 129, 0.35)', 
+              borderRadius: '20px', 
+              padding: '1.75rem 2rem', 
+              marginBottom: '3rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.5rem',
+              flexWrap: 'wrap'
+            }}
+          >
+            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: '#064e3b', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 4px 14px rgba(6, 78, 59, 0.3)' }}>
+              <Leaf size={28} style={{ color: '#34d399' }} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '0.25rem' }}>
+                Civic Leadership & Mayoral Commendation
+              </span>
+              <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: 600, margin: 0, lineHeight: '1.5' }}>
+                The prestigious drive was officially inaugurated by the Hon'ble Mayor of Nagpur, <strong>Smt. Neeta Thakre</strong>, who highly praised the Bhongle Charitable Foundation for pioneering a scientific, data-driven methodology in urban environmental conservation and guaranteeing 100% post-plantation nurturing.
+              </p>
+            </div>
+            <div style={{ background: '#ffffff', padding: '0.65rem 1.25rem', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.3)', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', fontWeight: 700, color: '#065f46' }}>
+              <Award size={18} style={{ color: 'var(--gold)' }} />
+              NMC Civic-NGO Alliance
+            </div>
+          </div>
+
+          {/* Key Impact Metrics Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div className="plantation-stat-card">
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#047857', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                100
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.5rem' }}>
+                Number-Tagged Saplings
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.25rem', lineHeight: 1.4 }}>
+                Each sapling planted with specific individual identification numbers for scientific growth tracking
+              </div>
+            </div>
+
+            <div className="plantation-stat-card">
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#047857', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                100%
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.5rem' }}>
+                Guaranteed Survival Rate
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.25rem', lineHeight: 1.4 }}>
+                Backed by officially signed 3-Year NMC Maintenance Pledges by both College Principals
+              </div>
+            </div>
+
+            <div className="plantation-stat-card">
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#047857', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                2
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.5rem' }}>
+                Premier Academic Campuses
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.25rem', lineHeight: 1.4 }}>
+                Bhausaheb Mulak Ayurved Mahavidyalaya (Phase 1) & KDK College of Pharmacy (Phase 2)
+              </div>
+            </div>
+
+            <div className="plantation-stat-card">
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#047857', fontFamily: 'var(--font-serif)', lineHeight: 1 }}>
+                AI
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.5rem' }}>
+                Automated Welcome Protocol
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.25rem', lineHeight: 1.4 }}>
+                Modern artificial intelligence protocol deployed by BCF to welcome and guide visiting dignitaries
+              </div>
+            </div>
+          </div>
+
+          {/* Two-Phase Operational Breakdown */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+            {/* Phase 1 Card */}
+            <div className="glass-card" style={{ padding: '2rem', borderRadius: '18px', border: '1.5px solid rgba(16, 185, 129, 0.25)', background: '#ffffff' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#047857', fontWeight: 800 }}>
+                  01
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Phase 1 Execution
+                  </span>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Bhausaheb Mulak Ayurveda Mahavidyalaya
+                  </h4>
+                </div>
+              </div>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1rem' }}>
+                The inaugural phase concentrated on botanical richness and indigenous biodiversity. Climate-resilient, medicinal, and oxygen-rich plant varieties were planted across designated soil beds, linking Ayurvedic heritage with urban forestry.
+              </p>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', padding: '0.85rem 1rem', borderRadius: '10px', borderLeft: '3px solid #10b981' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary)' }}>
+                  Institutional 3-Year Covenant:
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>
+                  Principal <strong>Dr. Yuwaraj Kale</strong> formally signed the NMC 3-Year Maintenance Pledge to guarantee perpetual irrigation and protection.
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 2 Card */}
+            <div className="glass-card" style={{ padding: '2rem', borderRadius: '18px', border: '1.5px solid rgba(16, 185, 129, 0.25)', background: '#ffffff' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#047857', fontWeight: 800 }}>
+                  02
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Phase 2 Execution
+                  </span>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    KDK College of Pharmacy
+                  </h4>
+                </div>
+              </div>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1rem' }}>
+                The second phase mobilized academic researchers, youth volunteers, and faculty members in expanding campus canopy coverage. Saplings were positioned for optimal shading, ecological health, and atmospheric purification.
+              </p>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', padding: '0.85rem 1rem', borderRadius: '10px', borderLeft: '3px solid #10b981' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary)' }}>
+                  Institutional 3-Year Covenant:
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>
+                  Principal <strong>Dr. Kamlesh Wadher</strong> officially signed the 3-Year Maintenance Pledge affirming student-faculty guardianship for 100% survival.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stage Dignitaries & Felicitations Section */}
+          <div className="glass-card" style={{ padding: '2.25rem', borderRadius: '20px', border: '1px solid rgba(0, 43, 73, 0.08)', background: '#ffffff', marginBottom: '3rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Official Protocol & Felicitations
+              </span>
+              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)', fontWeight: 700, marginTop: '0.3rem' }}>
+                Dignitaries Present on Stage & Official Honors
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', maxWidth: '700px', margin: '0.5rem auto 0 auto' }}>
+                Distinguished civic leaders, academic heads, and foundation trustees joined on dais to inaugurate this historic ecological drive.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <Award size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Hon'ble Smt. Neeta Thakre</strong>
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                  Mayor, Nagpur City
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
+                  Felicitated with a traditional ceremonial shawl and floral bouquet by BCF Treasurer, <strong>Dr. Priti Bhongle</strong>.
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <Award size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Shri Dilip Denge</strong>
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                  Director
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
+                  Felicitated with a floral bouquet by BCF President, <strong>Dr. Shaligram Bhongle</strong>.
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <Award size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Dr. Yuwaraj Kale</strong>
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                  Principal, Bhausaheb Mulak Ayurved Mahavidyalaya
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
+                  Felicitated with a floral bouquet by BCF Secretary, <strong>Yash Bhongle</strong>.
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
+                  <Award size={18} style={{ color: 'var(--gold)' }} />
+                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Dr. Kamlesh Wadher</strong>
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                  Principal, KDK College of Pharmacy
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
+                  Felicitated with a floral bouquet by BCF Secretary, <strong>Yash Bhongle</strong>.
+                </div>
+              </div>
+            </div>
+
+            {/* BCF Dais Trustees Bar */}
+            <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(0,43,73,0.06)', display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              <div className="leader-badge">
+                <Users size={15} style={{ color: 'var(--gold)' }} />
+                <strong>Dr. Shaligram Bhongle</strong> • President, BCF
+              </div>
+              <div className="leader-badge">
+                <Users size={15} style={{ color: 'var(--gold)' }} />
+                <strong>Dr. Priti Bhongle</strong> • Treasurer, BCF
+              </div>
+              <div className="leader-badge">
+                <Users size={15} style={{ color: 'var(--gold)' }} />
+                <strong>Yash Bhongle</strong> • Secretary, BCF
+              </div>
+            </div>
+          </div>
+
+          {/* AI Protocol & Technological Innovation Showcase */}
+          <div 
+            style={{ 
+              background: 'linear-gradient(135deg, #064e3b 0%, #022c22 100%)', 
+              color: '#fff', 
+              borderRadius: '20px', 
+              padding: '2.5rem', 
+              boxShadow: 'var(--shadow-lg)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(52, 211, 153, 0.2)', border: '1.5px solid #34d399', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Cpu size={30} style={{ color: '#34d399' }} />
+              </div>
+              <div style={{ flex: 1 }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '0.25rem' }}>
+                  Technological Innovation in Public Service
+                </span>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', fontWeight: 700, margin: '0 0 0.5rem 0', color: '#ffffff' }}>
+                  Grand Welcome via Proprietary AI Welcoming Protocol
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#cbd5e1', margin: 0, lineHeight: '1.6', maxWidth: '780px' }}>
+                  Demonstrating the convergence of modern technology with social responsibility, the BCF team designed and deployed an automated, voice-interactive AI welcoming protocol to greet the Hon'ble Mayor, Directors, and academic dignitaries upon arrival.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Flagship Field Initiatives & Milestones: Nagpur Police Health Mission (Phase 1) */}
+      <section 
+        id="police-health-mission" 
         style={{ 
           scrollMarginTop: '100px',
           borderBottom: '1px solid rgba(0,43,73,0.05)', 
