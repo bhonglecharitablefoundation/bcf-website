@@ -1147,33 +1147,9 @@ ${contactData.name}`;
                     Medical Dispensation & Pharmacy Services
                   </h4>
                 </div>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
-                  A fully stocked, on-site free pharmacy was deployed to dispense high-quality medications based on expert clinical prescriptions. To ensure premium care, highly valued clinical-grade treatments were provided:
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', margin: 0 }}>
+                  A fully stocked, on-site free pharmacy was deployed to dispense high-quality essential medications and therapeutic formulations completely free of cost to police personnel, dispensed strictly according to individual on-site clinical evaluations and expert physician prescriptions.
                 </p>
-
-                <div style={{ marginBottom: '1rem' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '0.35rem' }}>
-                    Cardiovascular & Diabetic Management:
-                  </span>
-                  <div>
-                    <span className="med-pill">Atorvastatin</span>
-                    <span className="med-pill">Rosuvastatin</span>
-                    <span className="med-pill">Clopidogrel Aspirin</span>
-                    <span className="med-pill">Metformin (1000mg)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '0.35rem' }}>
-                    Targeted Therapies & Gastric Formulations:
-                  </span>
-                  <div>
-                    <span className="med-pill">Azithromycin</span>
-                    <span className="med-pill">Levaflaxin</span>
-                    <span className="med-pill">Esomeprazole</span>
-                    <span className="med-pill">Omeprazole</span>
-                  </div>
-                </div>
               </div>
 
               {/* Distinguished Guests & Leadership Commendations */}
@@ -1290,46 +1266,40 @@ ${contactData.name}`;
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-              {/* BCF Leadership */}
+              {/* Foundation Organizing Committee */}
               <div style={{ background: 'rgba(0, 43, 73, 0.03)', borderRadius: '14px', padding: '1.5rem', border: '1px solid rgba(0, 43, 73, 0.06)' }}>
                 <h5 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Users size={18} style={{ color: 'var(--gold)' }} />
-                  Foundation Leadership
+                  Foundation Organizing Committee
                 </h5>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <div className="leader-badge">
-                    <strong>Dr. Shaligram Bhongle</strong> • President, BCF
+                    <strong>Executive Board & Trustees</strong> • Bhongle Charitable Foundation
                   </div>
                   <div className="leader-badge">
-                    <strong>Dr. Priti Bhongle</strong> • Treasurer, BCF
+                    <strong>Treasury & Statutory Administration</strong> • Bhongle Charitable Foundation
                   </div>
                   <div className="leader-badge">
-                    <strong>Mr. Yash Bhongle</strong> • Secretary, BCF
+                    <strong>Secretariat & Operations Directorate</strong> • Bhongle Charitable Foundation
                   </div>
                 </div>
               </div>
 
-              {/* Medical Experts */}
+              {/* Medical Delegation & Clinical Partners */}
               <div style={{ background: 'rgba(0, 43, 73, 0.03)', borderRadius: '14px', padding: '1.5rem', border: '1px solid rgba(0, 43, 73, 0.06)' }}>
                 <h5 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Stethoscope size={18} style={{ color: 'var(--green-light)' }} />
-                  Medical Experts & IMA Delegation
+                  Medical Delegation & Clinical Consortium
                 </h5>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <div className="leader-badge">
-                    <strong>Dr. Suyash</strong> • State Co-Convenor, IMA JDN
+                    <strong>State Executive Leadership</strong> • IMA Junior Doctors Network (JDN)
                   </div>
                   <div className="leader-badge">
-                    <strong>Dr. Balajit</strong> • State Joint Secretary, IMA JDN
+                    <strong>District Chapter & Medical Directorate</strong> • IMA JDN Nagpur
                   </div>
                   <div className="leader-badge">
-                    <strong>Dr. Chinmay</strong> • Chairman, IMA JDN Nagpur
-                  </div>
-                  <div className="leader-badge">
-                    <strong>Dr. Lokesh</strong> • General Secretary, IMA JDN Nagpur
-                  </div>
-                  <div className="leader-badge">
-                    <strong>Mr. Vivek</strong> • Meethas Healthcare Pvt. Ltd.
+                    <strong>Diagnostic & Operations Team</strong> • Meethas Healthcare Pvt. Ltd.
                   </div>
                 </div>
               </div>
