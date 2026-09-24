@@ -148,6 +148,11 @@ section {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marqueeScrollReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .marquee-container {
   display: flex;
   overflow: hidden;
@@ -681,11 +686,21 @@ section {
   flex-shrink: 0;
   width: max-content;
   gap: 2rem;
-  animation: marqueeScroll 38s linear infinite;
+  animation: marqueeScroll 30s linear infinite;
   align-items: center;
 }
 
-.partner-marquee-track:hover {
+.partner-marquee-track-reverse {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  gap: 2rem;
+  animation: marqueeScrollReverse 30s linear infinite;
+  align-items: center;
+}
+
+.partner-marquee-track:hover,
+.partner-marquee-track-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -732,15 +747,15 @@ section {
 }
 
 .partner-logo-box {
-  width: 105px;
-  height: 105px;
+  width: 140px;
+  height: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   background: rgba(0, 43, 73, 0.02);
-  border-radius: 50%;
-  padding: 8px;
+  border-radius: 16px;
+  padding: 8px 12px;
   transition: transform 0.35s ease, background-color 0.35s ease;
 }
 
@@ -753,7 +768,7 @@ section {
 }
 
 .partner-card:hover .partner-logo-box img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .partner-card:hover .partner-logo-box {
@@ -779,13 +794,14 @@ section {
 
 @media (max-width: 640px) {
   .partner-card {
-    width: 230px;
-    min-height: 195px;
+    width: 235px;
+    min-height: 200px;
     padding: 1.25rem 1rem;
   }
   .partner-logo-box {
-    width: 85px;
-    height: 85px;
+    width: 115px;
+    height: 75px;
+    padding: 6px 10px;
   }
   .partner-name {
     font-size: 0.95rem;

@@ -170,8 +170,8 @@ function App() {
     }
   ];
 
-  // Strategic Partner & Supporting Organisations
-  const partnerOrganisations = [
+  // Strategic Partner & Supporting Organisations - Bar 1 (Civic & Medical Leadership)
+  const partnerOrganisationsRow1 = [
     {
       name: "Maharashtra Police",
       subtitle: "State Law Enforcement & Public Safety",
@@ -196,7 +196,11 @@ function App() {
       name: "Indian Medical Association",
       subtitle: "IMA Nagpur & Healthcare Experts",
       logo: "/partners/indian-medical-association.png"
-    },
+    }
+  ];
+
+  // Strategic Partner & Supporting Organisations - Bar 2 (Academic, Medical & Healthcare Partners)
+  const partnerOrganisationsRow2 = [
     {
       name: "KDK College of Pharmacy & Research Institute",
       subtitle: "Pharmaceutical Sciences & Healthcare Research",
@@ -208,9 +212,14 @@ function App() {
       logo: "/partners/ima-junior-doctors-network.jpg"
     },
     {
-      name: "Bhausaheb Mulak Ayurved Mahavidyalaya & Research Hospital",
+      name: "Bhausaheb Mulak Ayurved Mahavidyalaya & Hospital",
       subtitle: "Ayurvedic Medical Science & Hospital (BCYRC)",
       logo: "/partners/bhausaheb-mulak-ayurved.png"
+    },
+    {
+      name: "Meethas Healthcare Private Limited",
+      subtitle: "Monitoring to Management Healthcare Systems",
+      logo: "/partners/meethas-healthcare.png"
     }
   ];
 
@@ -1848,11 +1857,26 @@ ${contactData.name}`;
           </p>
         </div>
 
-        {/* Continuous Smooth Scrolling Marquee Container */}
-        <div className="marquee-container" style={{ padding: '1rem 0 2rem 0' }}>
+        {/* First Scrolling Bar (Top Row) */}
+        <div className="marquee-container" style={{ padding: '0.75rem 0 1.25rem 0' }}>
           <div className="partner-marquee-track">
-            {partnerOrganisations.concat(partnerOrganisations).concat(partnerOrganisations).map((partner, idx) => (
-              <div key={`partner-${idx}`} className="partner-card">
+            {partnerOrganisationsRow1.concat(partnerOrganisationsRow1).concat(partnerOrganisationsRow1).concat(partnerOrganisationsRow1).map((partner, idx) => (
+              <div key={`partner-r1-${idx}`} className="partner-card">
+                <div className="partner-logo-box">
+                  <img src={partner.logo} alt={partner.name} loading="lazy" />
+                </div>
+                <h4 className="partner-name">{partner.name}</h4>
+                <span className="partner-role">{partner.subtitle}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Second Scrolling Bar (Bottom Row - Counter Flow) */}
+        <div className="marquee-container" style={{ padding: '0.5rem 0 1.5rem 0' }}>
+          <div className="partner-marquee-track-reverse">
+            {partnerOrganisationsRow2.concat(partnerOrganisationsRow2).concat(partnerOrganisationsRow2).concat(partnerOrganisationsRow2).concat(partnerOrganisationsRow2).concat(partnerOrganisationsRow2).map((partner, idx) => (
+              <div key={`partner-r2-${idx}`} className="partner-card">
                 <div className="partner-logo-box">
                   <img src={partner.logo} alt={partner.name} loading="lazy" />
                 </div>
