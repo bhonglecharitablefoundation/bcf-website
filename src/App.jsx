@@ -1453,7 +1453,7 @@ ${contactData.name}`;
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                   <Pill size={22} style={{ color: 'var(--green-light)' }} />
                   <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    Medical Dispensation & Pharmacy Services
+                    Free Medical Dispensation & Pharmacy Services
                   </h4>
                 </div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.6', margin: 0 }}>
