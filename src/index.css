@@ -911,7 +911,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 18%;
   display: block;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
@@ -1309,5 +1309,13 @@ html.a11y-extra-spacing * {
     font-size: 0.72rem;
   }
 }
+
+/* Advisory Card Hover Effect */
+.advisory-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 43, 73, 0.12), 0 0 20px rgba(212, 175, 55, 0.18) !important;
+  border-color: rgba(212, 175, 55, 0.5) !important;
+}
+
 
 

@@ -16,7 +16,7 @@ const Navbar = ({ onOpenDonate }) => {
       }
 
       // Check active section
-      const sections = ['home', 'about', 'focus', 'initiatives', 'governance', 'involved', 'contact'];
+      const sections = ['home', 'about', 'focus', 'initiatives', 'advisory', 'governance', 'involved', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -41,6 +41,7 @@ const Navbar = ({ onOpenDonate }) => {
     { name: 'About Us', id: 'about' },
     { name: 'Our Focus', id: 'focus' },
     { name: 'Events & Impact', id: 'initiatives' },
+    { name: 'Advisory Board', id: 'advisory' },
     { name: 'Governance', id: 'governance' },
     { name: 'Get Involved', id: 'involved' },
     { name: 'Contact Us', id: 'contact' },
@@ -84,15 +85,16 @@ const Navbar = ({ onOpenDonate }) => {
         style={{
           position: 'relative',
           width: '100%',
-          padding: isScrolled ? '0.55rem 2.5rem' : '0.9rem 2.5rem',
-          background: isScrolled ? 'rgba(0, 43, 73, 0.98)' : 'linear-gradient(to bottom, rgba(0,25,43,0.9) 0%, rgba(0,25,43,0.4) 100%)',
+          padding: '0.55rem 2rem',
+          background: 'rgba(0, 31, 53, 0.98)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: isScrolled ? '2px solid var(--gold)' : '1px solid rgba(212, 175, 55, 0.25)',
+          borderBottom: '1.5px solid var(--gold)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.45)',
+          transition: 'all 0.3s ease',
         }}
       >
       {/* Brand Logo & Standout Text */}
@@ -101,7 +103,7 @@ const Navbar = ({ onOpenDonate }) => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '1.25rem',
+          gap: '1.1rem',
           cursor: 'pointer',
         }}
       >
@@ -109,12 +111,12 @@ const Navbar = ({ onOpenDonate }) => {
           src="/logo.png" 
           alt="BCF Logo" 
           style={{
-            height: isScrolled ? '64px' : '88px',
-            width: isScrolled ? '64px' : '88px',
+            height: '58px',
+            width: '58px',
             borderRadius: '50%',
-            border: '2.5px solid var(--gold)',
-            boxShadow: '0 0 15px rgba(212, 175, 55, 0.25)',
-            transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+            border: '2px solid var(--gold)',
+            boxShadow: '0 0 12px rgba(212, 175, 55, 0.3)',
+            transition: 'transform 0.3s ease',
           }}
         />
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -122,11 +124,10 @@ const Navbar = ({ onOpenDonate }) => {
             style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 800,
-              fontSize: isScrolled ? '1.4rem' : '1.8rem',
+              fontSize: '1.45rem',
               color: '#fff',
               letterSpacing: '1px',
               textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-              transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             BHONGLE
@@ -135,13 +136,12 @@ const Navbar = ({ onOpenDonate }) => {
             style={{
               fontFamily: 'var(--font-sans)',
               fontWeight: 600,
-              fontSize: isScrolled ? '0.85rem' : '1rem',
+              fontSize: '0.82rem',
               color: 'var(--gold)',
-              letterSpacing: '2.5px',
+              letterSpacing: '2px',
               textTransform: 'uppercase',
               textShadow: '0 1px 2px rgba(0,0,0,0.5)',
               marginTop: '1px',
-              transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             CHARITABLE FOUNDATION

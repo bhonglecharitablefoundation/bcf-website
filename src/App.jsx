@@ -128,12 +128,12 @@ function App() {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-  // Auto-advance banner slides every 5.5 seconds (pausing on hover)
+  // Auto-advance banner slides every 3 seconds (pausing on hover)
   useEffect(() => {
     if (isHeroSliderHovered) return;
     const bannerTimer = setInterval(() => {
       setCurrentHeroSlide((prev) => (prev + 1) % heroBannerSlides.length);
-    }, 5500);
+    }, 3000);
     return () => clearInterval(bannerTimer);
   }, [isHeroSliderHovered, heroBannerSlides.length]);
 
@@ -280,6 +280,54 @@ function App() {
     }
   ];
 
+  // Esteemed Advisory Board Members
+  const advisoryBoardMembers = [
+    {
+      id: 1,
+      name: "Dr. Sanjeev Deshmukh",
+      degrees: "MBBS, MD (Medicine), FICP",
+      designation: "Chief Clinical Strategy Advisor",
+      pillar: "Healthcare & Clinical Excellence",
+      bio: "Distinguished physician with over 28 years of clinical leadership. Guides BCF's clinical diagnostic workflows and preventative medicine camps.",
+      avatarBg: "linear-gradient(135deg, #002b49 0%, #004b7a 100%)",
+      initials: "SD",
+      affiliation: "Senior Member, Indian Medical Association (IMA)"
+    },
+    {
+      id: 2,
+      name: "Shri Vijay Kumar Patil",
+      degrees: "IPS (Retd.) • M.A., LL.B.",
+      designation: "Public Administration & Police Welfare Advisor",
+      pillar: "Civic Governance & Police Welfare",
+      bio: "Former Special Inspector General of Police. Spearheads inter-agency civic coordination and institutional welfare programs.",
+      avatarBg: "linear-gradient(135deg, #0f5132 0%, #198754 100%)",
+      initials: "VP",
+      affiliation: "Retd. Special Inspector General of Police, Maharashtra"
+    },
+    {
+      id: 3,
+      name: "Dr. Yuwaraj Kale",
+      degrees: "BAMS, MD (Ayu), Ph.D.",
+      designation: "Ayurvedic Sciences & Natural Therapies Advisor",
+      pillar: "Integrative Holistic Medicine",
+      bio: "Principal at Bhausaheb Mulak Ayurved Mahavidyalaya. Directs integrative clinical outreach, herbal therapeutic protocols, and yoga wellness.",
+      avatarBg: "linear-gradient(135deg, #78350f 0%, #b45309 100%)",
+      initials: "YK",
+      affiliation: "Principal, Bhausaheb Mulak Ayurved Mahavidyalaya & Hospital"
+    },
+    {
+      id: 4,
+      name: "Dr. Kamlesh Wadher",
+      degrees: "M.Pharm, Ph.D. (Pharmaceutics)",
+      designation: "Pharmaceutical Research & Educational Outreach Advisor",
+      pillar: "Pharmacy Research & Drug Safety",
+      bio: "Principal at KDK College of Pharmacy. Oversees community medicine dispensation safety, clinical pharmacology audits, and youth education.",
+      avatarBg: "linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%)",
+      initials: "KW",
+      affiliation: "Principal, KDK College of Pharmacy & Research Institute"
+    }
+  ];
+
   const handleContactSubmit = (e) => {
     e.preventDefault();
     if (!contactData.name || !contactData.email || !contactData.message) {
@@ -404,7 +452,8 @@ ${contactData.name}`;
         style={{
           background: 'radial-gradient(circle at top right, var(--primary-light) 0%, var(--primary-dark) 100%)',
           color: '#fff',
-          paddingTop: 'clamp(100px, 12vw, 122px)',
+          paddingTop: '105px',
+          scrollMarginTop: '105px',
           paddingBottom: '3.5rem',
           minHeight: '100vh',
           display: 'flex',
@@ -1858,6 +1907,203 @@ ${contactData.name}`;
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>IRA International School staff gathered at the conclusion of the seminar.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ESTEEMED ADVISORY BOARD SECTION */}
+      <section 
+        id="advisory" 
+        className="scroll-reveal"
+        style={{
+          background: 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
+          borderTop: '1px solid rgba(0, 43, 73, 0.08)',
+          borderBottom: '1px solid rgba(0, 43, 73, 0.08)',
+          padding: '5rem 0',
+          position: 'relative',
+          scrollMarginTop: '110px'
+        }}
+      >
+        <div style={{ maxWidth: '1250px', margin: '0 auto', padding: '0 1.5rem', width: '100%' }}>
+          {/* Section Header */}
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.3)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+              <Award size={16} style={{ color: 'var(--gold)' }} />
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                Institutional Counsel & Strategic Wisdom
+              </span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.8vw, 2.8rem)', color: 'var(--primary)', margin: '0.3rem 0 0.75rem 0', fontWeight: 700 }}>
+              Our Esteemed Advisory Board
+            </h2>
+            <p style={{ color: 'var(--text-light)', maxWidth: '720px', margin: '0 auto', fontSize: '1.05rem', lineHeight: '1.6' }}>
+              Distinguished academic leaders, clinical luminaries, public administrators, and research visionaries guiding the Bhongle Charitable Foundation with ethical oversight and impactful strategy.
+            </p>
+          </div>
+
+          {/* Advisory Cards Grid */}
+          <div 
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', 
+              gap: '2rem',
+              alignItems: 'stretch'
+            }}
+          >
+            {advisoryBoardMembers.map((member) => (
+              <div 
+                key={member.id}
+                className="advisory-card"
+                style={{
+                  background: '#ffffff',
+                  borderRadius: '16px',
+                  border: '1.5px solid rgba(0, 43, 73, 0.09)',
+                  padding: '2.25rem 1.5rem 1.75rem 1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  boxShadow: '0 10px 30px rgba(0, 43, 73, 0.05)',
+                  position: 'relative',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Top decorative accent */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--gold) 0%, var(--primary) 100%)' }} />
+
+                {/* Avatar / Portrait Frame */}
+                <div 
+                  style={{
+                    width: '96px',
+                    height: '96px',
+                    borderRadius: '50%',
+                    background: member.avatarBg,
+                    border: '3px solid var(--gold)',
+                    boxShadow: '0 8px 22px rgba(0, 43, 73, 0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.25rem',
+                    position: 'relative',
+                    flexShrink: 0
+                  }}
+                >
+                  <span style={{ fontSize: '1.8rem', fontWeight: 800, color: '#ffffff', letterSpacing: '1px', fontFamily: 'var(--font-display)' }}>
+                    {member.initials}
+                  </span>
+                  {/* Verified Advisor Star Badge */}
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      bottom: '-2px',
+                      right: '-2px',
+                      width: '26px',
+                      height: '26px',
+                      borderRadius: '50%',
+                      background: 'var(--gold)',
+                      border: '2px solid #ffffff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+                    }}
+                    title="Verified Institutional Advisor"
+                  >
+                    <Check size={14} style={{ color: '#002b49', strokeWidth: 3 }} />
+                  </div>
+                </div>
+
+                {/* Name & Qualifications */}
+                <h4 style={{ color: 'var(--primary)', fontSize: '1.2rem', fontWeight: 700, margin: '0 0 0.25rem 0', fontFamily: 'var(--font-display)' }}>
+                  {member.name}
+                </h4>
+                <span style={{ color: 'var(--text-light)', fontSize: '0.8rem', fontWeight: 600, minHeight: '1.4rem' }}>
+                  {member.degrees}
+                </span>
+
+                {/* Official Designation Pill */}
+                <div 
+                  style={{
+                    background: 'rgba(212, 175, 55, 0.12)',
+                    border: '1px solid rgba(212, 175, 55, 0.35)',
+                    color: 'var(--primary)',
+                    padding: '0.35rem 0.85rem',
+                    borderRadius: '50px',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    margin: '0.85rem 0 0.4rem 0',
+                    lineHeight: '1.3'
+                  }}
+                >
+                  {member.designation}
+                </div>
+
+                {/* Pillar Tag */}
+                <span style={{ color: 'var(--gold-dark)', fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  {member.pillar}
+                </span>
+
+                {/* Biography */}
+                <p style={{ color: 'var(--text-light)', fontSize: '0.86rem', lineHeight: '1.55', margin: '0.9rem 0 1.25rem 0', flexGrow: 1 }}>
+                  {member.bio}
+                </p>
+
+                {/* Institutional Affiliation Footer */}
+                <div 
+                  style={{
+                    width: '100%',
+                    paddingTop: '0.9rem',
+                    borderTop: '1px dashed rgba(0, 43, 73, 0.12)',
+                    fontSize: '0.76rem',
+                    color: 'var(--primary-light)',
+                    fontWeight: 600,
+                    lineHeight: '1.4'
+                  }}
+                >
+                  {member.affiliation}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Consultative Body Invite Note */}
+          <div 
+            style={{
+              marginTop: '3.5rem',
+              background: '#ffffff',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              borderRadius: '12px',
+              padding: '1.25rem 1.75rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1.5rem',
+              flexWrap: 'wrap',
+              boxShadow: '0 4px 15px rgba(0, 43, 73, 0.04)'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <Compass size={24} style={{ color: 'var(--gold)', flexShrink: 0 }} />
+              <div>
+                <strong style={{ color: 'var(--primary)', fontSize: '0.95rem', display: 'block' }}>
+                  Strategic Consultative Expansion
+                </strong>
+                <span style={{ color: 'var(--text-light)', fontSize: '0.82rem' }}>
+                  The Bhongle Charitable Foundation continually welcomes esteemed luminaries, retired civil administrators, and domain specialists to join our Advisory Council.
+                </span>
+              </div>
+            </div>
+            <button 
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="btn btn-outline-primary"
+              style={{ padding: '0.45rem 1.25rem', fontSize: '0.82rem', whiteSpace: 'nowrap' }}
+            >
+              Express Advisory Interest
+            </button>
           </div>
         </div>
       </section>
