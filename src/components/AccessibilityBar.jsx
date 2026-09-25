@@ -2,35 +2,44 @@ import React, { useState, useEffect } from 'react';
 import { Eye, Volume2, Type, Sliders, X, RotateCcw, Check, Sparkles } from 'lucide-react';
 
 const AccessibilityBar = () => {
+  // Safe localStorage helper to prevent SecurityError in restricted environments
+  const getStorage = (key, fallback) => {
+    try {
+      const val = localStorage.getItem(key);
+      return val !== null ? val : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
+  const setStorage = (key, value) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Ignored in restricted environments
+    }
+  };
+
   // State for accessibility options with localStorage persistence
-  const [fontSize, setFontSize] = useState(() => {
-    return localStorage.getItem('bcf_a11y_font') || 'normal';
-  });
-  const [highContrast, setHighContrast] = useState(() => {
-    return localStorage.getItem('bcf_a11y_contrast') === 'true';
-  });
-  const [readableFont, setReadableFont] = useState(() => {
-    return localStorage.getItem('bcf_a11y_readable') === 'true';
-  });
-  const [highlightLinks, setHighlightLinks] = useState(() => {
-    return localStorage.getItem('bcf_a11y_links') === 'true';
-  });
-  const [extraSpacing, setExtraSpacing] = useState(() => {
-    return localStorage.getItem('bcf_a11y_spacing') === 'true';
-  });
+  const [fontSize, setFontSize] = useState(() => getStorage('bcf_a11y_font', 'normal'));
+  const [highContrast, setHighContrast] = useState(() => getStorage('bcf_a11y_contrast', 'false') === 'true');
+  const [readableFont, setReadableFont] = useState(() => getStorage('bcf_a11y_readable', 'false') === 'true');
+  const [highlightLinks, setHighlightLinks] = useState(() => getStorage('bcf_a11y_links', 'false') === 'true');
+  const [extraSpacing, setExtraSpacing] = useState(() => getStorage('bcf_a11y_spacing', 'false') === 'true');
 
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [isScreenReaderOpen, setIsScreenReaderOpen] = useState(false);
 
   // Apply classes to root element
   useEffect(() => {
+    if (typeof document === 'undefined') return;
     const root = document.documentElement;
 
     // Font size
     root.classList.remove('a11y-text-small', 'a11y-text-large');
     if (fontSize === 'small') root.classList.add('a11y-text-small');
     if (fontSize === 'large') root.classList.add('a11y-text-large');
-    localStorage.setItem('bcf_a11y_font', fontSize);
+    setStorage('bcf_a11y_font', fontSize);
 
     // Contrast
     if (highContrast) {
@@ -38,7 +47,7 @@ const AccessibilityBar = () => {
     } else {
       root.classList.remove('a11y-high-contrast');
     }
-    localStorage.setItem('bcf_a11y_contrast', highContrast);
+    setStorage('bcf_a11y_contrast', String(highContrast));
 
     // Readable font
     if (readableFont) {
@@ -46,7 +55,7 @@ const AccessibilityBar = () => {
     } else {
       root.classList.remove('a11y-readable-font');
     }
-    localStorage.setItem('bcf_a11y_readable', readableFont);
+    setStorage('bcf_a11y_readable', String(readableFont));
 
     // Highlight links
     if (highlightLinks) {
@@ -54,7 +63,7 @@ const AccessibilityBar = () => {
     } else {
       root.classList.remove('a11y-highlight-links');
     }
-    localStorage.setItem('bcf_a11y_links', highlightLinks);
+    setStorage('bcf_a11y_links', String(highlightLinks));
 
     // Extra spacing
     if (extraSpacing) {
@@ -62,7 +71,7 @@ const AccessibilityBar = () => {
     } else {
       root.classList.remove('a11y-extra-spacing');
     }
-    localStorage.setItem('bcf_a11y_spacing', extraSpacing);
+    setStorage('bcf_a11y_spacing', String(extraSpacing));
   }, [fontSize, highContrast, readableFont, highlightLinks, extraSpacing]);
 
   // Reset all to default

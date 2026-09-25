@@ -4,7 +4,7 @@ import {
   ChevronRight, ChevronLeft, Award, Compass, ExternalLink, ArrowUpRight, 
   Info, CheckCircle2, Leaf, FileCheck, Activity, Pill,
   FileText, Calendar, Sparkles, Stethoscope, AlertCircle,
-  TreePine, Cpu
+  TreePine, Cpu, Check
 } from 'lucide-react';
 import Globe from './components/Globe';
 import Navbar from './components/Navbar';
