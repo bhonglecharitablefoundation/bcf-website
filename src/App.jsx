@@ -114,13 +114,12 @@ function App() {
   const [submissionMethod, setSubmissionMethod] = useState('direct'); // 'direct' or 'mailto'
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Top Hero Featured Banner Slides (Pure photography without written text/statements)
+  // Top Hero Featured Banner Slides (Pure high-definition photography without text overlays)
   const heroBannerSlides = [
+    { src: '/bcf-event-image-1.png', alt: 'BCF Community Health & Education Drive' },
     { src: '/health-camp-group.jpg', alt: 'Nagpur Police Health Mission Mega Camp' },
-    { src: '/health-camp-checkup.jpg', alt: 'Clinical Diagnostics and Health Camp' },
-    { src: '/bcf-event-image-1.png', alt: 'Holistic Health and Wellness Drive' },
-    { src: '/bcf-event-image-2.png', alt: 'Preventative Education and Wellness Seminar' },
-    { src: '/yoga-day-banner-1.png', alt: 'Staff Wellness and Health Literacy Initiative' }
+    { src: '/bcf-event-image-2.png', alt: 'Holistic Health and Preventative Education' },
+    { src: '/health-camp-checkup.jpg', alt: 'Clinical Diagnostics and Medical Screening' }
   ];
 
   // State for Top Hero Panoramic Banner Carousel
@@ -491,48 +490,7 @@ ${contactData.name}`;
           />
         </div>
 
-        {/* Top Hero Heading (Header already has NGO identity) */}
-        <div 
-          style={{
-            maxWidth: '900px',
-            margin: '0 auto',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            padding: '0 1.5rem',
-            gap: '1rem',
-            position: 'relative',
-            zIndex: 2
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.35rem 1.1rem', borderRadius: '50px', width: 'fit-content' }}>
-            <Shield size={16} style={{ color: 'var(--gold)' }} />
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
-              Pan-India Public Charitable Trust • Reg No: E-0004363NGP
-            </span>
-          </div>
-          
-          <h1 
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)',
-              lineHeight: '1.15',
-              fontWeight: 700,
-              color: '#fff',
-              margin: '0.2rem 0 0 0'
-            }}
-          >
-            Universal Humanism <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>In Action</span>
-          </h1>
-
-          <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
-            Structured socio-economic, medical, and educational interventions across the Indian subcontinent.
-          </p>
-        </div>
-
-        {/* Prominent Panoramic Banner Slider (Skill India Digital Portal Pattern) */}
+        {/* Prominent Panoramic Banner Slider (Positioned above heading, Skill India Digital Portal Pattern) */}
         <div 
           className="hero-slider-container"
           onMouseEnter={() => setIsHeroSliderHovered(true)}
@@ -546,11 +504,16 @@ ${contactData.name}`;
                 className="hero-slide"
                 style={{
                   opacity: currentHeroSlide === index ? 1 : 0,
-                  transform: currentHeroSlide === index ? 'scale(1)' : 'scale(1.03)',
                   pointerEvents: currentHeroSlide === index ? 'auto' : 'none'
                 }}
               >
+                {/* Seamless Ambient Backdrop */}
+                <div className="hero-slide-backdrop">
+                  <img src={slide.src} alt="" aria-hidden="true" />
+                </div>
+                {/* Crisp Main High-Definition Photograph (100% full view, zero corner clipping) */}
                 <img
+                  className="hero-slide-main"
                   src={slide.src}
                   alt={slide.alt}
                   loading={index === 0 ? 'eager' : 'lazy'}
@@ -592,6 +555,47 @@ ${contactData.name}`;
               />
             ))}
           </div>
+        </div>
+
+        {/* Top Hero Heading */}
+        <div 
+          style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            padding: '0 1.5rem',
+            gap: '1rem',
+            position: 'relative',
+            zIndex: 2
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.35rem 1.1rem', borderRadius: '50px', width: 'fit-content' }}>
+            <Shield size={16} style={{ color: 'var(--gold)' }} />
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
+              Pan-India Humanitarian Initiative
+            </span>
+          </div>
+          
+          <h1 
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(2.3rem, 4.5vw, 3.8rem)',
+              lineHeight: '1.15',
+              fontWeight: 700,
+              color: '#fff',
+              margin: '0.2rem 0 0 0'
+            }}
+          >
+            Universal Humanism <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>In Action</span>
+          </h1>
+
+          <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
+            Structured socio-economic, medical, and educational interventions across the Indian subcontinent.
+          </p>
         </div>
 
         {/* Action Buttons & Compliance Snapshot */}
@@ -780,7 +784,7 @@ ${contactData.name}`;
             </div>
             
             <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', lineHeight: '1.7' }}>
-              Established on the foundational tenets of universal humanism, Bhongle Charitable Foundation was formally declared as an irrevocable Public Charitable Trust on August 28, 2025, and officially registered on January 21, 2026, in Nagpur, Maharashtra.
+              Established on the foundational tenets of universal humanism, Bhongle Charitable Foundation was formally declared as an irrevocable non-profit social organization on August 28, 2025, and officially registered on January 21, 2026, in Nagpur, Maharashtra.
             </p>
             
             <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', lineHeight: '1.7' }}>
@@ -1875,8 +1879,8 @@ ${contactData.name}`;
               </div>
               <div style={certCardStyle}>
                 <Shield size={20} style={{ color: 'var(--gold)', marginBottom: '0.5rem' }} />
-                <strong>Reg. ID Number</strong>
-                <p>E-0004363NGP</p>
+                <strong>Registration Status</strong>
+                <p>Govt. Registered Non-Profit</p>
               </div>
               <div style={certCardStyle}>
                 <Heart size={20} style={{ color: 'var(--gold)', marginBottom: '0.5rem' }} />
@@ -2050,7 +2054,7 @@ ${contactData.name}`;
                 <div>
                   <strong style={{ color: 'var(--primary)', display: 'block' }}>CSR & Statutory Compliance</strong>
                   <span style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: '1.4' }}>
-                    MCA Form CSR-1 Registered • 12A & 80G Certified • Reg No: E-0004363NGP
+                    MCA Form CSR-1 Registered • 12A & 80G Certified Non-Profit Organisation
                   </span>
                 </div>
               </div>
