@@ -114,11 +114,11 @@ function App() {
   const [submissionMethod, setSubmissionMethod] = useState('direct'); // 'direct' or 'mailto'
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Top Hero Featured Banner Slides (Pure high-definition photography without text overlays)
+  // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
   const heroBannerSlides = [
-    { src: '/bcf-event-image-1.png', alt: 'BCF Community Health & Education Drive' },
+    { src: '/bcf-event-image-1.png', alt: 'Bhongle Charitable Foundation Field Initiative' },
     { src: '/health-camp-group.jpg', alt: 'Nagpur Police Health Mission Mega Camp' },
-    { src: '/bcf-event-image-2.png', alt: 'Holistic Health and Preventative Education' },
+    { src: '/bcf-event-image-2.png', alt: 'Community Awareness and Health Literacy Conference' },
     { src: '/health-camp-checkup.jpg', alt: 'Clinical Diagnostics and Medical Screening' }
   ];
 
@@ -490,7 +490,7 @@ ${contactData.name}`;
           />
         </div>
 
-        {/* Prominent Panoramic Banner Slider (Positioned above heading, Skill India Digital Portal Pattern) */}
+        {/* Prominent Panoramic Banner Slider (High-Definition Uncropped Event Photography) */}
         <div 
           className="hero-slider-container"
           onMouseEnter={() => setIsHeroSliderHovered(true)}
@@ -504,18 +504,19 @@ ${contactData.name}`;
                 className="hero-slide"
                 style={{
                   opacity: currentHeroSlide === index ? 1 : 0,
+                  transform: currentHeroSlide === index ? 'scale(1)' : 'scale(1.02)',
                   pointerEvents: currentHeroSlide === index ? 'auto' : 'none'
                 }}
               >
-                {/* Seamless Ambient Backdrop */}
-                <div className="hero-slide-backdrop">
-                  <img src={slide.src} alt="" aria-hidden="true" />
-                </div>
-                {/* Crisp Main High-Definition Photograph (100% full view, zero corner clipping) */}
+                <div 
+                  className="hero-slide-bg" 
+                  style={{ backgroundImage: `url(${slide.src})` }}
+                  aria-hidden="true" 
+                />
                 <img
-                  className="hero-slide-main"
                   src={slide.src}
                   alt={slide.alt}
+                  className="hero-slide-img"
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -557,7 +558,7 @@ ${contactData.name}`;
           </div>
         </div>
 
-        {/* Top Hero Heading */}
+        {/* Top Hero Heading (Positioned directly below the panoramic banner slider) */}
         <div 
           style={{
             maxWidth: '900px',
@@ -784,7 +785,7 @@ ${contactData.name}`;
             </div>
             
             <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', lineHeight: '1.7' }}>
-              Established on the foundational tenets of universal humanism, Bhongle Charitable Foundation was formally declared as an irrevocable non-profit social organization on August 28, 2025, and officially registered on January 21, 2026, in Nagpur, Maharashtra.
+              Established on the foundational tenets of universal humanism, Bhongle Charitable Foundation was formally declared as an irrevocable Public Charitable Trust on August 28, 2025, and officially registered on January 21, 2026, in Nagpur, Maharashtra.
             </p>
             
             <p style={{ fontSize: '1.05rem', color: 'var(--text-light)', lineHeight: '1.7' }}>
@@ -1879,8 +1880,8 @@ ${contactData.name}`;
               </div>
               <div style={certCardStyle}>
                 <Shield size={20} style={{ color: 'var(--gold)', marginBottom: '0.5rem' }} />
-                <strong>Registration Status</strong>
-                <p>Govt. Registered Non-Profit</p>
+                <strong>Govt. Registration</strong>
+                <p>Officially Certified Entity</p>
               </div>
               <div style={certCardStyle}>
                 <Heart size={20} style={{ color: 'var(--gold)', marginBottom: '0.5rem' }} />
@@ -2054,7 +2055,7 @@ ${contactData.name}`;
                 <div>
                   <strong style={{ color: 'var(--primary)', display: 'block' }}>CSR & Statutory Compliance</strong>
                   <span style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: '1.4' }}>
-                    MCA Form CSR-1 Registered • 12A & 80G Certified Non-Profit Organisation
+                    MCA Form CSR-1 Registered • 12A & 80G Certified • Officially Registered Non-Profit
                   </span>
                 </div>
               </div>
