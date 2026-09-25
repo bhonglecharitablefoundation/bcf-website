@@ -1088,10 +1088,10 @@ ${contactData.name}`;
                 AI
               </div>
               <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.5rem' }}>
-                Automated Welcome Protocol
+                Proprietary AI Protocol
               </div>
               <div style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.25rem', lineHeight: 1.4 }}>
-                Modern artificial intelligence protocol deployed by BCF to welcome and guide visiting dignitaries
+                Advanced artificial intelligence protocol deployed by the BCF technology team during the function
               </div>
             </div>
           </div>
@@ -1155,71 +1155,67 @@ ${contactData.name}`;
             </div>
           </div>
 
-          {/* Stage Dignitaries & Felicitations Section */}
+          {/* Stage Dignitaries Section */}
           <div className="glass-card" style={{ padding: '2.25rem', borderRadius: '20px', border: '1px solid rgba(0, 43, 73, 0.08)', background: '#ffffff', marginBottom: '3rem' }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                Official Protocol & Felicitations
+                Distinguished Dais Guests
               </span>
               <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)', fontWeight: 700, marginTop: '0.3rem' }}>
-                Dignitaries Present on Stage & Official Honors
+                Dignitaries Present on Stage
               </h4>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', maxWidth: '700px', margin: '0.5rem auto 0 auto' }}>
-                Distinguished civic leaders, academic heads, and foundation trustees joined on dais to inaugurate this historic ecological drive.
+                Distinguished civic leaders, institutional directors, academic principals, and foundation trustees joined on dais to inaugurate this historic ecological drive.
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
-              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <Award size={18} style={{ color: 'var(--gold)' }} />
-                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Hon'ble Smt. Neeta Thakre</strong>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.25rem' }}>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.4rem', border: '1px solid rgba(16, 185, 129, 0.18)', textAlign: 'center' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                  <Award size={20} style={{ color: '#047857' }} />
                 </div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.05rem', display: 'block', marginBottom: '0.25rem' }}>
+                  Hon'ble Smt. Neeta Thakre
+                </strong>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#047857' }}>
                   Mayor, Nagpur City
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
-                  Felicitated with a traditional ceremonial shawl and floral bouquet by BCF Treasurer, <strong>Dr. Priti Bhongle</strong>.
-                </div>
+                </span>
               </div>
 
-              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <Award size={18} style={{ color: 'var(--gold)' }} />
-                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Shri Dilip Denge</strong>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.4rem', border: '1px solid rgba(16, 185, 129, 0.18)', textAlign: 'center' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                  <Award size={20} style={{ color: '#047857' }} />
                 </div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.05rem', display: 'block', marginBottom: '0.25rem' }}>
+                  Shri Dilip Denge
+                </strong>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#047857' }}>
                   Director
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
-                  Felicitated with a floral bouquet by BCF President, <strong>Dr. Shaligram Bhongle</strong>.
-                </div>
+                </span>
               </div>
 
-              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <Award size={18} style={{ color: 'var(--gold)' }} />
-                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Dr. Yuwaraj Kale</strong>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.4rem', border: '1px solid rgba(16, 185, 129, 0.18)', textAlign: 'center' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                  <Award size={20} style={{ color: '#047857' }} />
                 </div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.05rem', display: 'block', marginBottom: '0.25rem' }}>
+                  Dr. Yuwaraj Kale
+                </strong>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#047857' }}>
                   Principal, Bhausaheb Mulak Ayurved Mahavidyalaya
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
-                  Felicitated with a floral bouquet by BCF Secretary, <strong>Yash Bhongle</strong>.
-                </div>
+                </span>
               </div>
 
-              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.25rem', border: '1px solid rgba(16, 185, 129, 0.15)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <Award size={18} style={{ color: 'var(--gold)' }} />
-                  <strong style={{ color: 'var(--primary)', fontSize: '1rem' }}>Dr. Kamlesh Wadher</strong>
+              <div style={{ background: 'rgba(6, 78, 59, 0.03)', borderRadius: '14px', padding: '1.4rem', border: '1px solid rgba(16, 185, 129, 0.18)', textAlign: 'center' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto' }}>
+                  <Award size={20} style={{ color: '#047857' }} />
                 </div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#047857', marginBottom: '0.4rem' }}>
+                <strong style={{ color: 'var(--primary)', fontSize: '1.05rem', display: 'block', marginBottom: '0.25rem' }}>
+                  Dr. Kamlesh Wadher
+                </strong>
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#047857' }}>
                   Principal, KDK College of Pharmacy
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
-                  Felicitated with a floral bouquet by BCF Secretary, <strong>Yash Bhongle</strong>.
-                </div>
+                </span>
               </div>
             </div>
 
@@ -1261,10 +1257,10 @@ ${contactData.name}`;
                   Technological Innovation in Public Service
                 </span>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', fontWeight: 700, margin: '0 0 0.5rem 0', color: '#ffffff' }}>
-                  Grand Welcome via Proprietary AI Welcoming Protocol
+                  Proprietary AI Protocol Deployed by BCF
                 </h3>
                 <p style={{ fontSize: '0.92rem', color: '#cbd5e1', margin: 0, lineHeight: '1.6', maxWidth: '780px' }}>
-                  Demonstrating the convergence of modern technology with social responsibility, the BCF team designed and deployed an automated, voice-interactive AI welcoming protocol to greet the Hon'ble Mayor, Directors, and academic dignitaries upon arrival.
+                  Demonstrating the convergence of modern technology with social responsibility, the Bhongle Charitable Foundation technology team designed and successfully executed a proprietary AI protocol during the function.
                 </p>
               </div>
             </div>
