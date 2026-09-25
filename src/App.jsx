@@ -450,7 +450,7 @@ ${contactData.name}`;
       <section 
         id="home"
         style={{
-          background: 'radial-gradient(circle at top right, var(--primary-light) 0%, var(--primary-dark) 100%)',
+          background: 'radial-gradient(circle at 85% 15%, rgba(255, 111, 0, 0.45) 0%, rgba(230, 81, 0, 0.2) 35%, transparent 70%), radial-gradient(circle at 15% 85%, rgba(255, 153, 51, 0.28) 0%, transparent 60%), linear-gradient(160deg, #1d0900 0%, #2c1102 22%, #001f3f 65%, #001224 100%)',
           color: '#fff',
           paddingTop: '105px',
           scrollMarginTop: '105px',
@@ -474,7 +474,7 @@ ${contactData.name}`;
             width: '600px',
             height: '600px',
             borderRadius: '60% 40% 50% 50%',
-            background: 'radial-gradient(circle, rgba(20, 184, 166, 0.18) 0%, rgba(20, 184, 166, 0) 70%)',
+            background: 'radial-gradient(circle, rgba(255, 111, 0, 0.32) 0%, rgba(255, 111, 0, 0) 70%)',
             filter: 'blur(60px)',
             // Parallax shift & scale expansion linking to CSS scroll variable
             transform: 'translate(calc(var(--scroll-y, 0px) * 0.25), calc(var(--scroll-y, 0px) * -0.15)) scale(calc(1 + var(--scroll-y, 0px) * 0.0008))',
@@ -491,7 +491,7 @@ ${contactData.name}`;
             width: '500px',
             height: '500px',
             borderRadius: '40% 60% 30% 70%',
-            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%)',
+            background: 'radial-gradient(circle, rgba(255, 153, 51, 0.28) 0%, rgba(255, 153, 51, 0) 70%)',
             filter: 'blur(70px)',
             // Inverse parallax translation
             transform: 'translate(calc(var(--scroll-y, 0px) * -0.2), calc(var(--scroll-y, 0px) * 0.15)) scale(calc(1 + var(--scroll-y, 0px) * 0.0004))',
@@ -510,7 +510,7 @@ ${contactData.name}`;
           scaleSpeed={0.0035} 
           flapSpeed={0.65} 
           delay={0} 
-          colors={['#14b8a6', '#06b6d4', '#d4af37']} 
+          colors={['#ff6f00', '#ff9933', '#ffa726']} 
         />
         <FlyingBird 
           startLeft="78%" 
@@ -648,9 +648,9 @@ ${contactData.name}`;
             zIndex: 2
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', padding: '0.35rem 1.1rem', borderRadius: '50px', width: 'fit-content' }}>
-            <Shield size={16} style={{ color: 'var(--gold)' }} />
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '0.5px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 111, 0, 0.16)', border: '1.5px solid rgba(255, 153, 51, 0.5)', padding: '0.38rem 1.25rem', borderRadius: '50px', width: 'fit-content', boxShadow: '0 4px 15px rgba(255, 111, 0, 0.2)' }}>
+            <Shield size={16} style={{ color: '#ff9933' }} />
+            <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#ffb74d', letterSpacing: '0.75px', textTransform: 'uppercase' }}>
               Pan-India Humanitarian Initiative
             </span>
           </div>
@@ -665,10 +665,10 @@ ${contactData.name}`;
               margin: '0.2rem 0 0 0'
             }}
           >
-            Universal Humanism <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>In Action</span>
+            Universal Humanism <span style={{ background: 'linear-gradient(135deg, #FFB74D 0%, #FF7700 50%, #FF5500 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontStyle: 'italic', textShadow: '0 2px 20px rgba(255, 111, 0, 0.4)' }}>In Action</span>
           </h1>
 
-          <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: '1.5', maxWidth: '680px', margin: '0 auto' }}>
             Structured socio-economic, medical, and educational interventions across the Indian subcontinent.
           </p>
         </div>
@@ -701,22 +701,22 @@ ${contactData.name}`;
           </div>
 
           {/* Tags / Snapshot */}
-          <div style={{ display: 'flex', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '2rem', borderTop: '1px solid rgba(255, 111, 0, 0.25)', paddingTop: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <div>
-              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>12A & 80G</h4>
-              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Tax Exemptions Approved</p>
+              <h4 style={{ color: '#ff9933', fontSize: '1.4rem', fontWeight: 700 }}>12A & 80G</h4>
+              <p style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>Tax Exemptions Approved</p>
             </div>
-            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>CSR-1</h4>
-              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>MCA Registered (Govt. of India)</p>
+            <div style={{ borderLeft: '1px solid rgba(255, 111, 0, 0.25)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: '#ff9933', fontSize: '1.4rem', fontWeight: 700 }}>CSR-1</h4>
+              <p style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>MCA Registered (Govt. of India)</p>
             </div>
-            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>Nagpur, MH</h4>
-              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Headquarters & Registration</p>
+            <div style={{ borderLeft: '1px solid rgba(255, 111, 0, 0.25)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: '#ff9933', fontSize: '1.4rem', fontWeight: 700 }}>Nagpur, MH</h4>
+              <p style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>Headquarters & Registration</p>
             </div>
-            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-              <h4 style={{ color: 'var(--gold)', fontSize: '1.4rem', fontWeight: 700 }}>NGO Darpan</h4>
-              <p style={{ fontSize: '0.72rem', color: '#b8c9d6' }}>Central Govt. Registered</p>
+            <div style={{ borderLeft: '1px solid rgba(255, 111, 0, 0.25)', paddingLeft: '2rem' }}>
+              <h4 style={{ color: '#ff9933', fontSize: '1.4rem', fontWeight: 700 }}>NGO Darpan</h4>
+              <p style={{ fontSize: '0.72rem', color: '#cbd5e1' }}>Central Govt. Registered</p>
             </div>
           </div>
         </div>
@@ -727,7 +727,7 @@ ${contactData.name}`;
         id="global-vision" 
         className="scroll-reveal"
         style={{
-          background: 'radial-gradient(circle at center, #051421 0%, #000810 100%)',
+          background: 'radial-gradient(circle at 50% 10%, rgba(255, 111, 0, 0.18) 0%, transparent 60%), radial-gradient(circle at center, #0a1826 0%, #010810 100%)',
           color: '#fff',
           padding: '6rem 1.5rem',
           minHeight: '100vh',
@@ -949,9 +949,9 @@ ${contactData.name}`;
       <section 
         id="focus" 
         style={{ 
-          background: 'rgba(0, 43, 73, 0.02)', 
-          borderTop: '1px solid rgba(0,43,73,0.05)', 
-          borderBottom: '1px solid rgba(0,43,73,0.05)',
+          background: 'linear-gradient(180deg, #fffdfa 0%, #fff6eb 50%, #fffdfa 100%)', 
+          borderTop: '2px solid rgba(255, 111, 0, 0.18)', 
+          borderBottom: '2px solid rgba(255, 111, 0, 0.18)',
           maxWidth: '100%',
           paddingLeft: '0',
           paddingRight: '0',
@@ -1916,9 +1916,9 @@ ${contactData.name}`;
         id="advisory" 
         className="scroll-reveal"
         style={{
-          background: 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
-          borderTop: '1px solid rgba(0, 43, 73, 0.08)',
-          borderBottom: '1px solid rgba(0, 43, 73, 0.08)',
+          background: 'linear-gradient(180deg, #fffaf4 0%, #fef3e5 100%)',
+          borderTop: '2px solid rgba(255, 111, 0, 0.25)',
+          borderBottom: '2px solid rgba(255, 111, 0, 0.25)',
           padding: '5rem 0',
           position: 'relative',
           scrollMarginTop: '110px'
@@ -1927,9 +1927,9 @@ ${contactData.name}`;
         <div style={{ maxWidth: '1250px', margin: '0 auto', padding: '0 1.5rem', width: '100%' }}>
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.3)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
-              <Award size={16} style={{ color: 'var(--gold)' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--primary)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 111, 0, 0.12)', border: '1.5px solid rgba(255, 111, 0, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+              <Award size={16} style={{ color: '#ff6f00' }} />
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#c2410c', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
                 Institutional Counsel & Strategic Wisdom
               </span>
             </div>
@@ -1957,20 +1957,20 @@ ${contactData.name}`;
                 style={{
                   background: '#ffffff',
                   borderRadius: '16px',
-                  border: '1.5px solid rgba(0, 43, 73, 0.09)',
+                  border: '1.5px solid rgba(255, 111, 0, 0.16)',
                   padding: '2.25rem 1.5rem 1.75rem 1.5rem',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  boxShadow: '0 10px 30px rgba(0, 43, 73, 0.05)',
+                  boxShadow: '0 10px 30px rgba(0, 34, 68, 0.05)',
                   position: 'relative',
                   transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   overflow: 'hidden'
                 }}
               >
                 {/* Top decorative accent */}
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, var(--gold) 0%, var(--primary) 100%)' }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #FF6F00 0%, #FF9933 60%, #002244 100%)' }} />
 
                 {/* Avatar / Portrait Frame */}
                 <div 
@@ -1979,7 +1979,7 @@ ${contactData.name}`;
                     height: '96px',
                     borderRadius: '50%',
                     background: member.avatarBg,
-                    border: '3px solid var(--gold)',
+                    border: '3px solid #ff6f00',
                     boxShadow: '0 8px 22px rgba(0, 43, 73, 0.2)',
                     display: 'flex',
                     alignItems: 'center',
@@ -2186,8 +2186,10 @@ ${contactData.name}`;
       <section 
         id="involved" 
         style={{ 
-          background: 'radial-gradient(circle at bottom left, var(--primary-light) 0%, var(--primary-dark) 100%)', 
+          background: 'radial-gradient(circle at 10% 90%, rgba(255, 111, 0, 0.38) 0%, transparent 55%), radial-gradient(circle at 90% 10%, rgba(255, 153, 51, 0.25) 0%, transparent 50%), linear-gradient(165deg, #1f0b01 0%, #2f1202 25%, #002244 75%, #001224 100%)', 
           color: '#fff',
+          borderTop: '3.5px solid #ff6f00',
+          borderBottom: '3.5px solid #ff6f00',
           maxWidth: '100%',
           paddingLeft: '0',
           paddingRight: '0',
@@ -2200,32 +2202,32 @@ ${contactData.name}`;
             {/* Left promo */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div>
-                <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>Join The Movement</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#ff9933', letterSpacing: '1px', textTransform: 'uppercase' }}>Join The Movement</span>
                 <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: '#fff', marginTop: '0.5rem', fontWeight: 600 }}>
                   Translate Altruistic Vision Into Reality
                 </h2>
               </div>
               
-              <p style={{ fontSize: '1.05rem', color: '#b8c9d6', lineHeight: '1.7' }}>
+              <p style={{ fontSize: '1.05rem', color: '#cbd5e1', lineHeight: '1.7' }}>
                 Whether you are an individual wanting to volunteer, a philanthropist, or a corporate organization looking for collaborations, BCF offers transparent and impactful channels to co-create an equitable and self-reliant society.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '0.5rem' }}>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                  <div style={{ background: 'rgba(212,175,55,0.15)', padding: '0.5rem', borderRadius: '50%' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--gold)' }} />
+                  <div style={{ background: 'rgba(255, 111, 0, 0.22)', padding: '0.5rem', borderRadius: '50%' }}>
+                    <CheckCircle2 size={16} style={{ color: '#ff9933' }} />
                   </div>
                   <span style={{ fontSize: '0.95rem', color: '#fff' }}>Transparent annual reporting and compliance access</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                  <div style={{ background: 'rgba(212,175,55,0.15)', padding: '0.5rem', borderRadius: '50%' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--gold)' }} />
+                  <div style={{ background: 'rgba(255, 111, 0, 0.22)', padding: '0.5rem', borderRadius: '50%' }}>
+                    <CheckCircle2 size={16} style={{ color: '#ff9933' }} />
                   </div>
                   <span style={{ fontSize: '0.95rem', color: '#fff' }}>50% tax exemption under Section 80G</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                  <div style={{ background: 'rgba(212,175,55,0.15)', padding: '0.5rem', borderRadius: '50%' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--gold)' }} />
+                  <div style={{ background: 'rgba(255, 111, 0, 0.22)', padding: '0.5rem', borderRadius: '50%' }}>
+                    <CheckCircle2 size={16} style={{ color: '#ff9933' }} />
                   </div>
                   <span style={{ fontSize: '0.95rem', color: '#fff' }}>Youth-centric leadership training opportunities</span>
                 </div>
@@ -2448,7 +2450,7 @@ ${contactData.name}`;
       </section>
 
       {/* Strategic Partners & Supporting Organisations Scrolling Section */}
-      <section id="partners" style={{ padding: '4.5rem 0 3.5rem 0', background: 'linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%)', borderTop: '1px solid rgba(0, 43, 73, 0.06)', borderBottom: '1px solid rgba(0, 43, 73, 0.08)', overflow: 'hidden' }}>
+      <section id="partners" style={{ padding: '4.5rem 0 3.5rem 0', background: 'linear-gradient(180deg, #ffffff 0%, #fff7ec 100%)', borderTop: '2px solid rgba(255, 111, 0, 0.2)', borderBottom: '2px solid rgba(255, 111, 0, 0.2)', overflow: 'hidden' }}>
         <div className="container" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>Collaborative Ecosystem</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.4rem)', color: 'var(--primary)', marginBottom: '0.5rem', fontWeight: 800 }}>

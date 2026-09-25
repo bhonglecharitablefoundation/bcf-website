@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Colors */
-  --primary: #002b49;
-  --primary-light: #0a3d60;
-  --primary-dark: #00192b;
-  --gold: #d4af37;
-  --gold-light: #f3d06b;
-  --gold-dark: #aa8620;
+  /* Colors - BJP Vibrant Saffron & Royal Navy Palette */
+  --primary: #002244;
+  --primary-light: #0a335c;
+  --primary-dark: #001428;
+  --saffron: #ff6f00;
+  --saffron-light: #ff9933;
+  --saffron-dark: #c2410c;
+  --saffron-glow: rgba(255, 111, 0, 0.38);
+  --gold: #ff6f00;
+  --gold-light: #ff9933;
+  --gold-dark: #d95d00;
   --green: #0f5132;
   --green-light: #198754;
   --green-dark: #09341f;
   --text: #0f1c26;
   --text-light: #4e616f;
-  --bg: #fffdf9;
-  --bg-dark: #051421;
-  --card-bg: rgba(255, 253, 249, 0.85);
-  --card-border: rgba(212, 175, 55, 0.15);
+  --bg: #fffbf5;
+  --bg-dark: #120700;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(255, 111, 0, 0.2);
   
   /* Fonts */
   --font-sans: 'Inter', sans-serif;
@@ -26,10 +30,10 @@
   
   /* Transitions & Shadows */
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-sm: 0 4px 6px -1px rgba(0, 43, 73, 0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0, 43, 73, 0.08), 0 4px 6px -2px rgba(0, 43, 73, 0.04);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 43, 73, 0.1), 0 10px 10px -5px rgba(0, 43, 73, 0.04);
-  --shadow-gold: 0 10px 20px -3px rgba(212, 175, 55, 0.25);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 34, 68, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 34, 68, 0.08), 0 4px 6px -2px rgba(0, 34, 68, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 34, 68, 0.1), 0 10px 10px -5px rgba(0, 34, 68, 0.04);
+  --shadow-gold: 0 10px 24px -3px rgba(255, 111, 0, 0.4);
   --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -128,8 +132,8 @@ section {
 }
 
 @keyframes pulseGold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-  50% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.45); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 111, 0, 0); }
 }
 
 @keyframes flapLeft {
@@ -537,17 +541,20 @@ section {
 }
 
 .btn-gold {
-  background-color: var(--gold);
-  color: var(--primary-dark);
-  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, #FF7700 0%, #E65100 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  border: 2px solid #FF8800;
+  box-shadow: 0 8px 20px -3px rgba(255, 111, 0, 0.4);
   animation: pulseGold 2.5s infinite;
 }
 
 .btn-gold:hover {
-  background-color: var(--gold-light);
-  border-color: var(--gold-light);
+  background: linear-gradient(135deg, #FF8800 0%, #FF5500 100%);
+  border-color: #FFA040;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 12px 25px -2px rgba(255, 111, 0, 0.55);
+  color: #ffffff !important;
 }
 
 .btn-outline {
@@ -887,9 +894,9 @@ section {
   height: clamp(380px, 48vw, 620px);
   overflow: hidden;
   background: #000a14;
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
-  border-bottom: 2.5px solid var(--gold);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  border-top: 1.5px solid rgba(255, 111, 0, 0.35);
+  border-bottom: 3.5px solid #ff6f00;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 111, 0, 0.25);
 }
 
 .hero-slider-track {
@@ -1007,8 +1014,8 @@ section {
    GOVERNMENT ACCESSIBILITY SETTINGS (GIGW 3.0 & WCAG 2.1 AAA)
    ========================================================================== */
 .a11y-top-bar {
-  background: #001220;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  background: linear-gradient(90deg, #051421 0%, #1a0a00 50%, #051421 100%);
+  border-bottom: 2px solid #ff6f00;
   padding: 4px 2rem;
   font-size: 0.76rem;
   color: #cbd5e1;
@@ -1021,7 +1028,7 @@ section {
 }
 
 .a11y-skip-link {
-  color: var(--gold);
+  color: #ff9933;
   text-decoration: underline;
   font-weight: 600;
   font-size: 0.76rem;
@@ -1032,8 +1039,8 @@ section {
 }
 
 .a11y-skip-link:focus {
-  background: var(--gold);
-  color: #002b49;
+  background: #ff6f00;
+  color: #ffffff;
   padding: 2px 8px;
   border-radius: 4px;
   outline: 2px solid #ffffff;
@@ -1057,23 +1064,23 @@ section {
 
 .a11y-btn:hover,
 .a11y-btn.active {
-  background: var(--gold);
-  color: #002b49;
-  border-color: var(--gold);
+  background: #ff6f00;
+  color: #ffffff;
+  border-color: #ff6f00;
 }
 
 .a11y-btn-gold {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: var(--gold);
-  color: var(--gold);
+  background: rgba(255, 111, 0, 0.2);
+  border-color: #ff6f00;
+  color: #ff9933;
 }
 
 .a11y-font-group {
   display: inline-flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(255, 111, 0, 0.4);
   overflow: hidden;
 }
 
@@ -1313,8 +1320,8 @@ html.a11y-extra-spacing * {
 /* Advisory Card Hover Effect */
 .advisory-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 43, 73, 0.12), 0 0 20px rgba(212, 175, 55, 0.18) !important;
-  border-color: rgba(212, 175, 55, 0.5) !important;
+  box-shadow: 0 20px 40px rgba(0, 34, 68, 0.12), 0 0 25px rgba(255, 111, 0, 0.28) !important;
+  border-color: #ff6f00 !important;
 }
 
 

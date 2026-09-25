@@ -37,9 +37,9 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
   return (
     <footer
       style={{
-        backgroundColor: 'var(--primary-dark)',
+        background: 'linear-gradient(180deg, #130700 0%, #00162a 35%, #000c17 100%)',
         color: '#fff',
-        borderTop: '2px solid var(--gold)',
+        borderTop: '3.5px solid #ff6f00',
         padding: '5rem 2rem 2rem 2rem',
         fontFamily: 'var(--font-sans)',
       }}
@@ -64,14 +64,14 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
                 height: '50px',
                 width: '50px',
                 borderRadius: '50%',
-                border: '1.5px solid var(--gold)',
+                border: '2px solid #ff6f00',
               }}
             />
             <div>
               <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>
                 BHONGLE
               </h4>
-              <span style={{ fontSize: '0.7rem', color: 'var(--gold)', letterSpacing: '0.5px' }}>
+              <span style={{ fontSize: '0.72rem', color: '#ff9933', letterSpacing: '0.5px', fontWeight: 700 }}>
                 CHARITABLE FOUNDATION
               </span>
             </div>
@@ -113,7 +113,7 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
 
         {/* Quick Links column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--gold)', fontSize: '1.1rem', fontWeight: 600 }}>
+          <h4 style={{ fontFamily: 'var(--font-display)', color: '#ff9933', fontSize: '1.1rem', fontWeight: 700 }}>
             Quick Links
           </h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', padding: 0 }}>
@@ -132,7 +132,7 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
                     filter: 'brightness(1.4)',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--gold)'}
+                  onMouseEnter={(e) => e.target.style.color = '#ff9933'}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   {id === 'focus' ? 'Our Focus' : id === 'involved' ? 'Get Involved' : id === 'contact' ? 'Contact Us' : id === 'about' ? 'About Us' : id}
@@ -144,7 +144,7 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
 
         {/* Focus Areas column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--gold)', fontSize: '1.1rem', fontWeight: 600 }}>
+          <h4 style={{ fontFamily: 'var(--font-display)', color: '#ff9933', fontSize: '1.1rem', fontWeight: 700 }}>
             Core Pillars
           </h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', padding: 0 }}>
@@ -170,28 +170,28 @@ const Footer = ({ onOpenDonate, onOpenVolunteer }) => {
 
         {/* Contact/Statutory column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          <h4 style={{ fontFamily: 'var(--font-display)', color: 'var(--gold)', fontSize: '1.1rem', fontWeight: 600 }}>
+          <h4 style={{ fontFamily: 'var(--font-display)', color: '#ff9933', fontSize: '1.1rem', fontWeight: 700 }}>
             Compliance & Contact
           </h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--text-light)', filter: 'brightness(1.4)' }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
-              <MapPin size={16} style={{ color: 'var(--gold)', marginTop: '0.2rem', flexShrink: 0 }} />
+              <MapPin size={16} style={{ color: '#ff9933', marginTop: '0.2rem', flexShrink: 0 }} />
               <span style={{ fontSize: '0.85rem', lineHeight: '1.4' }}>
                 Plot No. 181, Venkatesh Nagar Phase-2, Near KDK College Road, Nandanvan, Nagpur, MH – 440009
               </span>
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <Mail size={16} style={{ color: 'var(--gold)', flexShrink: 0 }} />
+              <Mail size={16} style={{ color: '#ff9933', flexShrink: 0 }} />
               <a href="mailto:bhonglecharitablefoundation@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
                 bhonglecharitablefoundation@gmail.com
               </a>
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <Phone size={16} style={{ color: 'var(--gold)', flexShrink: 0 }} />
+              <Phone size={16} style={{ color: '#ff9933', flexShrink: 0 }} />
               <span>+91-7387498932</span>
             </div>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start', marginTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.5rem' }}>
-              <Shield size={16} style={{ color: 'var(--gold)', marginTop: '0.1rem', flexShrink: 0 }} />
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start', marginTop: '0.5rem', borderTop: '1px solid rgba(255, 111, 0, 0.2)', paddingTop: '0.5rem' }}>
+              <Shield size={16} style={{ color: '#ff9933', marginTop: '0.1rem', flexShrink: 0 }} />
               <span style={{ fontSize: '0.8rem' }}>
                 Officially Registered Non-Profit<br />
                 12A & 80G Certified Trust<br />

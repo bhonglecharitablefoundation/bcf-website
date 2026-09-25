@@ -89,7 +89,7 @@ const Navbar = ({ onOpenDonate }) => {
           background: 'rgba(0, 31, 53, 0.98)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1.5px solid var(--gold)',
+          borderBottom: '2.5px solid #ff6f00',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -114,8 +114,8 @@ const Navbar = ({ onOpenDonate }) => {
             height: '58px',
             width: '58px',
             borderRadius: '50%',
-            border: '2px solid var(--gold)',
-            boxShadow: '0 0 12px rgba(212, 175, 55, 0.3)',
+            border: '2.5px solid #ff6f00',
+            boxShadow: '0 0 14px rgba(255, 111, 0, 0.45)',
             transition: 'transform 0.3s ease',
           }}
         />
@@ -135,9 +135,9 @@ const Navbar = ({ onOpenDonate }) => {
           <span 
             style={{
               fontFamily: 'var(--font-sans)',
-              fontWeight: 600,
+              fontWeight: 700,
               fontSize: '0.82rem',
-              color: 'var(--gold)',
+              color: '#ff9933',
               letterSpacing: '2px',
               textTransform: 'uppercase',
               textShadow: '0 1px 2px rgba(0,0,0,0.5)',
@@ -178,7 +178,7 @@ const Navbar = ({ onOpenDonate }) => {
                   fontFamily: 'var(--font-display)',
                   fontWeight: 600,
                   fontSize: '1rem',
-                  color: activeSection === link.id ? 'var(--gold)' : '#fff',
+                  color: activeSection === link.id ? '#ff9933' : '#fff',
                   cursor: 'pointer',
                   position: 'relative',
                   padding: '0.25rem 0',
@@ -194,8 +194,8 @@ const Navbar = ({ onOpenDonate }) => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      height: '2px',
-                      backgroundColor: 'var(--gold)',
+                      height: '2.5px',
+                      backgroundColor: '#ff6f00',
                       borderRadius: '2px',
                     }}
                   />
@@ -256,7 +256,7 @@ const Navbar = ({ onOpenDonate }) => {
             left: 0,
             right: 0,
             background: 'var(--primary-dark)',
-            borderBottom: '2px solid var(--gold)',
+            borderBottom: '3px solid #ff6f00',
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
@@ -276,7 +276,7 @@ const Navbar = ({ onOpenDonate }) => {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 600,
                 fontSize: '1.2rem',
-                color: activeSection === link.id ? 'var(--gold)' : '#fff',
+                color: activeSection === link.id ? '#ff9933' : '#fff',
                 cursor: 'pointer',
                 padding: '0.5rem 0',
               }}
