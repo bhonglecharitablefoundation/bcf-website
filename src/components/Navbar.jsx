@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
+import AccessibilityBar from './AccessibilityBar';
 
 const Navbar = ({ onOpenDonate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,23 +78,23 @@ const Navbar = ({ onOpenDonate }) => {
   );
 
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        padding: isScrolled ? '0.6rem 2.5rem' : '1.2rem 2.5rem',
-        background: isScrolled ? 'rgba(0, 43, 73, 0.98)' : 'linear-gradient(to bottom, rgba(0,25,43,0.75) 0%, rgba(0,25,43,0) 100%)',
-        backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        borderBottom: isScrolled ? '2px solid var(--gold)' : 'none',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-      }}
-    >
+    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, width: '100%' }}>
+      <AccessibilityBar />
+      <nav
+        style={{
+          position: 'relative',
+          width: '100%',
+          padding: isScrolled ? '0.55rem 2.5rem' : '0.9rem 2.5rem',
+          background: isScrolled ? 'rgba(0, 43, 73, 0.98)' : 'linear-gradient(to bottom, rgba(0,25,43,0.9) 0%, rgba(0,25,43,0.4) 100%)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: isScrolled ? '2px solid var(--gold)' : '1px solid rgba(212, 175, 55, 0.25)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
       {/* Brand Logo & Standout Text */}
       <div 
         onClick={() => handleNavClick('home')}
@@ -331,6 +332,7 @@ const Navbar = ({ onOpenDonate }) => {
         }
       `}} />
     </nav>
+  </header>
   );
 };
 

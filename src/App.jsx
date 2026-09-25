@@ -125,15 +125,40 @@ function App() {
   // State for Top Hero Panoramic Banner Carousel
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
   const [isHeroSliderHovered, setIsHeroSliderHovered] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
-  // Auto-advance banner slides every 4.5 seconds (pausing on hover)
+  // Auto-advance banner slides every 5.5 seconds (pausing on hover)
   useEffect(() => {
     if (isHeroSliderHovered) return;
     const bannerTimer = setInterval(() => {
       setCurrentHeroSlide((prev) => (prev + 1) % heroBannerSlides.length);
-    }, 4500);
+    }, 5500);
     return () => clearInterval(bannerTimer);
   }, [isHeroSliderHovered, heroBannerSlides.length]);
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 45;
+    if (distance > minSwipeDistance) {
+      // Swiped left -> next photo
+      setCurrentHeroSlide((prev) => (prev + 1) % heroBannerSlides.length);
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right -> prev photo
+      setCurrentHeroSlide((prev) => (prev - 1 + heroBannerSlides.length) % heroBannerSlides.length);
+    }
+    setTouchStartX(0);
+    setTouchEndX(0);
+  };
 
   // Custom SVG for X (Twitter)
   const XIcon = ({ size = 18 }) => (
@@ -379,7 +404,7 @@ ${contactData.name}`;
         style={{
           background: 'radial-gradient(circle at top right, var(--primary-light) 0%, var(--primary-dark) 100%)',
           color: '#fff',
-          paddingTop: '8.5rem',
+          paddingTop: 'clamp(100px, 12vw, 122px)',
           paddingBottom: '3.5rem',
           minHeight: '100vh',
           display: 'flex',
@@ -490,37 +515,35 @@ ${contactData.name}`;
           />
         </div>
 
-        {/* Prominent Panoramic Banner Slider (High-Definition Uncropped Event Photography) */}
+        {/* Prominent Panoramic Banner Slider (100% Full-Width Screen Fit, Smooth Horizontal Transition) */}
         <div 
           className="hero-slider-container"
           onMouseEnter={() => setIsHeroSliderHovered(true)}
           onMouseLeave={() => setIsHeroSliderHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Main Slider Frame */}
           <div className="hero-slider-frame">
-            {heroBannerSlides.map((slide, index) => (
-              <div
-                key={index}
-                className="hero-slide"
-                style={{
-                  opacity: currentHeroSlide === index ? 1 : 0,
-                  transform: currentHeroSlide === index ? 'scale(1)' : 'scale(1.02)',
-                  pointerEvents: currentHeroSlide === index ? 'auto' : 'none'
-                }}
-              >
-                <div 
-                  className="hero-slide-bg" 
-                  style={{ backgroundImage: `url(${slide.src})` }}
-                  aria-hidden="true" 
-                />
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  className="hero-slide-img"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              </div>
-            ))}
+            <div 
+              className="hero-slider-track"
+              style={{
+                transform: `translateX(-${currentHeroSlide * 100}%)`,
+                transition: 'transform 0.85s cubic-bezier(0.25, 1, 0.35, 1)'
+              }}
+            >
+              {heroBannerSlides.map((slide, index) => (
+                <div key={index} className="hero-slide">
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="hero-slide-img"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              ))}
+            </div>
 
             {/* Previous Photo Button */}
             <button
@@ -528,7 +551,7 @@ ${contactData.name}`;
               className="hero-slider-btn prev"
               aria-label="Previous Photo"
             >
-              <ChevronLeft size={22} />
+              <ChevronLeft size={24} />
             </button>
 
             {/* Next Photo Button */}
@@ -537,29 +560,31 @@ ${contactData.name}`;
               className="hero-slider-btn next"
               aria-label="Next Photo"
             >
-              <ChevronRight size={22} />
+              <ChevronRight size={24} />
             </button>
-          </div>
 
-          {/* Pagination Indicator Dots */}
-          <div className="hero-slider-dots">
-            {heroBannerSlides.map((_, dotIdx) => (
-              <button
-                key={dotIdx}
-                onClick={() => setCurrentHeroSlide(dotIdx)}
-                className="hero-slider-dot"
-                aria-label={`Go to photo ${dotIdx + 1}`}
-                style={{
-                  width: currentHeroSlide === dotIdx ? '28px' : '9px',
-                  background: currentHeroSlide === dotIdx ? 'var(--gold)' : 'rgba(255, 255, 255, 0.35)'
-                }}
-              />
-            ))}
+            {/* Pagination Indicator Dots */}
+            <div className="hero-slider-dots">
+              {heroBannerSlides.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  onClick={() => setCurrentHeroSlide(dotIdx)}
+                  className="hero-slider-dot"
+                  aria-label={`Go to photo ${dotIdx + 1}`}
+                  style={{
+                    width: currentHeroSlide === dotIdx ? '32px' : '10px',
+                    background: currentHeroSlide === dotIdx ? 'var(--gold)' : 'rgba(255, 255, 255, 0.45)'
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Top Hero Heading (Positioned directly below the panoramic banner slider) */}
+        {/* Top Hero Heading (Positioned directly below the full-width panoramic banner slider) */}
         <div 
+          id="main-content"
+          tabIndex="-1"
           style={{
             maxWidth: '900px',
             margin: '0 auto',
