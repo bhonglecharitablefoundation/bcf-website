@@ -4,7 +4,7 @@ import {
   ChevronRight, ChevronLeft, Award, Compass, ExternalLink, ArrowUpRight, 
   Info, CheckCircle2, Leaf, FileCheck, Activity, Pill,
   FileText, Calendar, Sparkles, Stethoscope, AlertCircle,
-  TreePine, Cpu, Check
+  TreePine, Cpu, Check, X
 } from 'lucide-react';
 import Globe from './components/Globe';
 import Navbar from './components/Navbar';
@@ -114,12 +114,17 @@ function App() {
   const [submissionMethod, setSubmissionMethod] = useState('direct'); // 'direct' or 'mailto'
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // State for Photo Gallery Lightbox / Modal
+  const [activePhotoModal, setActivePhotoModal] = useState(null);
+
   // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
   const heroBannerSlides = [
+    { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Delegation' },
+    { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers' },
+    { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation' },
+    { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' },
     { src: '/bcf-event-image-1.png', alt: 'Bhongle Charitable Foundation Field Initiative' },
-    { src: '/health-camp-group.jpg', alt: 'Nagpur Police Health Mission Mega Camp' },
-    { src: '/bcf-event-image-2.png', alt: 'Community Awareness and Health Literacy Conference' },
-    { src: '/health-camp-checkup.jpg', alt: 'Clinical Diagnostics and Medical Screening' }
+    { src: '/bcf-event-image-2.png', alt: 'Community Awareness and Health Literacy Conference' }
   ];
 
   // State for Top Hero Panoramic Banner Carousel
@@ -1600,68 +1605,239 @@ ${contactData.name}`;
             </div>
           </div>
 
-          {/* Photo Gallery Showcase */}
+          {/* Photo Gallery Showcase - 5 Official High-Definition Photographs */}
           <div style={{ marginBottom: '3.5rem' }}>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--primary)', marginBottom: '1.75rem', textAlign: 'center', fontWeight: 700 }}>
-              Mission Photo Gallery • Lakadganj Police Station
-            </h3>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 111, 0, 0.12)', border: '1.5px solid rgba(255, 111, 0, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <Shield size={16} style={{ color: '#ff6f00' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#c2410c', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Field Photographic Documentation
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Mission Photo Gallery • Lakadganj Police Station
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '680px', margin: '0 auto', lineHeight: '1.6' }}>
+                Official photographic documentation capturing the 4-tier clinical workflow, specialized physician consultations, point-of-care diagnostics, and free pharmaceutical dispensation for Nagpur police personnel.
+              </p>
+            </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-              {/* Photo 1 */}
-              <div className="glass-card" style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px' }}>
-                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '270px', border: '1px solid rgba(0,43,73,0.08)' }}>
+            {/* Featured Photo 1: Grand Commemorative Gathering & Leadership Delegation */}
+            <div 
+              onClick={() => setActivePhotoModal({
+                src: '/police-health-mission-delegation.jpg',
+                title: 'BCF Leadership, Nagpur Police Officers & IMA Medical Fraternities',
+                tag: 'Inaugural Delegation • July 27, 2026',
+                caption: 'Official commemorative delegation photographed at Lakadganj Police Station on July 27, 2026. The milestone marked a united partnership between civic law enforcement authorities, Indian Medical Association (IMA) physicians, and BCF Trustees dedicated to frontline officer healthcare.'
+              })}
+              className="glass-card" 
+              style={{ 
+                padding: '1.25rem', 
+                borderRadius: '20px', 
+                marginBottom: '2rem', 
+                cursor: 'pointer',
+                border: '1.5px solid rgba(255, 111, 0, 0.28)',
+                boxShadow: '0 10px 30px rgba(0, 34, 68, 0.08)',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '340px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
                   <img 
-                    src="/health-camp-group.jpg" 
+                    src="/police-health-mission-delegation.jpg" 
                     alt="Nagpur Police Health Mission Phase 1 Group Photo" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
                     className="hover-zoom"
                   />
+                  <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '5px 12px', borderRadius: '20px', fontSize: '0.74rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                    <Sparkles size={12} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
                 </div>
-                <div style={{ padding: '0.4rem 0.25rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-dark)', textTransform: 'uppercase' }}>
-                      Inaugural Delegation
-                    </span>
-                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
-                      July 27, 2026
+                <div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.12)', border: '1px solid rgba(255, 111, 0, 0.3)', padding: '0.3rem 0.85rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                    <Shield size={14} style={{ color: '#ff6f00' }} />
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Inaugural Leadership Delegation
                     </span>
                   </div>
-                  <h5 style={{ fontSize: '1rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    BCF Leadership, Police Dignitaries & IMA Doctors
-                  </h5>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Commemorative group gathering at Lakadganj Police Station featuring Police Leadership, IMA medical team, and BCF Trustees.
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', color: 'var(--primary)', fontWeight: 700, lineHeight: '1.3', marginBottom: '0.75rem' }}>
+                    BCF Leadership, Police Dignitaries & IMA Medical Doctors
+                  </h4>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
+                    Commemorative gathering at Lakadganj Police Station featuring senior police leadership, the Indian Medical Association (IMA) clinical delegation, and Bhongle Charitable Foundation Trustees at the successful rollout of the Police Health Mission.
                   </p>
+                  <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> DCP Zone 3 Representation</span>
+                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> IMA Specialist Clinicians</span>
+                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> BCF Executive Board</span>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              {/* Photo 2 */}
-              <div className="glass-card" style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px' }}>
-                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '270px', border: '1px solid rgba(0,43,73,0.08)' }}>
+            {/* 4-Card Grid: Process Stations & Field Interventions */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem' }}>
+              
+              {/* Photo 2: Vital & Cardiovascular Assessments */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/police-health-checkup-bp.jpg',
+                  title: 'Tier 1: Vital & Cardiovascular Assessment',
+                  tag: 'Vital Screening • Hemodynamic Diagnostics',
+                  caption: 'Specialist physician using an acoustic stethoscope and clinical sphygmomanometer to evaluate resting blood pressure, pulse rhythm, and cardiovascular parameters for on-duty police personnel.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
                   <img 
-                    src="/health-camp-checkup.jpg" 
-                    alt="Clinical Medical Checkup in progress" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    src="/police-health-checkup-bp.jpg" 
+                    alt="Doctor checking blood pressure of police officer" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block' }}
                     className="hover-zoom"
                   />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
                 </div>
                 <div style={{ padding: '0.4rem 0.25rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-dark)', textTransform: 'uppercase' }}>
-                      Clinical Interventions
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Tier 1: Vital Assessment
                     </span>
                     <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
                       DCP Zone 3
                     </span>
                   </div>
-                  <h5 style={{ fontSize: '1rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    One-on-One Vital Screening & Clinical Diagnosis
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Cardiovascular & Blood Pressure Screening
                   </h5>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Doctors conducting blood pressure, sugar, hemoglobin and clinical evaluations for officers on duty.
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Physician conducting precision blood pressure and cardiovascular evaluations for participating police personnel.
                   </p>
                 </div>
               </div>
+
+              {/* Photo 3: Metabolic & Hematological Diagnostics */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/police-health-diagnostic-screening.jpg',
+                  title: 'Tier 2: Metabolic & Hematological Profiling',
+                  tag: 'Laboratory Diagnostics • Capillary Blood Testing',
+                  caption: 'Point-of-care capillary diagnostic station testing 82+ officers for random blood glucose and hemoglobin levels to detect early signs of metabolic disorders and occupational fatigue.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
+                  <img 
+                    src="/police-health-diagnostic-screening.jpg" 
+                    alt="Capillary blood glucose testing on police officer" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Tier 2: Laboratory Profiling
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      82 Profiles
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Capillary Blood Glucose & Hemoglobin Diagnostics
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Laboratory diagnostic counter screening officers for diabetes markers and anemia profiles for prompt interventions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Photo 4: One-on-One Physician Consultations */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/police-health-clinical-consultation.jpg',
+                  title: 'Tier 3 & 4: Physician Consultations & Medical Cards',
+                  tag: 'Clinical Advisory • One-on-One Guidance',
+                  caption: 'Doctors conducting one-on-one medical reviews with officers, examining diagnostic results, prescribing personalized treatment paths, and issuing permanent Patient Record Cards.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
+                  <img 
+                    src="/police-health-clinical-consultation.jpg" 
+                    alt="Doctor consultation table with police officers" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Tier 3 & 4: Consultations
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      90+ Personnel
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    One-on-One Expert Diagnosis & Patient Record Cards
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Senior physicians analyzing clinical data, prescribing individual care regimens, and providing preventive counsel.
+                  </p>
+                </div>
+              </div>
+
+              {/* Photo 5: Free Pharmacy & Medication Dispensation */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/police-health-pharmacy-dispensation.jpg',
+                  title: 'Free Medical Dispensation & Pharmacy Services',
+                  tag: 'Pharmacy Counter • 100% Free Medicines',
+                  caption: 'On-site pharmaceutical dispensary providing essential medications, therapeutic formulations, and nutritional supplements free of cost according to physician prescriptions.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
+                  <img 
+                    src="/police-health-pharmacy-dispensation.jpg" 
+                    alt="Free Medical Dispensation and Pharmacy Counter" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Pharmacy Services
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      100% Free
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Free Medical Dispensation & Essential Drug Support
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Fully stocked on-site pharmacy distributing prescribed medicines and supplements directly to officers.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -2501,6 +2677,93 @@ ${contactData.name}`;
       {/* Modals */}
       <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
       <VolunteerModal isOpen={isVolunteerOpen} onClose={() => setIsVolunteerOpen(false)} />
+
+      {/* High-Definition Photo Lightbox Modal */}
+      {activePhotoModal && (
+        <div 
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            background: 'rgba(0, 10, 20, 0.94)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.25rem',
+            animation: 'fadeInUp 0.25s ease-out forwards'
+          }}
+          onClick={() => setActivePhotoModal(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={activePhotoModal.title}
+        >
+          <div 
+            style={{
+              maxWidth: '980px',
+              width: '100%',
+              background: '#ffffff',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 111, 0, 0.3)',
+              border: '2px solid #ff6f00',
+              position: 'relative'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image Preview Box */}
+            <div style={{ position: 'relative', width: '100%', maxHeight: '72vh', background: '#050f18', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img 
+                src={activePhotoModal.src} 
+                alt={activePhotoModal.title}
+                style={{ width: '100%', maxHeight: '72vh', objectFit: 'contain', display: 'block' }}
+              />
+              <button
+                onClick={() => setActivePhotoModal(null)}
+                style={{
+                  position: 'absolute',
+                  top: '14px',
+                  right: '14px',
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'rgba(0, 20, 35, 0.85)',
+                  border: '1.5px solid rgba(255, 255, 255, 0.6)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  zIndex: 10
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#ff6f00'; e.currentTarget.style.color = '#fff'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 20, 35, 0.85)'; }}
+                aria-label="Close photo preview"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Caption & Metadata Bar */}
+            <div style={{ padding: '1.25rem 1.75rem', background: '#ffffff', borderTop: '1px solid rgba(0, 43, 73, 0.08)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.12)', border: '1px solid rgba(255, 111, 0, 0.3)', padding: '0.25rem 0.75rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
+                <Shield size={13} style={{ color: '#ff6f00' }} />
+                <span style={{ fontSize: '0.74rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  {activePhotoModal.tag}
+                </span>
+              </div>
+              <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                {activePhotoModal.title}
+              </h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.55', margin: 0 }}>
+                {activePhotoModal.caption}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
