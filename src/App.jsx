@@ -119,7 +119,8 @@ function App() {
 
   // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
   const heroBannerSlides = [
-    { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Delegation' },
+    { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly' },
+    { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Leadership Delegation' },
     { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers' },
     { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation' },
     { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' },
@@ -1622,13 +1623,13 @@ ${contactData.name}`;
               </p>
             </div>
             
-            {/* Featured Photo 1: Grand Commemorative Gathering & Leadership Delegation */}
+            {/* Featured Photo 1: Grand Contingent Assembly (Panoramic Gathering of 90+ Officers, IMA Doctors & BCF Team) */}
             <div 
               onClick={() => setActivePhotoModal({
-                src: '/police-health-mission-delegation.jpg',
-                title: 'BCF Leadership, Nagpur Police Officers & IMA Medical Fraternities',
-                tag: 'Inaugural Delegation • July 27, 2026',
-                caption: 'Official commemorative delegation photographed at Lakadganj Police Station on July 27, 2026. The milestone marked a united partnership between civic law enforcement authorities, Indian Medical Association (IMA) physicians, and BCF Trustees dedicated to frontline officer healthcare.'
+                src: '/police-health-grand-contingent.jpg',
+                title: 'Grand Contingent Assembly: DCP Zone 3 Officers, IMA Doctors & BCF Leadership',
+                tag: 'Workforce Assembly • 90+ Police Personnel',
+                caption: 'Grand commemorative assembly bringing together the entire participating police force across DCP Zone 3 stations, the Indian Medical Association (IMA) medical delegation, and Bhongle Charitable Foundation Trustees inside the main hall of Lakadganj Police Station.'
               })}
               className="glass-card" 
               style={{ 
@@ -1636,49 +1637,89 @@ ${contactData.name}`;
                 borderRadius: '20px', 
                 marginBottom: '2rem', 
                 cursor: 'pointer',
-                border: '1.5px solid rgba(255, 111, 0, 0.28)',
+                border: '1.5px solid rgba(255, 111, 0, 0.3)',
                 boxShadow: '0 10px 30px rgba(0, 34, 68, 0.08)',
                 transition: 'all 0.3s ease'
               }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'center' }}>
-                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '340px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
-                  <img 
-                    src="/police-health-mission-delegation.jpg" 
-                    alt="Nagpur Police Health Mission Phase 1 Group Photo" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
-                    className="hover-zoom"
-                  />
-                  <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '5px 12px', borderRadius: '20px', fontSize: '0.74rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
-                    <Sparkles size={12} style={{ color: '#ff9933' }} /> Click to enlarge
-                  </div>
+              <div style={{ borderRadius: '14px', overflow: 'hidden', height: 'clamp(240px, 32vw, 380px)', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '1.25rem' }}>
+                <img 
+                  src="/police-health-grand-contingent.jpg" 
+                  alt="Nagpur Police Health Mission Grand Contingent Assembly" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%', display: 'block' }}
+                  className="hover-zoom"
+                />
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '5px 12px', borderRadius: '20px', fontSize: '0.74rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <Sparkles size={12} style={{ color: '#ff9933' }} /> Click to enlarge full panorama
                 </div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                 <div>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.12)', border: '1px solid rgba(255, 111, 0, 0.3)', padding: '0.3rem 0.85rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.12)', border: '1px solid rgba(255, 111, 0, 0.3)', padding: '0.3rem 0.85rem', borderRadius: '50px', marginBottom: '0.5rem' }}>
                     <Shield size={14} style={{ color: '#ff6f00' }} />
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
-                      Inaugural Leadership Delegation
+                      Grand Contingent Assembly • Lakadganj Police Station
                     </span>
                   </div>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', color: 'var(--primary)', fontWeight: 700, lineHeight: '1.3', marginBottom: '0.75rem' }}>
-                    BCF Leadership, Police Dignitaries & IMA Medical Doctors
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                    Unifying Frontline Police Personnel, Clinical Practitioners & BCF Leadership
                   </h4>
-                  <p style={{ fontSize: '0.92rem', color: 'var(--text-light)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
-                    Commemorative gathering at Lakadganj Police Station featuring senior police leadership, the Indian Medical Association (IMA) clinical delegation, and Bhongle Charitable Foundation Trustees at the successful rollout of the Police Health Mission.
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0, maxWidth: '850px' }}>
+                    Historic collective gathering featuring male and female police personnel from DCP Zone 3 stations alongside the IMA physician panel and BCF executive organizing committee.
                   </p>
-                  <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> DCP Zone 3 Representation</span>
-                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> IMA Specialist Clinicians</span>
-                    <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> BCF Executive Board</span>
-                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                  <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> 90+ Screened Officers</span>
+                  <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> IMA Medical Panel</span>
+                  <span className="med-pill"><CheckCircle2 size={13} style={{ color: '#ff6f00' }} /> BCF Executive Team</span>
                 </div>
               </div>
             </div>
 
-            {/* 4-Card Grid: Process Stations & Field Interventions */}
+            {/* 5-Card Grid: Core Leadership Delegation & 4 Clinical Workflow Stations */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem' }}>
               
-              {/* Photo 2: Vital & Cardiovascular Assessments */}
+              {/* Photo 2: Core Leadership Delegation */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/police-health-mission-delegation.jpg',
+                  title: 'Inaugural Delegation: BCF Trustees, Police Dignitaries & IMA Physicians',
+                  tag: 'Inaugural Delegation • July 27, 2026',
+                  caption: 'Official commemorative delegation photographed at Lakadganj Police Station on July 27, 2026. The milestone marked a united partnership between civic law enforcement authorities, Indian Medical Association (IMA) physicians, and BCF Trustees dedicated to frontline officer healthcare.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative' }}>
+                  <img 
+                    src="/police-health-mission-delegation.jpg" 
+                    alt="BCF Leadership and Police Dignitaries" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                      Inaugural Delegation
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      July 27, 2026
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Core Leadership & Medical Fraternities
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Senior Police Leadership, IMA physicians, and BCF Trustees photographed at the ceremonial launch.
+                  </p>
+                </div>
+              </div>
+
+              {/* Photo 3: Vital & Cardiovascular Assessments */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/police-health-checkup-bp.jpg',
@@ -1718,7 +1759,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Photo 3: Metabolic & Hematological Diagnostics */}
+              {/* Photo 4: Metabolic & Hematological Diagnostics */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/police-health-diagnostic-screening.jpg',
@@ -1758,7 +1799,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Photo 4: One-on-One Physician Consultations */}
+              {/* Photo 5: One-on-One Physician Consultations */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/police-health-clinical-consultation.jpg',
@@ -1798,7 +1839,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Photo 5: Free Pharmacy & Medication Dispensation */}
+              {/* Photo 6: Free Pharmacy & Medication Dispensation */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/police-health-pharmacy-dispensation.jpg',
