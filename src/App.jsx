@@ -121,13 +121,18 @@ function App() {
   const heroBannerSlides = [
     { src: '/plantation-drive-panoramic-contingent.jpg', alt: 'Mega Scientific Plantation Drive Grand Student Contingent with Mayor Smt. Neeta Thakre' },
     { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly' },
-    { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership' },
+    { src: '/plantation-drive-kdk-pharmacy-delegation.jpg', alt: 'KDK College of Pharmacy Institutional Assembly & Faculty Delegation' },
     { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Leadership Delegation' },
-    { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre' },
+    { src: '/plantation-drive-student-volunteers.jpg', alt: 'Student Volunteers and Youth Guardianship in Campus Botanical Garden' },
+    { src: '/plantation-drive-mayor-yash-bhongle.jpg', alt: 'Mayoral Civic Partnership with BCF Secretary Yash Bhongle' },
+    { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership' },
     { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers' },
+    { src: '/plantation-drive-faculty-planting.jpg', alt: 'Faculty and Trustee Botanical Soil Seeding' },
+    { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre' },
     { src: '/plantation-drive-watering-ceremony.jpg', alt: 'Mega Scientific Plantation Drive Sapling Watering Ceremony' },
     { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation' },
     { src: '/plantation-drive-sapling-placement.jpg', alt: 'Plantation Drive Root Bed Alignment & Sapling Placement' },
+    { src: '/plantation-drive-dignitary-felicitation.jpg', alt: 'Stage Felicitation and Dignitary Reception' },
     { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' }
   ];
 
@@ -1380,7 +1385,7 @@ ${contactData.name}`;
             </div>
           </div>
 
-          {/* Photo Gallery Showcase - 5 Official High-Definition Photographs for Mega Scientific Plantation Drive */}
+          {/* Photo Gallery Showcase - 10 Official High-Definition Photographs for Mega Scientific Plantation Drive */}
           <div style={{ marginTop: '3.5rem' }}>
             <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(5, 150, 105, 0.12)', border: '1.5px solid rgba(5, 150, 105, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
@@ -1392,8 +1397,8 @@ ${contactData.name}`;
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
                 Mission Photo Gallery • Mega Scientific Plantation Drive
               </h3>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '680px', margin: '0 auto', lineHeight: '1.6' }}>
-                Official photographic documentation capturing the grand student-faculty contingent assembly, mayoral inauguration, scientific root-depth planting, and campus guardianship pledges.
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '720px', margin: '0 auto', lineHeight: '1.6' }}>
+                Official photographic documentation capturing the grand academic contingent assembly, institutional delegation at KDK College of Pharmacy, mayoral civic partnership, botanical root-depth planting, and 3-year campus guardianship covenants.
               </p>
             </div>
 
@@ -1451,10 +1456,175 @@ ${contactData.name}`;
               </div>
             </div>
 
-            {/* 4-Card Grid: Ceremonial Felicitation, Inaugural Planting, Pit Placement & Watering */}
+            {/* Two Featured Widescreen Highlights: KDK Pharmacy Institutional Assembly & Mayoral Reception */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem', marginBottom: '2rem' }}>
+              
+              {/* Featured Highlight A: KDK College of Pharmacy Institutional Delegation */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-kdk-pharmacy-delegation.jpg',
+                  title: 'KDK College of Pharmacy Institutional Delegation & Leadership Assembly',
+                  tag: 'Institutional Stewardship • KDK College of Pharmacy',
+                  category: 'environment',
+                  caption: 'Distinguished assembly inside the main entrance foyer of KDK College of Pharmacy & Research Institute featuring principal Dr. Kamlesh Wadher, faculty researchers, women professors, student representatives, Dr. Shaligram Bhongle, Dr. Priti Bhongle, and Yash Bhongle affirming institutional guardianship.'
+                })}
+                className="glass-card" 
+                style={{ padding: '1rem', borderRadius: '18px', cursor: 'pointer', border: '1px solid rgba(5, 150, 105, 0.25)', boxShadow: '0 6px 20px rgba(0,34,68,0.06)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '260px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-kdk-pharmacy-delegation.jpg" 
+                    alt="KDK College of Pharmacy Institutional Assembly" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.72rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.3rem 0.2rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.2rem 0.65rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
+                    <TreePine size={12} style={{ color: '#059669' }} />
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Academic Leadership • KDK Pharmacy Foyer
+                    </span>
+                  </div>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                    KDK College of Pharmacy Institutional Assembly
+                  </h4>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                    Faculty researchers, women professors, and youth representatives alongside BCF leadership ratifying campus-wide ecological stewardship.
+                  </p>
+                </div>
+              </div>
+
+              {/* Featured Highlight B: Mayoral Civic Reception with BCF Secretary Yash Bhongle */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-mayor-yash-bhongle.jpg',
+                  title: 'Mayoral Civic Partnership: Hon\'ble Mayor Smt. Neeta Thakre & BCF Secretary Yash Bhongle',
+                  tag: 'Civic Leadership & Mayoral Partnership',
+                  category: 'environment',
+                  caption: 'Chief Guest Hon\'ble Mayor Smt. Neeta Thakre formally received by BCF Secretary Yash Bhongle outside the academic campus facility alongside the official Nagpur Municipal Corporation delegation.'
+                })}
+                className="glass-card" 
+                style={{ padding: '1rem', borderRadius: '18px', cursor: 'pointer', border: '1px solid rgba(5, 150, 105, 0.25)', boxShadow: '0 6px 20px rgba(0,34,68,0.06)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '260px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-mayor-yash-bhongle.jpg" 
+                    alt="Hon'ble Mayor Smt. Neeta Thakre and BCF Secretary Yash Bhongle" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.72rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.3rem 0.2rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.2rem 0.65rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
+                    <TreePine size={12} style={{ color: '#059669' }} />
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Civic Synergy • Nagpur Municipal Corporation
+                    </span>
+                  </div>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                    Mayoral Civic Reception & Partnership
+                  </h4>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                    Hon'ble Mayor Smt. Neeta Thakre welcomed by BCF Secretary Yash Bhongle to align municipal greening goals with grassroots foundation action.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* 7-Card Grid: Process, Dais Protocols, Planting Execution, Youth Stewardship & Hydration */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
               
-              {/* Card 1: Inauguration & Ceremonial Reception */}
+              {/* Card 1: Student Scholars & Botanical Guardianship */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-student-volunteers.jpg',
+                  title: 'Student Scholars & Volunteer Guardianship in Campus Garden',
+                  tag: 'Youth Stewardship • Campus Herbal Garden',
+                  category: 'environment',
+                  caption: 'Energetic pharmacy student scholars and youth volunteers actively preparing the root bed and nurturing newly planted saplings alongside BCF Secretary Yash Bhongle in the campus botanical garden.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-student-volunteers.jpg" 
+                    alt="Student scholars and volunteers tending sapling" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Youth Mobilization
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Botanical Garden
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Student Scholars & Guardianship
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Youth student scholars active in soil preparation establishing long-term personal guardianship.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Stage Welcome & Technological Briefing */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-dignitary-felicitation.jpg',
+                  title: 'Stage Welcome & Dignitary Briefing',
+                  tag: 'Inaugural Stage Protocols',
+                  category: 'environment',
+                  caption: 'Formal dais welcome in front of the Mega Scientific Plantation Drive 2026 digital backdrop with distinguished guests, academic leaders, and foundation trustees.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-dignitary-felicitation.jpg" 
+                    alt="Stage welcome and dignitary felicitation" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Stage Protocols
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Inaugural Dais
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Dais Welcome & Briefing
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Formal stage welcome briefing delegates on botanical air-purification and technological execution.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Inauguration & Ceremonial Reception */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-mayor-felicitation.jpg',
@@ -1495,7 +1665,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Card 2: Inaugural Scientific Sapling Plantation */}
+              {/* Card 4: Inaugural Scientific Sapling Plantation */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-inaugural-planting.jpg',
@@ -1536,7 +1706,48 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Card 3: Ground Pit Placement & Root-Bed Alignment */}
+              {/* Card 5: Faculty & Trustee Ground Seeding */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-faculty-planting.jpg',
+                  title: 'Faculty & Trustee Botanical Canopy Expansion',
+                  tag: 'Botanical Soil Seeding • Faculty Participation',
+                  category: 'environment',
+                  caption: 'Dr. Shaligram Bhongle, Dr. Priti Bhongle, institutional directors, and women faculty scholars guiding indigenous saplings into the conditioned soil beds to expand campus biodiversity.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-faculty-planting.jpg" 
+                    alt="Faculty and trustees planting sapling" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Faculty Action
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Canopy Expansion
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Faculty & Trustee Seeding
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Women faculty professors and BCF trustees positioning saplings for high-survival growth.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 6: Ground Pit Placement & Root-Bed Alignment */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-sapling-placement.jpg',
@@ -1577,7 +1788,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Card 4: Post-Planting Nurturing & Watering Ceremony */}
+              {/* Card 7: Post-Planting Nurturing & Watering Ceremony */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-watering-ceremony.jpg',
