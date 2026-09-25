@@ -119,13 +119,16 @@ function App() {
 
   // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
   const heroBannerSlides = [
+    { src: '/plantation-drive-panoramic-contingent.jpg', alt: 'Mega Scientific Plantation Drive Grand Student Contingent with Mayor Smt. Neeta Thakre' },
     { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly' },
+    { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership' },
     { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Leadership Delegation' },
+    { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre' },
     { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers' },
+    { src: '/plantation-drive-watering-ceremony.jpg', alt: 'Mega Scientific Plantation Drive Sapling Watering Ceremony' },
     { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation' },
-    { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' },
-    { src: '/bcf-event-image-1.png', alt: 'Bhongle Charitable Foundation Field Initiative' },
-    { src: '/bcf-event-image-2.png', alt: 'Community Awareness and Health Literacy Conference' }
+    { src: '/plantation-drive-sapling-placement.jpg', alt: 'Plantation Drive Root Bed Alignment & Sapling Placement' },
+    { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' }
   ];
 
   // State for Top Hero Panoramic Banner Carousel
@@ -1374,6 +1377,247 @@ ${contactData.name}`;
                   Demonstrating the convergence of modern technology with social responsibility, the Bhongle Charitable Foundation technology team designed and successfully executed a proprietary AI protocol during the function.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Photo Gallery Showcase - 5 Official High-Definition Photographs for Mega Scientific Plantation Drive */}
+          <div style={{ marginTop: '3.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(5, 150, 105, 0.12)', border: '1.5px solid rgba(5, 150, 105, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <TreePine size={16} style={{ color: '#059669' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#047857', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Field Photographic Documentation
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Mission Photo Gallery • Mega Scientific Plantation Drive
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '680px', margin: '0 auto', lineHeight: '1.6' }}>
+                Official photographic documentation capturing the grand student-faculty contingent assembly, mayoral inauguration, scientific root-depth planting, and campus guardianship pledges.
+              </p>
+            </div>
+
+            {/* Featured Photo 1: Grand Contingent Assembly (Panoramic Gathering of 100+ Students, Faculty & Mayor Smt. Neeta Thakre) */}
+            <div 
+              onClick={() => setActivePhotoModal({
+                src: '/plantation-drive-panoramic-contingent.jpg',
+                title: 'Grand Student-Faculty Contingent & Civic Leadership Assembly',
+                tag: 'Contingent Assembly • Over 100+ Student Scholars & Dignitaries',
+                category: 'environment',
+                caption: 'Historic commemorative gathering featuring over 100+ academic students in official blue ties, university faculty, BCF leadership, and Chief Guest Hon\'ble Mayor Smt. Neeta Thakre at the launch of the Mega Scientific Plantation Drive across the educational campus.'
+              })}
+              className="glass-card" 
+              style={{ 
+                padding: '1.25rem', 
+                borderRadius: '20px', 
+                marginBottom: '2rem', 
+                cursor: 'pointer',
+                border: '1.5px solid rgba(5, 150, 105, 0.3)',
+                boxShadow: '0 10px 30px rgba(0, 34, 68, 0.08)',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ borderRadius: '14px', overflow: 'hidden', height: 'clamp(240px, 32vw, 380px)', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '1.25rem', background: '#022c22' }}>
+                <img 
+                  src="/plantation-drive-panoramic-contingent.jpg" 
+                  alt="Mega Scientific Plantation Drive Grand Student and Dignitary Assembly" 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                  className="hover-zoom"
+                />
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '5px 12px', borderRadius: '20px', fontSize: '0.74rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <Sparkles size={12} style={{ color: '#34d399' }} /> Click to enlarge full panorama
+                </div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(5, 150, 105, 0.12)', border: '1px solid rgba(5, 150, 105, 0.3)', padding: '0.3rem 0.85rem', borderRadius: '50px', marginBottom: '0.5rem' }}>
+                    <TreePine size={14} style={{ color: '#059669' }} />
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Grand Contingent Assembly • Bhausaheb Mulak & KDK Campuses
+                    </span>
+                  </div>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                    Unifying 100+ Youth Scholars, Academic Leadership & Civic Authorities
+                  </h4>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0, maxWidth: '850px' }}>
+                    Panoramic documentation of the expansive student scholar contingent with faculty mentors, institutional directors, and Hon\'ble Mayor Smt. Neeta Thakre championing urban ecological restoration.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                  <span className="med-pill" style={{ borderColor: 'rgba(5, 150, 105, 0.3)', background: 'rgba(5, 150, 105, 0.08)', color: '#047857' }}><CheckCircle2 size={13} style={{ color: '#059669' }} /> 100+ Student Scholars</span>
+                  <span className="med-pill" style={{ borderColor: 'rgba(5, 150, 105, 0.3)', background: 'rgba(5, 150, 105, 0.08)', color: '#047857' }}><CheckCircle2 size={13} style={{ color: '#059669' }} /> Hon'ble Mayor Present</span>
+                  <span className="med-pill" style={{ borderColor: 'rgba(5, 150, 105, 0.3)', background: 'rgba(5, 150, 105, 0.08)', color: '#047857' }}><CheckCircle2 size={13} style={{ color: '#059669' }} /> Dual Campus Mobilization</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 4-Card Grid: Ceremonial Felicitation, Inaugural Planting, Pit Placement & Watering */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+              
+              {/* Card 1: Inauguration & Ceremonial Reception */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-mayor-felicitation.jpg',
+                  title: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre',
+                  tag: 'Civic Dignitary Reception',
+                  category: 'environment',
+                  caption: 'Dr. Priti Bhongle, Treasurer of BCF, formally welcoming Hon\'ble Mayor Smt. Neeta Thakre on stage in the presence of institutional directors and academic principals before the technological and ecological briefing.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-mayor-felicitation.jpg" 
+                    alt="Ceremonial reception of Mayor Smt. Neeta Thakre" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Civic Welcome
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Inaugural Stage
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Inauguration & Ceremonial Reception
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Dr. Priti Bhongle welcoming Hon'ble Mayor Smt. Neeta Thakre alongside institutional directors.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Inaugural Scientific Sapling Plantation */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-inaugural-planting.jpg',
+                  title: 'Planting of the Inaugural Scientific Sapling',
+                  tag: 'Inaugural Plantation Ceremony',
+                  category: 'environment',
+                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre alongside Dr. Priti Bhongle, academic directors, and college faculty planting the first high-canopy indigenous sapling into the campus soil.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-inaugural-planting.jpg" 
+                    alt="Planting the inaugural scientific sapling" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      First Sapling
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Campus Green Belt
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Inaugural Scientific Sapling
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Mayor Smt. Neeta Thakre and BCF leadership conducting the ceremonial planting.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Ground Pit Placement & Root-Bed Alignment */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-sapling-placement.jpg',
+                  title: 'Ground Pit Placement & Root Aeration Protocol',
+                  tag: 'Field Horticultural Protocol',
+                  category: 'environment',
+                  caption: 'Civic leaders, faculty members, and BCF trustees carefully positioning the root ball into prepared earth pits adhering to botanical depth and spacing standards.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-sapling-placement.jpg" 
+                    alt="Sapling placement in conditioned soil pit" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Field Technique
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Scientific Standards
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Pit Placement & Root Alignment
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Precise botanical positioning to maximize sapling root development and structural stability.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: Post-Planting Nurturing & Watering Ceremony */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-watering-ceremony.jpg',
+                  title: 'Hydration & Post-Planting Care Ceremony',
+                  tag: 'Long-Term Ecological Nurturing',
+                  category: 'environment',
+                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre, women faculty members, and student leaders administering initial hydration to the newly planted tree under the 3-year campus survival pledge.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-watering-ceremony.jpg" 
+                    alt="Watering the newly planted sapling" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Nurturing Care
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      3-Year Commitment
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Hydration & Post-Planting Care
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Administering initial hydration to seal root beds as part of the student stewardship covenant.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -2789,9 +3033,28 @@ ${contactData.name}`;
 
             {/* Caption & Metadata Bar */}
             <div style={{ padding: '1.25rem 1.75rem', background: '#ffffff', borderTop: '1px solid rgba(0, 43, 73, 0.08)' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.12)', border: '1px solid rgba(255, 111, 0, 0.3)', padding: '0.25rem 0.75rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
-                <Shield size={13} style={{ color: '#ff6f00' }} />
-                <span style={{ fontSize: '0.74rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <div style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '0.4rem', 
+                background: activePhotoModal.category === 'environment' ? 'rgba(5, 150, 105, 0.12)' : 'rgba(255, 111, 0, 0.12)', 
+                border: activePhotoModal.category === 'environment' ? '1px solid rgba(5, 150, 105, 0.3)' : '1px solid rgba(255, 111, 0, 0.3)', 
+                padding: '0.25rem 0.75rem', 
+                borderRadius: '50px', 
+                marginBottom: '0.45rem' 
+              }}>
+                {activePhotoModal.category === 'environment' ? (
+                  <TreePine size={13} style={{ color: '#059669' }} />
+                ) : (
+                  <Shield size={13} style={{ color: '#ff6f00' }} />
+                )}
+                <span style={{ 
+                  fontSize: '0.74rem', 
+                  fontWeight: 700, 
+                  color: activePhotoModal.category === 'environment' ? '#047857' : '#c2410c', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.5px' 
+                }}>
                   {activePhotoModal.tag}
                 </span>
               </div>
