@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Heart, BookOpen, Shield, Users, Mail, Phone, MapPin, 
-  ChevronRight, Award, Compass, ExternalLink, ArrowUpRight, 
+  ChevronRight, ChevronLeft, Award, Compass, ExternalLink, ArrowUpRight, 
   Info, CheckCircle2, Leaf, FileCheck, Activity, Pill,
   FileText, Calendar, Sparkles, Stethoscope, AlertCircle,
   TreePine, Cpu
@@ -114,6 +114,28 @@ function App() {
   const [submissionMethod, setSubmissionMethod] = useState('direct'); // 'direct' or 'mailto'
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Top Hero Featured Banner Slides (Pure photography without written text/statements)
+  const heroBannerSlides = [
+    { src: '/health-camp-group.jpg', alt: 'Nagpur Police Health Mission Mega Camp' },
+    { src: '/health-camp-checkup.jpg', alt: 'Clinical Diagnostics and Health Camp' },
+    { src: '/bcf-event-image-1.png', alt: 'Holistic Health and Wellness Drive' },
+    { src: '/bcf-event-image-2.png', alt: 'Preventative Education and Wellness Seminar' },
+    { src: '/yoga-day-banner-1.png', alt: 'Staff Wellness and Health Literacy Initiative' }
+  ];
+
+  // State for Top Hero Panoramic Banner Carousel
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [isHeroSliderHovered, setIsHeroSliderHovered] = useState(false);
+
+  // Auto-advance banner slides every 4.5 seconds (pausing on hover)
+  useEffect(() => {
+    if (isHeroSliderHovered) return;
+    const bannerTimer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % heroBannerSlides.length);
+    }, 4500);
+    return () => clearInterval(bannerTimer);
+  }, [isHeroSliderHovered, heroBannerSlides.length]);
+
   // Custom SVG for X (Twitter)
   const XIcon = ({ size = 18 }) => (
     <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
@@ -136,40 +158,6 @@ function App() {
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
   );
-
-  // On-Ground Field Initiatives & Welfare Drives Gallery
-  const galleryImages = [
-    {
-      src: '/health-camp-group.jpg',
-      tag: 'Police Health Mission',
-      title: 'Lakadganj Police Station Mega Camp (DCP Zone 3)',
-      location: 'Nagpur, Maharashtra • July 27, 2026'
-    },
-    {
-      src: '/health-camp-checkup.jpg',
-      tag: 'Clinical Diagnostics',
-      title: '4-Tier Medical Screening & Free Pharmacy Dispensation',
-      location: 'Lakadganj Station • July 27, 2026'
-    },
-    {
-      src: '/bcf-event-image-1.png',
-      tag: 'Holistic Wellness',
-      title: 'International Yoga Day Seminar & Practical Asanas',
-      location: 'IRA International Campus • June 21, 2026'
-    },
-    {
-      src: '/bcf-event-image-2.png',
-      tag: 'Preventative Education',
-      title: 'Lifestyle Disease Prevention & Stress Abatement Guidance',
-      location: 'Butibori, Maharashtra • June 21, 2026'
-    },
-    {
-      src: '/yoga-day-banner-1.png',
-      tag: 'Community Milestone',
-      title: 'Staff Wellness & Health Literacy Partnership',
-      location: 'Annual Foundation Drive • June 2026'
-    }
-  ];
 
   // Strategic Partner & Supporting Organisations - Bar 1 (Civic & Medical Leadership)
   const partnerOrganisationsRow1 = [
@@ -544,27 +532,65 @@ ${contactData.name}`;
           </p>
         </div>
 
-        {/* Auto-scrolling Pictures in larger size directly below the NGO name */}
-        <div style={{ width: '100%', margin: '1.75rem 0', position: 'relative', zIndex: 2 }}>
-          <div className="marquee-container">
-            <div className="marquee-track">
-              {galleryImages.concat(galleryImages).map((item, idx) => (
-                <div key={idx} className="marquee-card marquee-card-hero">
-                  <img src={item.src} alt={item.title} loading="eager" />
-                  <div className="marquee-overlay">
-                    <span style={{ fontSize: '0.72rem', color: 'var(--gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      {item.tag}
-                    </span>
-                    <strong style={{ fontSize: '1rem', color: '#fff', lineHeight: '1.3' }}>
-                      {item.title}
-                    </strong>
-                    <span style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>
-                      {item.location}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Prominent Panoramic Banner Slider (Skill India Digital Portal Pattern) */}
+        <div 
+          className="hero-slider-container"
+          onMouseEnter={() => setIsHeroSliderHovered(true)}
+          onMouseLeave={() => setIsHeroSliderHovered(false)}
+        >
+          {/* Main Slider Frame */}
+          <div className="hero-slider-frame">
+            {heroBannerSlides.map((slide, index) => (
+              <div
+                key={index}
+                className="hero-slide"
+                style={{
+                  opacity: currentHeroSlide === index ? 1 : 0,
+                  transform: currentHeroSlide === index ? 'scale(1)' : 'scale(1.03)',
+                  pointerEvents: currentHeroSlide === index ? 'auto' : 'none'
+                }}
+              >
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))}
+
+            {/* Previous Photo Button */}
+            <button
+              onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + heroBannerSlides.length) % heroBannerSlides.length)}
+              className="hero-slider-btn prev"
+              aria-label="Previous Photo"
+            >
+              <ChevronLeft size={22} />
+            </button>
+
+            {/* Next Photo Button */}
+            <button
+              onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % heroBannerSlides.length)}
+              className="hero-slider-btn next"
+              aria-label="Next Photo"
+            >
+              <ChevronRight size={22} />
+            </button>
+          </div>
+
+          {/* Pagination Indicator Dots */}
+          <div className="hero-slider-dots">
+            {heroBannerSlides.map((_, dotIdx) => (
+              <button
+                key={dotIdx}
+                onClick={() => setCurrentHeroSlide(dotIdx)}
+                className="hero-slider-dot"
+                aria-label={`Go to photo ${dotIdx + 1}`}
+                style={{
+                  width: currentHeroSlide === dotIdx ? '28px' : '9px',
+                  background: currentHeroSlide === dotIdx ? 'var(--gold)' : 'rgba(255, 255, 255, 0.35)'
+                }}
+              />
+            ))}
           </div>
         </div>
 
