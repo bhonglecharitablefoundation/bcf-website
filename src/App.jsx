@@ -118,22 +118,23 @@ function App() {
   const [activePhotoModal, setActivePhotoModal] = useState(null);
 
   // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
+  // Priority Queuing: Group photos and photos with the Mayor are placed first
   const heroBannerSlides = [
-    { src: '/plantation-drive-panoramic-contingent.jpg', alt: 'Mega Scientific Plantation Drive Grand Student Contingent with Mayor Smt. Neeta Thakre' },
-    { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly' },
-    { src: '/plantation-drive-kdk-pharmacy-delegation.jpg', alt: 'KDK College of Pharmacy Institutional Assembly & Faculty Delegation' },
-    { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Leadership Delegation' },
-    { src: '/plantation-drive-student-volunteers.jpg', alt: 'Student Volunteers and Youth Guardianship in Campus Botanical Garden' },
-    { src: '/plantation-drive-mayor-yash-bhongle.jpg', alt: 'Mayoral Civic Partnership with BCF Secretary Yash Bhongle' },
-    { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership' },
-    { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers' },
-    { src: '/plantation-drive-faculty-planting.jpg', alt: 'Faculty and Trustee Botanical Soil Seeding' },
-    { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre' },
-    { src: '/plantation-drive-watering-ceremony.jpg', alt: 'Mega Scientific Plantation Drive Sapling Watering Ceremony' },
-    { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation' },
-    { src: '/plantation-drive-sapling-placement.jpg', alt: 'Plantation Drive Root Bed Alignment & Sapling Placement' },
-    { src: '/plantation-drive-dignitary-felicitation.jpg', alt: 'Stage Felicitation and Dignitary Reception' },
-    { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics' }
+    { src: '/plantation-drive-panoramic-contingent.jpg', alt: 'Mega Scientific Plantation Drive Grand Student Contingent with Mayor Smt. Neeta Thakre', fit: 'contain' },
+    { src: '/plantation-drive-mayor-yash-bhongle.jpg', alt: 'Mayoral Civic Partnership: Hon\'ble Mayor Smt. Neeta Thakre with BCF Secretary Yash Bhongle', fit: 'contain', position: 'center 10%' },
+    { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly (90+ Police Personnel, Doctors & Trustees)', fit: 'contain' },
+    { src: '/plantation-drive-kdk-pharmacy-delegation.jpg', alt: 'KDK College of Pharmacy Institutional Assembly & Faculty Delegation', fit: 'contain' },
+    { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Stage Reception of Hon\'ble Mayor Smt. Neeta Thakre', fit: 'contain', position: 'center 20%' },
+    { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership', fit: 'contain', position: 'center 25%' },
+    { src: '/plantation-drive-watering-ceremony.jpg', alt: 'Mega Scientific Plantation Drive Sapling Watering Ceremony with Mayor Smt. Neeta Thakre', fit: 'contain', position: 'center 30%' },
+    { src: '/police-health-mission-delegation.jpg', alt: 'Nagpur Police Health Mission Leadership & Medical Delegation', fit: 'contain' },
+    { src: '/plantation-drive-student-volunteers.jpg', alt: 'Student Volunteers and Youth Guardianship in Campus Botanical Garden', fit: 'contain' },
+    { src: '/plantation-drive-faculty-planting.jpg', alt: 'Faculty and Trustee Botanical Soil Seeding & Canopy Expansion', fit: 'contain' },
+    { src: '/plantation-drive-dignitary-felicitation.jpg', alt: 'Stage Felicitation and Dignitary Reception on Inaugural Dais', fit: 'contain' },
+    { src: '/police-health-checkup-bp.jpg', alt: 'Clinical Diagnostics and Medical Screening for Police Officers', fit: 'contain' },
+    { src: '/police-health-pharmacy-dispensation.jpg', alt: 'Free Pharmacy and Medication Dispensation', fit: 'contain' },
+    { src: '/plantation-drive-sapling-placement.jpg', alt: 'Plantation Drive Root Bed Alignment & Sapling Placement', fit: 'contain' },
+    { src: '/police-health-diagnostic-screening.jpg', alt: 'Metabolic & Blood Glucose Diagnostics', fit: 'contain' }
   ];
 
   // State for Top Hero Panoramic Banner Carousel
@@ -597,11 +598,36 @@ ${contactData.name}`;
               }}
             >
               {heroBannerSlides.map((slide, index) => (
-                <div key={index} className="hero-slide">
+                <div key={index} className="hero-slide" style={{ background: '#000c17', position: 'relative' }}>
+                  {/* Atmospheric blurred ambient backdrop preventing any abrupt margins */}
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      inset: '-15px',
+                      backgroundImage: `url(${slide.src})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: slide.position || 'center 20%',
+                      filter: 'blur(22px) brightness(0.38) saturate(1.2)',
+                      transform: 'scale(1.1)',
+                      zIndex: 0,
+                      pointerEvents: 'none'
+                    }}
+                  />
+                  {/* High-Definition Crisp Uncropped Photograph */}
                   <img
                     src={slide.src}
                     alt={slide.alt}
                     className="hero-slide-img"
+                    style={{
+                      position: 'relative',
+                      zIndex: 1,
+                      objectFit: slide.fit || 'contain',
+                      objectPosition: slide.position || 'center center',
+                      width: '100%',
+                      height: '100%',
+                      display: 'block',
+                      margin: '0 auto'
+                    }}
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 </div>
@@ -1456,10 +1482,49 @@ ${contactData.name}`;
               </div>
             </div>
 
-            {/* Two Featured Widescreen Highlights: KDK Pharmacy Institutional Assembly & Mayoral Reception */}
+            {/* Two Featured Widescreen Highlights: Mayoral Civic Reception & KDK Pharmacy Institutional Assembly */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem', marginBottom: '2rem' }}>
               
-              {/* Featured Highlight A: KDK College of Pharmacy Institutional Delegation */}
+              {/* Featured Highlight 1: Mayoral Civic Reception with BCF Secretary Yash Bhongle */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-mayor-yash-bhongle.jpg',
+                  title: 'Mayoral Civic Partnership: Hon\'ble Mayor Smt. Neeta Thakre & BCF Secretary Yash Bhongle',
+                  tag: 'Civic Leadership & Mayoral Partnership',
+                  category: 'environment',
+                  caption: 'Chief Guest Hon\'ble Mayor Smt. Neeta Thakre formally received by BCF Secretary Yash Bhongle outside the academic campus facility alongside the official Nagpur Municipal Corporation delegation.'
+                })}
+                className="glass-card" 
+                style={{ padding: '1rem', borderRadius: '18px', cursor: 'pointer', border: '1px solid rgba(5, 150, 105, 0.25)', boxShadow: '0 6px 20px rgba(0,34,68,0.06)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '14px', overflow: 'hidden', height: 'clamp(280px, 32vw, 340px)', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-mayor-yash-bhongle.jpg" 
+                    alt="Hon'ble Mayor Smt. Neeta Thakre and BCF Secretary Yash Bhongle" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 10%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.72rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.3rem 0.2rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.2rem 0.65rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
+                    <TreePine size={12} style={{ color: '#059669' }} />
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Civic Synergy • Nagpur Municipal Corporation
+                    </span>
+                  </div>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                    Mayoral Civic Reception & Partnership
+                  </h4>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                    Hon'ble Mayor Smt. Neeta Thakre welcomed by BCF Secretary Yash Bhongle to align municipal greening goals with grassroots foundation action.
+                  </p>
+                </div>
+              </div>
+
+              {/* Featured Highlight 2: KDK College of Pharmacy Institutional Delegation */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-kdk-pharmacy-delegation.jpg',
@@ -1471,7 +1536,7 @@ ${contactData.name}`;
                 className="glass-card" 
                 style={{ padding: '1rem', borderRadius: '18px', cursor: 'pointer', border: '1px solid rgba(5, 150, 105, 0.25)', boxShadow: '0 6px 20px rgba(0,34,68,0.06)', transition: 'all 0.3s ease' }}
               >
-                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '260px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
+                <div style={{ borderRadius: '14px', overflow: 'hidden', height: 'clamp(280px, 32vw, 340px)', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
                   <img 
                     src="/plantation-drive-kdk-pharmacy-delegation.jpg" 
                     alt="KDK College of Pharmacy Institutional Assembly" 
@@ -1498,66 +1563,68 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Featured Highlight B: Mayoral Civic Reception with BCF Secretary Yash Bhongle */}
-              <div 
-                onClick={() => setActivePhotoModal({
-                  src: '/plantation-drive-mayor-yash-bhongle.jpg',
-                  title: 'Mayoral Civic Partnership: Hon\'ble Mayor Smt. Neeta Thakre & BCF Secretary Yash Bhongle',
-                  tag: 'Civic Leadership & Mayoral Partnership',
-                  category: 'environment',
-                  caption: 'Chief Guest Hon\'ble Mayor Smt. Neeta Thakre formally received by BCF Secretary Yash Bhongle outside the academic campus facility alongside the official Nagpur Municipal Corporation delegation.'
-                })}
-                className="glass-card" 
-                style={{ padding: '1rem', borderRadius: '18px', cursor: 'pointer', border: '1px solid rgba(5, 150, 105, 0.25)', boxShadow: '0 6px 20px rgba(0,34,68,0.06)', transition: 'all 0.3s ease' }}
-              >
-                <div style={{ borderRadius: '14px', overflow: 'hidden', height: '260px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', marginBottom: '0.85rem', background: '#022c22' }}>
-                  <img 
-                    src="/plantation-drive-mayor-yash-bhongle.jpg" 
-                    alt="Hon'ble Mayor Smt. Neeta Thakre and BCF Secretary Yash Bhongle" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
-                    className="hover-zoom"
-                  />
-                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.8)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.72rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
-                  </div>
-                </div>
-                <div style={{ padding: '0.3rem 0.2rem' }}>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.2rem 0.65rem', borderRadius: '50px', marginBottom: '0.45rem' }}>
-                    <TreePine size={12} style={{ color: '#059669' }} />
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
-                      Civic Synergy • Nagpur Municipal Corporation
-                    </span>
-                  </div>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.15rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
-                    Mayoral Civic Reception & Partnership
-                  </h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
-                    Hon'ble Mayor Smt. Neeta Thakre welcomed by BCF Secretary Yash Bhongle to align municipal greening goals with grassroots foundation action.
-                  </p>
-                </div>
-              </div>
-
             </div>
 
-            {/* 7-Card Grid: Process, Dais Protocols, Planting Execution, Youth Stewardship & Hydration */}
+            {/* 7-Card Grid: Mayor Ceremonies & Group Actions Queued First */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
               
-              {/* Card 1: Student Scholars & Botanical Guardianship */}
+              {/* Card 1: Inauguration & Ceremonial Reception of Hon'ble Mayor */}
               <div 
                 onClick={() => setActivePhotoModal({
-                  src: '/plantation-drive-student-volunteers.jpg',
-                  title: 'Student Scholars & Volunteer Guardianship in Campus Garden',
-                  tag: 'Youth Stewardship • Campus Herbal Garden',
+                  src: '/plantation-drive-mayor-felicitation.jpg',
+                  title: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre',
+                  tag: 'Civic Dignitary Reception',
                   category: 'environment',
-                  caption: 'Energetic pharmacy student scholars and youth volunteers actively preparing the root bed and nurturing newly planted saplings alongside BCF Secretary Yash Bhongle in the campus botanical garden.'
+                  caption: 'Dr. Priti Bhongle, Treasurer of BCF, formally welcoming Hon\'ble Mayor Smt. Neeta Thakre on stage in the presence of institutional directors and academic principals before the technological and ecological briefing.'
                 })}
                 className="glass-card" 
                 style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
               >
                 <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
                   <img 
-                    src="/plantation-drive-student-volunteers.jpg" 
-                    alt="Student scholars and volunteers tending sapling" 
+                    src="/plantation-drive-mayor-felicitation.jpg" 
+                    alt="Ceremonial reception of Mayor Smt. Neeta Thakre" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Mayoral Welcome
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      Inaugural Stage
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Inauguration & Ceremonial Reception
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Dr. Priti Bhongle welcoming Hon'ble Mayor Smt. Neeta Thakre alongside institutional directors.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Inaugural Scientific Sapling Plantation by Mayor */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-inaugural-planting.jpg',
+                  title: 'Planting of the Inaugural Scientific Sapling',
+                  tag: 'Inaugural Plantation Ceremony',
+                  category: 'environment',
+                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre alongside Dr. Priti Bhongle, academic directors, and college faculty planting the first high-canopy indigenous sapling into the campus soil.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-inaugural-planting.jpg" 
+                    alt="Planting the inaugural scientific sapling" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
                     className="hover-zoom"
                   />
@@ -1568,22 +1635,63 @@ ${contactData.name}`;
                 <div style={{ padding: '0.4rem 0.25rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
                     <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
-                      Youth Mobilization
+                      Mayor Seeding
                     </span>
                     <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
-                      Botanical Garden
+                      Campus Green Belt
                     </span>
                   </div>
                   <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    Student Scholars & Guardianship
+                    Inaugural Scientific Sapling
                   </h5>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Youth student scholars active in soil preparation establishing long-term personal guardianship.
+                    Mayor Smt. Neeta Thakre and BCF leadership conducting the ceremonial planting.
                   </p>
                 </div>
               </div>
 
-              {/* Card 2: Stage Welcome & Technological Briefing */}
+              {/* Card 3: Post-Planting Nurturing & Watering Ceremony with Mayor */}
+              <div 
+                onClick={() => setActivePhotoModal({
+                  src: '/plantation-drive-watering-ceremony.jpg',
+                  title: 'Hydration & Post-Planting Care Ceremony',
+                  tag: 'Long-Term Ecological Nurturing',
+                  category: 'environment',
+                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre, women faculty members, and student leaders administering initial hydration to the newly planted tree under the 3-year campus survival pledge.'
+                })}
+                className="glass-card" 
+                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                  <img 
+                    src="/plantation-drive-watering-ceremony.jpg" 
+                    alt="Watering the newly planted sapling" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <div style={{ padding: '0.4rem 0.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                      Nurturing Care
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
+                      3-Year Commitment
+                    </span>
+                  </div>
+                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
+                    Hydration & Post-Planting Care
+                  </h5>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
+                    Mayor Smt. Neeta Thakre and faculty administering hydration sealing the campus pledge.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: Stage Welcome & Technological Briefing Group */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-dignitary-felicitation.jpg',
@@ -1624,63 +1732,22 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Card 3: Inauguration & Ceremonial Reception */}
+              {/* Card 5: Student Scholars & Botanical Guardianship Group */}
               <div 
                 onClick={() => setActivePhotoModal({
-                  src: '/plantation-drive-mayor-felicitation.jpg',
-                  title: 'Inauguration & Ceremonial Reception of Hon\'ble Mayor Smt. Neeta Thakre',
-                  tag: 'Civic Dignitary Reception',
+                  src: '/plantation-drive-student-volunteers.jpg',
+                  title: 'Student Scholars & Volunteer Guardianship in Campus Garden',
+                  tag: 'Youth Stewardship • Campus Herbal Garden',
                   category: 'environment',
-                  caption: 'Dr. Priti Bhongle, Treasurer of BCF, formally welcoming Hon\'ble Mayor Smt. Neeta Thakre on stage in the presence of institutional directors and academic principals before the technological and ecological briefing.'
+                  caption: 'Energetic pharmacy student scholars and youth volunteers actively preparing the root bed and nurturing newly planted saplings alongside BCF Secretary Yash Bhongle in the campus botanical garden.'
                 })}
                 className="glass-card" 
                 style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
               >
                 <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
                   <img 
-                    src="/plantation-drive-mayor-felicitation.jpg" 
-                    alt="Ceremonial reception of Mayor Smt. Neeta Thakre" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
-                    className="hover-zoom"
-                  />
-                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
-                  </div>
-                </div>
-                <div style={{ padding: '0.4rem 0.25rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
-                      Civic Welcome
-                    </span>
-                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
-                      Inaugural Stage
-                    </span>
-                  </div>
-                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    Inauguration & Ceremonial Reception
-                  </h5>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Dr. Priti Bhongle welcoming Hon'ble Mayor Smt. Neeta Thakre alongside institutional directors.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 4: Inaugural Scientific Sapling Plantation */}
-              <div 
-                onClick={() => setActivePhotoModal({
-                  src: '/plantation-drive-inaugural-planting.jpg',
-                  title: 'Planting of the Inaugural Scientific Sapling',
-                  tag: 'Inaugural Plantation Ceremony',
-                  category: 'environment',
-                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre alongside Dr. Priti Bhongle, academic directors, and college faculty planting the first high-canopy indigenous sapling into the campus soil.'
-                })}
-                className="glass-card" 
-                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
-              >
-                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
-                  <img 
-                    src="/plantation-drive-inaugural-planting.jpg" 
-                    alt="Planting the inaugural scientific sapling" 
+                    src="/plantation-drive-student-volunteers.jpg" 
+                    alt="Student scholars and volunteers tending sapling" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
                     className="hover-zoom"
                   />
@@ -1691,22 +1758,22 @@ ${contactData.name}`;
                 <div style={{ padding: '0.4rem 0.25rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
                     <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
-                      First Sapling
+                      Youth Mobilization
                     </span>
                     <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
-                      Campus Green Belt
+                      Botanical Garden
                     </span>
                   </div>
                   <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    Inaugural Scientific Sapling
+                    Student Scholars & Guardianship
                   </h5>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Mayor Smt. Neeta Thakre and BCF leadership conducting the ceremonial planting.
+                    Youth student scholars active in soil preparation establishing long-term personal guardianship.
                   </p>
                 </div>
               </div>
 
-              {/* Card 5: Faculty & Trustee Ground Seeding */}
+              {/* Card 6: Faculty & Trustee Ground Seeding Group */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-faculty-planting.jpg',
@@ -1747,7 +1814,7 @@ ${contactData.name}`;
                 </div>
               </div>
 
-              {/* Card 6: Ground Pit Placement & Root-Bed Alignment */}
+              {/* Card 7: Ground Pit Placement & Root-Bed Alignment */}
               <div 
                 onClick={() => setActivePhotoModal({
                   src: '/plantation-drive-sapling-placement.jpg',
@@ -1784,47 +1851,6 @@ ${contactData.name}`;
                   </h5>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
                     Precise botanical positioning to maximize sapling root development and structural stability.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 7: Post-Planting Nurturing & Watering Ceremony */}
-              <div 
-                onClick={() => setActivePhotoModal({
-                  src: '/plantation-drive-watering-ceremony.jpg',
-                  title: 'Hydration & Post-Planting Care Ceremony',
-                  tag: 'Long-Term Ecological Nurturing',
-                  category: 'environment',
-                  caption: 'Hon\'ble Mayor Smt. Neeta Thakre, women faculty members, and student leaders administering initial hydration to the newly planted tree under the 3-year campus survival pledge.'
-                })}
-                className="glass-card" 
-                style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', borderRadius: '16px', cursor: 'pointer', border: '1px solid rgba(0,43,73,0.08)', transition: 'all 0.3s ease' }}
-              >
-                <div style={{ borderRadius: '12px', overflow: 'hidden', height: '240px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
-                  <img 
-                    src="/plantation-drive-watering-ceremony.jpg" 
-                    alt="Watering the newly planted sapling" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
-                    className="hover-zoom"
-                  />
-                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.75)', color: '#fff', padding: '3px 8px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge
-                  </div>
-                </div>
-                <div style={{ padding: '0.4rem 0.25rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
-                      Nurturing Care
-                    </span>
-                    <span style={{ fontSize: '0.72rem', color: 'var(--text-light)' }}>
-                      3-Year Commitment
-                    </span>
-                  </div>
-                  <h5 style={{ fontSize: '1.02rem', color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
-                    Hydration & Post-Planting Care
-                  </h5>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginTop: '0.35rem', lineHeight: '1.5' }}>
-                    Administering initial hydration to seal root beds as part of the student stewardship covenant.
                   </p>
                 </div>
               </div>
