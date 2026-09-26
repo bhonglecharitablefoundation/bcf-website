@@ -117,12 +117,14 @@ function App() {
   // State for Photo Gallery Lightbox / Modal
   const [activePhotoModal, setActivePhotoModal] = useState(null);
 
-  // Top Hero Featured Banner Slides (High-definition, uncropped event photography)
+  // Top Hero Featured Banner Slides (High-definition, uncropped event photography & official banners)
   // Priority Queuing: Group photos and photos with the Mayor are placed first
   const heroBannerSlides = [
     { src: '/plantation-drive-panoramic-contingent.jpg', alt: 'Mega Scientific Plantation Drive Grand Student Contingent with Mayor Smt. Neeta Thakre', fit: 'contain' },
     { src: '/plantation-drive-mayor-yash-bhongle.jpg', alt: 'Mayoral Civic Partnership: Hon\'ble Mayor Smt. Neeta Thakre with BCF Secretary Yash Bhongle', fit: 'contain', position: 'center 10%' },
+    { src: '/banner-plantation-drive.jpg', alt: 'Official Event Banner: Mega Scientific Plantation Drive 2026 with Mayor Smt. Neeta Thakre', fit: 'contain' },
     { src: '/police-health-grand-contingent.jpg', alt: 'Nagpur Police Health Mission Grand Contingent Assembly (90+ Police Personnel, Doctors & Trustees)', fit: 'contain' },
+    { src: '/banner-police-health-mission.jpg', alt: 'Official Event Banner: Nagpur Police Health Mission with DCP Zone 3 & IMA', fit: 'contain' },
     { src: '/plantation-drive-kdk-pharmacy-delegation.jpg', alt: 'KDK College of Pharmacy Institutional Assembly & Faculty Delegation', fit: 'contain' },
     { src: '/plantation-drive-mayor-felicitation.jpg', alt: 'Inauguration & Ceremonial Stage Reception of Hon\'ble Mayor Smt. Neeta Thakre', fit: 'contain', position: 'center 20%' },
     { src: '/plantation-drive-inaugural-planting.jpg', alt: 'Inaugural Scientific Sapling Plantation by Mayor Smt. Neeta Thakre and BCF Leadership', fit: 'contain', position: 'center 25%' },
@@ -1411,6 +1413,285 @@ ${contactData.name}`;
             </div>
           </div>
 
+          {/* Official Mission Banner & Event Blueprint */}
+          <div style={{ marginTop: '3.5rem', marginBottom: '3.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(5, 150, 105, 0.12)', border: '1.5px solid rgba(5, 150, 105, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <Award size={16} style={{ color: '#059669' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#047857', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Official Event Blueprint & Stage Banner
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Official Mega Scientific Plantation Drive Banner
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '750px', margin: '0 auto', lineHeight: '1.6' }}>
+                The official ceremonial stage backdrop and institutional blueprint deployed at the event dais, validating the joint partnership between KDK College of Pharmacy, Bhongle Charitable Foundation, and the Nagpur Municipal Corporation under the auspices of Hon'ble Mayor Smt. Neeta Thakre.
+              </p>
+            </div>
+
+            <div 
+              onClick={() => setActivePhotoModal({
+                src: '/banner-plantation-drive.jpg',
+                title: 'Official Event Banner: Mega Scientific Plantation Drive 2026',
+                tag: 'Official Event Banner • Dais Backdrop',
+                category: 'environment',
+                caption: 'Official ceremonial event banner displayed at KDK College of Pharmacy on August 21, 2026. Highlights Chief Guest Hon\'ble Mayor Smt. Neeta Thakre, Dr. Shaligram Bhongle (President, BCF), Dr. Priti Bhongle (Treasurer, BCF), Yash Bhongle (Secretary, BCF), and Principal Dr. Kamlesh Wadher.'
+              })}
+              className="glass-card"
+              style={{
+                padding: '1.25rem',
+                borderRadius: '20px',
+                border: '1.5px solid rgba(16, 185, 129, 0.35)',
+                boxShadow: '0 10px 30px rgba(0, 34, 68, 0.08)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ borderRadius: '14px', overflow: 'hidden', maxHeight: '520px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#022c22' }}>
+                <img 
+                  src="/banner-plantation-drive.jpg" 
+                  alt="Official Banner: Mega Scientific Plantation Drive 2026" 
+                  style={{ width: '100%', height: 'auto', maxHeight: '520px', objectFit: 'contain', display: 'block', margin: '0 auto' }}
+                  className="hover-zoom"
+                />
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '6px 14px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <Sparkles size={12} style={{ color: '#34d399' }} /> Click to enlarge official banner
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Official Institutional Letters of Appreciation & Mayoral Commendation Showcase */}
+          <div style={{ marginTop: '3.5rem', marginBottom: '3.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1.5px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <Award size={16} style={{ color: 'var(--gold-dark)' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--gold-dark)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Institutional Credentials & Official Commendations
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Letters of Appreciation & Civic Endorsement
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '780px', margin: '0 auto', lineHeight: '1.6' }}>
+                Formal recognition and written commendations issued by the <strong>Nagpur Municipal Corporation (NMC)</strong> and <strong>KDK College of Pharmacy & Research Institute</strong> recognizing BCF's precision execution, data-driven sapling numbering, and legally binding 3-year survival covenants.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
+              
+              {/* Letter 1: Hon'ble Mayor Smt. Neeta Thakre (NMC) */}
+              <div 
+                className="glass-card" 
+                style={{ 
+                  borderRadius: '20px', 
+                  padding: '1.75rem', 
+                  border: '1.5px solid rgba(16, 185, 129, 0.35)', 
+                  background: '#ffffff',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 8px 24px rgba(0, 34, 68, 0.06)'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>
+                      <Award size={13} style={{ color: '#059669' }} />
+                      <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                        Civic Head Commendation
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 600 }}>
+                      Outward: 372/M/26 • 03.09.2026
+                    </span>
+                  </div>
+
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.5rem 0' }}>
+                    Nagpur Municipal Corporation (NMC)
+                  </h4>
+                  <div style={{ fontSize: '0.88rem', color: '#047857', fontWeight: 700, marginBottom: '0.75rem' }}>
+                    Hon'ble Smt. Nita Rajendra Thakre • Mayor of Nagpur City
+                  </div>
+
+                  {/* Letter Image Preview with Click-to-Enlarge */}
+                  <div 
+                    onClick={() => setActivePhotoModal({
+                      src: '/appreciation-letter-nmc-mayor.png',
+                      pdfUrl: '/appreciation-letter-nmc-mayor.pdf',
+                      title: 'Official Commendation Letter: Hon\'ble Mayor Smt. Neeta Thakre (NMC)',
+                      tag: 'NMC Civic Letter • Outward: 372/M/26',
+                      category: 'commendation',
+                      caption: 'Official letter of appreciation signed by Hon\'ble Mayor Smt. Nita Rajendra Thakre on behalf of Nagpur Municipal Corporation on September 3, 2026. Highly praising Bhongle Charitable Foundation\'s support of the \'5-Lakh Green Nagpur\' drive, precision numbered tagging of 107 saplings, AI-audio inauguration protocol, and dedicated leadership by Dr. Yash Bhongle, Dr. Shaligram Bhongle, and Dr. Priti Bhongle.'
+                    })}
+                    style={{ 
+                      borderRadius: '12px', 
+                      overflow: 'hidden', 
+                      border: '1px solid rgba(0,43,73,0.12)', 
+                      position: 'relative', 
+                      height: '280px', 
+                      marginBottom: '1.25rem', 
+                      cursor: 'pointer',
+                      background: '#f8fafc' 
+                    }}
+                  >
+                    <img 
+                      src="/appreciation-letter-nmc-mayor.png" 
+                      alt="Official Letter of Appreciation from Mayor Smt. Neeta Thakre" 
+                      style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                      className="hover-zoom"
+                    />
+                    <div style={{ position: 'absolute', bottom: '8px', right: '8px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge letter
+                    </div>
+                  </div>
+
+                  {/* Key Endorsement Quotes */}
+                  <div style={{ background: 'rgba(6, 78, 59, 0.03)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '10px', padding: '1rem', marginBottom: '1.25rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: 0, fontStyle: 'italic' }}>
+                      "I extend my heartfelt appreciation to the Bhongle Charitable Foundation... for their active support towards the <strong>5-Lakh Green Nagpur</strong> vision. Their unique data-driven approach, numbering 107 saplings, securing a 3-year survival pledge from the college, and innovative AI-audio protocol demonstrate outstanding technological and community leadership."
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button 
+                    onClick={() => setActivePhotoModal({
+                      src: '/appreciation-letter-nmc-mayor.png',
+                      pdfUrl: '/appreciation-letter-nmc-mayor.pdf',
+                      title: 'Official Commendation Letter: Hon\'ble Mayor Smt. Neeta Thakre (NMC)',
+                      tag: 'NMC Civic Letter • Outward: 372/M/26',
+                      category: 'commendation',
+                      caption: 'Official letter of appreciation signed by Hon\'ble Mayor Smt. Nita Rajendra Thakre on behalf of Nagpur Municipal Corporation on September 3, 2026. Highly praising Bhongle Charitable Foundation\'s support of the \'5-Lakh Green Nagpur\' drive, precision numbered tagging of 107 saplings, AI-audio inauguration protocol, and dedicated leadership by Dr. Yash Bhongle, Dr. Shaligram Bhongle, and Dr. Priti Bhongle.'
+                    })}
+                    className="btn btn-outline" 
+                    style={{ flex: 1, minWidth: '150px', fontSize: '0.82rem', padding: '0.55rem 0.8rem', justifyContent: 'center' }}
+                  >
+                    <Award size={15} />
+                    View Letter
+                  </button>
+                  <a 
+                    href="/appreciation-letter-nmc-mayor.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary" 
+                    style={{ flex: 1, minWidth: '160px', fontSize: '0.82rem', padding: '0.55rem 0.8rem', justifyContent: 'center' }}
+                  >
+                    <FileText size={15} />
+                    Download PDF
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Letter 2: Principal Dr. Kamlesh Wadher (KDK College of Pharmacy) */}
+              <div 
+                className="glass-card" 
+                style={{ 
+                  borderRadius: '20px', 
+                  padding: '1.75rem', 
+                  border: '1.5px solid rgba(16, 185, 129, 0.35)', 
+                  background: '#ffffff',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 8px 24px rgba(0, 34, 68, 0.06)'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>
+                      <Award size={13} style={{ color: '#059669' }} />
+                      <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>
+                        Academic Institution Commendation
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: 600 }}>
+                      Ref: 2026/528 • 01/09/2026
+                    </span>
+                  </div>
+
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.5rem 0' }}>
+                    KDK College of Pharmacy & Research
+                  </h4>
+                  <div style={{ fontSize: '0.88rem', color: '#047857', fontWeight: 700, marginBottom: '0.75rem' }}>
+                    Dr. Kamlesh J. Wadher (M. Pharm, Ph.D) • Principal (PCI ID: 172)
+                  </div>
+
+                  {/* Letter Image Preview with Click-to-Enlarge */}
+                  <div 
+                    onClick={() => setActivePhotoModal({
+                      src: '/appreciation-letter-kdk-pharmacy.png',
+                      pdfUrl: '/appreciation-letter-kdk-pharmacy.pdf',
+                      title: 'Official Appreciation Letter: Principal Dr. Kamlesh J. Wadher (KDK College of Pharmacy)',
+                      tag: 'Institutional Endorsement • Ref: 2026/528',
+                      category: 'commendation',
+                      caption: 'Official institutional letter of appreciation issued by Principal Dr. Kamlesh J. Wadher on September 1, 2026. Commending Bhongle Charitable Foundation and Secretary Mr. Yash Bhongle for the flawless execution of the Phase 2 Scientific Plantation Drive, individual numbered tags, AI-audio welcome for Mayor Smt. Neeta Thakre, and ratifying the institution\'s 3-year maintenance responsibility.'
+                    })}
+                    style={{ 
+                      borderRadius: '12px', 
+                      overflow: 'hidden', 
+                      border: '1px solid rgba(0,43,73,0.12)', 
+                      position: 'relative', 
+                      height: '280px', 
+                      marginBottom: '1.25rem', 
+                      cursor: 'pointer',
+                      background: '#f8fafc' 
+                    }}
+                  >
+                    <img 
+                      src="/appreciation-letter-kdk-pharmacy.png" 
+                      alt="Official Letter of Appreciation from KDK College of Pharmacy" 
+                      style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                      className="hover-zoom"
+                    />
+                    <div style={{ position: 'absolute', bottom: '8px', right: '8px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '4px 10px', borderRadius: '15px', fontSize: '0.7rem', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Sparkles size={11} style={{ color: '#34d399' }} /> Click to enlarge letter
+                    </div>
+                  </div>
+
+                  {/* Key Endorsement Quotes */}
+                  <div style={{ background: 'rgba(6, 78, 59, 0.03)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '10px', padding: '1rem', marginBottom: '1.25rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: 0, fontStyle: 'italic' }}>
+                      "We place on record our sincere appreciation for the remarkable initiative... The scientific approach with numbered tags, modern AI-audio inauguration protocol, and outstanding coordination with the Mayor's office made this event exceptional. We take full responsibility to nurture every sapling planted on our campus."
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button 
+                    onClick={() => setActivePhotoModal({
+                      src: '/appreciation-letter-kdk-pharmacy.png',
+                      pdfUrl: '/appreciation-letter-kdk-pharmacy.pdf',
+                      title: 'Official Appreciation Letter: Principal Dr. Kamlesh J. Wadher (KDK College of Pharmacy)',
+                      tag: 'Institutional Endorsement • Ref: 2026/528',
+                      category: 'commendation',
+                      caption: 'Official institutional letter of appreciation issued by Principal Dr. Kamlesh J. Wadher on September 1, 2026. Commending Bhongle Charitable Foundation and Secretary Mr. Yash Bhongle for the flawless execution of the Phase 2 Scientific Plantation Drive, individual numbered tags, AI-audio welcome for Mayor Smt. Neeta Thakre, and ratifying the institution\'s 3-year maintenance responsibility.'
+                    })}
+                    className="btn btn-outline" 
+                    style={{ flex: 1, minWidth: '150px', fontSize: '0.82rem', padding: '0.55rem 0.8rem', justifyContent: 'center' }}
+                  >
+                    <Award size={15} />
+                    View Letter
+                  </button>
+                  <a 
+                    href="/appreciation-letter-kdk-pharmacy.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary" 
+                    style={{ flex: 1, minWidth: '160px', fontSize: '0.82rem', padding: '0.55rem 0.8rem', justifyContent: 'center' }}
+                  >
+                    <FileText size={15} />
+                    Download PDF
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           {/* Photo Gallery Showcase - 10 Official High-Definition Photographs for Mega Scientific Plantation Drive */}
           <div style={{ marginTop: '3.5rem' }}>
             <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -2084,6 +2365,198 @@ ${contactData.name}`;
                 </ul>
               </div>
 
+            </div>
+          </div>
+
+          {/* Official Healthcare Mission Banner & Multi-Agency Blueprint */}
+          <div style={{ marginTop: '3.5rem', marginBottom: '3.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 111, 0, 0.12)', border: '1.5px solid rgba(255, 111, 0, 0.35)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <Award size={16} style={{ color: '#ff6f00' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#c2410c', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Official Event Blueprint & Stage Banner
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Official Nagpur Police Health Mission Banner
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '750px', margin: '0 auto', lineHeight: '1.6' }}>
+                The official ceremonial backdrop and mission framework deployed at Lakadganj Police Station on July 27, 2026, marking the high-level healthcare alliance between the Nagpur City Police (Zone 3), the Indian Medical Association (IMA JDN), and the Bhongle Charitable Foundation.
+              </p>
+            </div>
+
+            <div 
+              onClick={() => setActivePhotoModal({
+                src: '/banner-police-health-mission.jpg',
+                title: 'Official Event Banner: Nagpur Police Health Mission 2026',
+                tag: 'Official Event Banner • Multi-Agency Healthcare Camp',
+                category: 'police',
+                caption: 'Official commemorative event banner displayed at Lakadganj Police Station during the Free Health & Diagnostic Camp for Police Personnel. Commemorating the collaboration between Nagpur City Police (Zone 3), Indian Medical Association (IMA), and Bhongle Charitable Foundation under the patronship of DCP Zone 3 Shri Rahul Madane (IPS).'
+              })}
+              className="glass-card"
+              style={{
+                padding: '1.25rem',
+                borderRadius: '20px',
+                border: '1.5px solid rgba(255, 111, 0, 0.35)',
+                boxShadow: '0 10px 30px rgba(0, 34, 68, 0.08)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <div style={{ borderRadius: '14px', overflow: 'hidden', maxHeight: '520px', border: '1px solid rgba(0,43,73,0.08)', position: 'relative', background: '#001a33' }}>
+                <img 
+                  src="/banner-police-health-mission.jpg" 
+                  alt="Official Banner: Nagpur Police Health Mission 2026" 
+                  style={{ width: '100%', height: 'auto', maxHeight: '520px', objectFit: 'contain', display: 'block', margin: '0 auto' }}
+                  className="hover-zoom"
+                />
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '6px 14px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', gap: '5px', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <Sparkles size={12} style={{ color: '#ff9933' }} /> Click to enlarge official banner
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Official Police Department Commendation & Letter of Appreciation */}
+          <div style={{ marginTop: '3.5rem', marginBottom: '3.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1.5px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+                <Shield size={16} style={{ color: 'var(--gold-dark)' }} />
+                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--gold-dark)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Law Enforcement Commendation • Nagpur City Police
+                </span>
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 3.2vw, 2.3rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+                Official Police Commendation Letter
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '780px', margin: '0 auto', lineHeight: '1.6' }}>
+                Formal recognition and official letter of appreciation issued by the <strong>Office of the Deputy Commissioner of Police, Zone 3, Nagpur City</strong>, commending BCF for safeguarding the health of frontline police officers through comprehensive diagnostic screenings and free medicine dispensation.
+              </p>
+            </div>
+
+            <div 
+              className="glass-card" 
+              style={{ 
+                borderRadius: '24px', 
+                padding: '2.25rem', 
+                border: '1.5px solid rgba(255, 111, 0, 0.35)', 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fffcf8 100%)',
+                boxShadow: '0 12px 36px rgba(0, 34, 68, 0.08)'
+              }}
+            >
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+                
+                {/* Left: Document Thumbnail Preview */}
+                <div 
+                  onClick={() => setActivePhotoModal({
+                    src: '/appreciation-letter-dcp-police.png',
+                    pdfUrl: '/appreciation-letter-dcp-police.pdf',
+                    title: 'Official Commendation Letter: DCP Zone 3, Nagpur City Police',
+                    tag: 'Police Dept Letter • Outward: 2026-6784',
+                    category: 'commendation',
+                    caption: 'Official letter of appreciation and special commendation issued by Shri Rahul Madane (IPS), Police Deputy Commissioner, Zone 3, Nagpur City on August 3, 2026. Commending the Bhongle Charitable Foundation for organizing the Free Health & Diagnostic Camp at Lakadganj Police Station on July 27, 2026, screening 90+ police personnel, providing specialized female medical teams for women police officers, free prescription medicines, and lauding the selfless public service of Dr. Shaligram Bhongle, Secretary Yash Bhongle, and Treasurer Dr. Priti Bhongle.'
+                  })}
+                  style={{ 
+                    borderRadius: '16px', 
+                    overflow: 'hidden', 
+                    border: '1.5px solid rgba(0,43,73,0.15)', 
+                    position: 'relative', 
+                    height: '380px', 
+                    cursor: 'pointer',
+                    background: '#f8fafc',
+                    boxShadow: '0 8px 20px rgba(0, 43, 73, 0.08)'
+                  }}
+                >
+                  <img 
+                    src="/appreciation-letter-dcp-police.png" 
+                    alt="Official Commendation Letter from DCP Zone 3, Nagpur City Police" 
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+                    className="hover-zoom"
+                  />
+                  <div style={{ position: 'absolute', bottom: '10px', right: '10px', background: 'rgba(0, 20, 35, 0.85)', color: '#fff', padding: '5px 12px', borderRadius: '18px', fontSize: '0.72rem', fontWeight: 600, backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <Sparkles size={11} style={{ color: '#ff9933' }} /> Click to enlarge letter
+                  </div>
+                </div>
+
+                {/* Right: Detailed Commendation Metadata & Quote */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 111, 0, 0.1)', border: '1px solid rgba(255, 111, 0, 0.25)', padding: '0.3rem 0.85rem', borderRadius: '50px' }}>
+                      <Shield size={14} style={{ color: '#ff6f00' }} />
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>
+                        Nagpur City Police • Zone 3
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 600 }}>
+                      Outward: पोउपआ/परि-३/विशेष कौतुक/2026-6784 • 03/08/2026
+                    </span>
+                  </div>
+
+                  <div>
+                    <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                      पोलीस उप आयुक्त कार्यालय परिमंडळ क्र. 03 नागपूर शहर
+                    </h4>
+                    <div style={{ fontSize: '0.95rem', color: '#c2410c', fontWeight: 700 }}>
+                      Shri Rahul Madane (IPS) • Police Deputy Commissioner, Zone 3
+                    </div>
+                  </div>
+
+                  <div style={{ background: 'rgba(255, 111, 0, 0.04)', border: '1px solid rgba(255, 111, 0, 0.2)', borderRadius: '12px', padding: '1.25rem' }}>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-dark)', lineHeight: '1.7', margin: 0, fontStyle: 'italic' }}>
+                      "दिनांक 27/07/2026 रोजी लकडगंज पोलीस स्टेशन येथे पोलीस अधिकारी व अंमलदार यांच्यासाठी भव्य मोफत आरोग्य तपासणी व औषधोपचार शिबीर आयोजित करण्यात आले... सदर शिबिरात <strong>90 हून अधिक पोलीस अधिकारी व कर्मचाऱ्यांची</strong> रक्तदाब, मधुमेह, हिमोग्लोबिन आदी तपासण्या करून मोफत औषध वाटप करण्यात आले. विशेषतः महिला पोलीस अंमलदारांसाठी स्वतंत्र महिला तज्ज्ञ डॉक्टरांची पथके तैनात करण्यात आली... भोंगळे चॅरिटेबल फाउंडेशनचे अध्यक्ष डॉ. शालिग्राम भोंगळे, सचिव यश भोंगळे, आणि कोषाध्यक्ष डॉ. प्रीती भोंगळे यांनी दाखवलेली सामाजिक बांधिलकी अत्यंत कौतुकास्पद व प्रशंसनीय आहे."
+                    </p>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem' }}>
+                    <div className="leader-badge" style={{ margin: 0, justifyContent: 'flex-start' }}>
+                      <CheckCircle2 size={14} style={{ color: '#ff6f00' }} />
+                      <span><strong>90+ Officers</strong> Screened</span>
+                    </div>
+                    <div className="leader-badge" style={{ margin: 0, justifyContent: 'flex-start' }}>
+                      <CheckCircle2 size={14} style={{ color: '#ff6f00' }} />
+                      <span><strong>Dedicated Panel</strong> For Women Officers</span>
+                    </div>
+                    <div className="leader-badge" style={{ margin: 0, justifyContent: 'flex-start' }}>
+                      <CheckCircle2 size={14} style={{ color: '#ff6f00' }} />
+                      <span><strong>Free Medicine</strong> Dispensation</span>
+                    </div>
+                    <div className="leader-badge" style={{ margin: 0, justifyContent: 'flex-start' }}>
+                      <CheckCircle2 size={14} style={{ color: '#ff6f00' }} />
+                      <span><strong>IPS Commended</strong> Humanitarian Work</span>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+                    <button 
+                      onClick={() => setActivePhotoModal({
+                        src: '/appreciation-letter-dcp-police.png',
+                        pdfUrl: '/appreciation-letter-dcp-police.pdf',
+                        title: 'Official Commendation Letter: DCP Zone 3, Nagpur City Police',
+                        tag: 'Police Dept Letter • Outward: 2026-6784',
+                        category: 'commendation',
+                        caption: 'Official letter of appreciation and special commendation issued by Shri Rahul Madane (IPS), Police Deputy Commissioner, Zone 3, Nagpur City on August 3, 2026. Commending the Bhongle Charitable Foundation for organizing the Free Health & Diagnostic Camp at Lakadganj Police Station on July 27, 2026, screening 90+ police personnel, providing specialized female medical teams for women police officers, free prescription medicines, and lauding the selfless public service of Dr. Shaligram Bhongle, Secretary Yash Bhongle, and Treasurer Dr. Priti Bhongle.'
+                      })}
+                      className="btn btn-outline" 
+                      style={{ fontSize: '0.88rem', padding: '0.65rem 1.4rem' }}
+                    >
+                      <Award size={16} />
+                      View High-Resolution Letter
+                    </button>
+                    <a 
+                      href="/appreciation-letter-dcp-police.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-primary" 
+                      style={{ fontSize: '0.88rem', padding: '0.65rem 1.4rem' }}
+                    >
+                      <FileText size={16} />
+                      Download Official Signed PDF
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
 
@@ -2876,7 +3349,148 @@ ${contactData.name}`;
               </p>
             </div>
           </div>
+        </div>
 
+        {/* Verifiable Letters of Appreciation & Institutional Commendations */}
+        <div style={{ marginTop: '3.5rem', paddingTop: '3rem', borderTop: '1px solid rgba(0, 43, 73, 0.08)' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1.5px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1.1rem', borderRadius: '50px', marginBottom: '0.75rem' }}>
+              <FileCheck size={16} style={{ color: 'var(--gold-dark)' }} />
+              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--gold-dark)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                Verifiable Official Institutional Commendations
+              </span>
+            </div>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', color: 'var(--primary)', fontWeight: 700, margin: '0.2rem 0 0.5rem 0' }}>
+              Official Letters of Appreciation & Recognition
+            </h3>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-light)', maxWidth: '780px', margin: '0 auto', lineHeight: '1.6' }}>
+              Original signed commendation letters from civic, police, and academic authorities recognizing the Bhongle Charitable Foundation's proven ground impact, fiscal transparency, and public service excellence.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
+            
+            {/* Letter Card 1: Nagpur City Police (DCP Zone 3) */}
+            <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '18px', border: '1px solid rgba(255, 111, 0, 0.25)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#ffffff', boxShadow: '0 4px 16px rgba(0,34,68,0.04)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase' }}>Nagpur City Police</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-light)', fontWeight: 600 }}>03/08/2026</span>
+                </div>
+                <h5 style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                  Office of DCP, Zone 3
+                </h5>
+                <p style={{ fontSize: '0.82rem', color: '#c2410c', fontWeight: 600, margin: '0 0 0.75rem 0' }}>
+                  Shri Rahul Madane (IPS), Police Deputy Commissioner
+                </p>
+                <div 
+                  onClick={() => setActivePhotoModal({
+                    src: '/appreciation-letter-dcp-police.png',
+                    pdfUrl: '/appreciation-letter-dcp-police.pdf',
+                    title: 'Official Commendation Letter: DCP Zone 3, Nagpur City Police',
+                    tag: 'Police Dept Letter • Outward: 2026-6784',
+                    category: 'commendation',
+                    caption: 'Official letter of appreciation and special commendation issued by Shri Rahul Madane (IPS), Police Deputy Commissioner, Zone 3, Nagpur City on August 3, 2026 for the Free Health & Diagnostic Camp at Lakadganj Police Station.'
+                  })}
+                  style={{ borderRadius: '10px', overflow: 'hidden', height: '180px', border: '1px solid rgba(0,43,73,0.1)', cursor: 'pointer', background: '#f8fafc', marginBottom: '0.85rem', position: 'relative' }}
+                >
+                  <img src="/appreciation-letter-dcp-police.png" alt="DCP Zone 3 Commendation Letter" style={{ width: '100%', height: '100%', objectFit: 'contain' }} className="hover-zoom" />
+                  <div style={{ position: 'absolute', bottom: '6px', right: '6px', background: 'rgba(0,20,35,0.85)', color: '#fff', padding: '3px 8px', borderRadius: '12px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                    <Sparkles size={10} style={{ color: '#ff9933' }} /> Click to enlarge
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Commending 90+ officers screened, women police medical focus, free medicines, and humanitarian service of BCF Trustees.
+                </p>
+              </div>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem' }}>
+                <a href="/appreciation-letter-dcp-police.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.78rem', padding: '0.5rem', justifyContent: 'center' }}>
+                  <FileText size={14} /> Open PDF
+                </a>
+              </div>
+            </div>
+
+            {/* Letter Card 2: Nagpur Municipal Corporation (NMC) */}
+            <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '18px', border: '1px solid rgba(16, 185, 129, 0.25)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#ffffff', boxShadow: '0 4px 16px rgba(0,34,68,0.04)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>Nagpur Municipal Corp.</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-light)', fontWeight: 600 }}>03.09.2026</span>
+                </div>
+                <h5 style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                  Office of the Mayor of Nagpur
+                </h5>
+                <p style={{ fontSize: '0.82rem', color: '#047857', fontWeight: 600, margin: '0 0 0.75rem 0' }}>
+                  Hon'ble Smt. Nita Rajendra Thakre, Mayor
+                </p>
+                <div 
+                  onClick={() => setActivePhotoModal({
+                    src: '/appreciation-letter-nmc-mayor.png',
+                    pdfUrl: '/appreciation-letter-nmc-mayor.pdf',
+                    title: 'Official Commendation Letter: Hon\'ble Mayor Smt. Neeta Thakre (NMC)',
+                    tag: 'NMC Civic Letter • Outward: 372/M/26',
+                    category: 'commendation',
+                    caption: 'Official letter of appreciation signed by Hon\'ble Mayor Smt. Nita Rajendra Thakre on behalf of Nagpur Municipal Corporation on September 3, 2026 commending BCF\'s support of the 5-Lakh Green Nagpur initiative.'
+                  })}
+                  style={{ borderRadius: '10px', overflow: 'hidden', height: '180px', border: '1px solid rgba(0,43,73,0.1)', cursor: 'pointer', background: '#f8fafc', marginBottom: '0.85rem', position: 'relative' }}
+                >
+                  <img src="/appreciation-letter-nmc-mayor.png" alt="Mayor Smt. Neeta Thakre Commendation Letter" style={{ width: '100%', height: '100%', objectFit: 'contain' }} className="hover-zoom" />
+                  <div style={{ position: 'absolute', bottom: '6px', right: '6px', background: 'rgba(0,20,35,0.85)', color: '#fff', padding: '3px 8px', borderRadius: '12px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                    <Sparkles size={10} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Commending active support of 5-Lakh Green Nagpur, 107 numbered saplings, AI-audio protocol, and 3-year survival covenants.
+                </p>
+              </div>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem' }}>
+                <a href="/appreciation-letter-nmc-mayor.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.78rem', padding: '0.5rem', justifyContent: 'center' }}>
+                  <FileText size={14} /> Open PDF
+                </a>
+              </div>
+            </div>
+
+            {/* Letter Card 3: KDK College of Pharmacy */}
+            <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '18px', border: '1px solid rgba(16, 185, 129, 0.25)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#ffffff', boxShadow: '0 4px 16px rgba(0,34,68,0.04)' }}>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#047857', textTransform: 'uppercase' }}>Academic Institute</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-light)', fontWeight: 600 }}>01/09/2026</span>
+                </div>
+                <h5 style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                  KDK College of Pharmacy
+                </h5>
+                <p style={{ fontSize: '0.82rem', color: '#047857', fontWeight: 600, margin: '0 0 0.75rem 0' }}>
+                  Dr. Kamlesh J. Wadher, Principal (PCI ID: 172)
+                </p>
+                <div 
+                  onClick={() => setActivePhotoModal({
+                    src: '/appreciation-letter-kdk-pharmacy.png',
+                    pdfUrl: '/appreciation-letter-kdk-pharmacy.pdf',
+                    title: 'Official Appreciation Letter: Principal Dr. Kamlesh J. Wadher (KDK College of Pharmacy)',
+                    tag: 'Institutional Endorsement • Ref: 2026/528',
+                    category: 'commendation',
+                    caption: 'Official institutional letter of appreciation issued by Principal Dr. Kamlesh J. Wadher on September 1, 2026 commending BCF and Secretary Yash Bhongle for the Phase 2 Scientific Plantation Drive.'
+                  })}
+                  style={{ borderRadius: '10px', overflow: 'hidden', height: '180px', border: '1px solid rgba(0,43,73,0.1)', cursor: 'pointer', background: '#f8fafc', marginBottom: '0.85rem', position: 'relative' }}
+                >
+                  <img src="/appreciation-letter-kdk-pharmacy.png" alt="KDK College of Pharmacy Letter" style={{ width: '100%', height: '100%', objectFit: 'contain' }} className="hover-zoom" />
+                  <div style={{ position: 'absolute', bottom: '6px', right: '6px', background: 'rgba(0,20,35,0.85)', color: '#fff', padding: '3px 8px', borderRadius: '12px', fontSize: '0.68rem', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                    <Sparkles size={10} style={{ color: '#34d399' }} /> Click to enlarge
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', lineHeight: '1.5', margin: 0 }}>
+                  Commending scientific numbered tagging, Mayoral coordination, BCF Secretary Yash Bhongle, and confirming 3-year care pledge.
+                </p>
+              </div>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem' }}>
+                <a href="/appreciation-letter-kdk-pharmacy.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ flex: 1, fontSize: '0.78rem', padding: '0.5rem', justifyContent: 'center' }}>
+                  <FileText size={14} /> Open PDF
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -3274,21 +3888,35 @@ ${contactData.name}`;
                 display: 'inline-flex', 
                 alignItems: 'center', 
                 gap: '0.4rem', 
-                background: activePhotoModal.category === 'environment' ? 'rgba(5, 150, 105, 0.12)' : 'rgba(255, 111, 0, 0.12)', 
-                border: activePhotoModal.category === 'environment' ? '1px solid rgba(5, 150, 105, 0.3)' : '1px solid rgba(255, 111, 0, 0.3)', 
+                background: activePhotoModal.category === 'environment' 
+                  ? 'rgba(5, 150, 105, 0.12)' 
+                  : activePhotoModal.category === 'commendation'
+                  ? 'rgba(212, 175, 55, 0.15)'
+                  : 'rgba(255, 111, 0, 0.12)', 
+                border: activePhotoModal.category === 'environment' 
+                  ? '1px solid rgba(5, 150, 105, 0.3)' 
+                  : activePhotoModal.category === 'commendation'
+                  ? '1px solid rgba(212, 175, 55, 0.4)'
+                  : '1px solid rgba(255, 111, 0, 0.3)', 
                 padding: '0.25rem 0.75rem', 
                 borderRadius: '50px', 
                 marginBottom: '0.45rem' 
               }}>
                 {activePhotoModal.category === 'environment' ? (
                   <TreePine size={13} style={{ color: '#059669' }} />
+                ) : activePhotoModal.category === 'commendation' ? (
+                  <Award size={13} style={{ color: 'var(--gold-dark)' }} />
                 ) : (
                   <Shield size={13} style={{ color: '#ff6f00' }} />
                 )}
                 <span style={{ 
                   fontSize: '0.74rem', 
                   fontWeight: 700, 
-                  color: activePhotoModal.category === 'environment' ? '#047857' : '#c2410c', 
+                  color: activePhotoModal.category === 'environment' 
+                    ? '#047857' 
+                    : activePhotoModal.category === 'commendation'
+                    ? 'var(--gold-dark)'
+                    : '#c2410c', 
                   textTransform: 'uppercase', 
                   letterSpacing: '0.5px' 
                 }}>
@@ -3301,6 +3929,35 @@ ${contactData.name}`;
               <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', lineHeight: '1.55', margin: 0 }}>
                 {activePhotoModal.caption}
               </p>
+              {activePhotoModal.pdfUrl && (
+                <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <a
+                    href={activePhotoModal.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.55rem 1.25rem',
+                      borderRadius: '8px',
+                      background: 'linear-gradient(135deg, #002b49 0%, #004b7a 100%)',
+                      color: '#ffffff',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      textDecoration: 'none',
+                      boxShadow: '0 3px 10px rgba(0, 43, 73, 0.25)',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 5px 14px rgba(0, 43, 73, 0.35)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 43, 73, 0.25)'; }}
+                  >
+                    <FileText size={16} />
+                    Open / Download Official Signed Document (PDF)
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
